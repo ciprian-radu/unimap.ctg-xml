@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.example.org/core" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.example.org/core">
+
+    <xsd:annotation>
+    	<xsd:documentation>XML schema for a task belonging to a Communiaction Task Graph (CTG).</xsd:documentation></xsd:annotation>
+    
+
+    
+
+
+
+    
+    <xsd:complexType name="coreType">
+        <xsd:annotation>
+        	<xsd:documentation>XML representing an Intellectual Property (IP) core.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence maxOccurs="1" minOccurs="1">
+    		<xsd:element name="ID" type="xsd:ID" minOccurs="1"
+    			maxOccurs="1">
+    			<xsd:annotation>
+    				<xsd:documentation>
+    					Unique IP (Intellectual Property) core
+    					identifier. Each IP core must have such an ID.
+    				</xsd:documentation>
+    			</xsd:annotation>
+    		</xsd:element>
+    		<xsd:element name="name" type="xsd:string" maxOccurs="1"
+    			minOccurs="0">
+    			<xsd:annotation>
+    				<xsd:documentation>
+    					The name of the core.
+    				</xsd:documentation>
+    			</xsd:annotation>
+    		</xsd:element>
+    		<xsd:element name="frequency" type="xsd:double"
+    			maxOccurs="1" minOccurs="0">
+    			<xsd:annotation>
+    				<xsd:documentation>The operating frequency (in MHz).
+    				</xsd:documentation>
+    			</xsd:annotation>
+    		</xsd:element>
+    		<xsd:element name="width" type="xsd:double" maxOccurs="1"
+    			minOccurs="0">
+    			<xsd:annotation>
+    				<xsd:documentation>The width (in mm) of this core.
+    				</xsd:documentation>
+    			</xsd:annotation>
+    		</xsd:element>
+    		<xsd:element name="height" type="xsd:double" maxOccurs="1"
+    			minOccurs="0">
+    			<xsd:annotation>
+    				<xsd:documentation>The height (in mm) of this core.
+    				</xsd:documentation>
+    			</xsd:annotation>
+    		</xsd:element>
+    		<xsd:element name="idlePower" type="xsd:double" maxOccurs="1" minOccurs="0">
+    			<xsd:annotation>
+    				<xsd:documentation>The power (in Watts) consumed by this core when it doesn't execute any task.</xsd:documentation>
+    			</xsd:annotation></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="core" type="core:coreType"></xsd:element>
+</xsd:schema>

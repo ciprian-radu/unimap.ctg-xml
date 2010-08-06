@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.example.org/mapping" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mapping="http://www.example.org/mapping">
+
+    <annotation>
+    	<documentation>XML used for representing a mapping generated with any application mapping algorithm for NoCs.</documentation></annotation>
+    <complexType name="mappingType">
+    	<sequence maxOccurs="unbounded" minOccurs="1">
+    		<element name="map" type="mapping:mapType"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="string" use="required"></attribute>
+    	<attribute name="apcg" type="string" use="required"></attribute>
+    </complexType>
+
+
+    <element name="mapping" type="mapping:mappingType"></element>
+
+    <complexType name="mapType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="node" type="string" maxOccurs="1"
+    			minOccurs="1">
+                <annotation>
+                	<documentation>The ID of the NoC node.</documentation>
+                </annotation>
+    		</element>
+    		<element name="core" type="string" maxOccurs="1" minOccurs="1">
+    			<annotation>
+    				<documentation>The ID of the IP core.</documentation>
+    			</annotation></element>
+    	</sequence>
+    	
+    </complexType>
+    
+</schema>

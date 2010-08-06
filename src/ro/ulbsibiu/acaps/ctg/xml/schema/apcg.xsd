@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.example.org/apcg" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:apcg="http://www.example.org/apcg">
+
+    <annotation>
+    	<documentation>XML used for representing the scheduling generated with a scheduling algorithm.</documentation></annotation>
+    <complexType name="apcgType">
+    	<sequence maxOccurs="unbounded" minOccurs="1">
+    		<element name="core" type="apcg:coreType"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="string" use="required">
+    		<annotation>
+    			<documentation>The ID of this Application Characterization Graph.</documentation>
+    		</annotation></attribute>
+    	<attribute name="ctg" type="string" use="required">
+    		<annotation>
+    			<documentation>The ID of the Communication Task Graph.</documentation>
+    		</annotation></attribute>
+    </complexType>
+
+
+    <element name="apcg" type="apcg:apcgType"></element>
+
+    <complexType name="coreType">
+    	<sequence maxOccurs="unbounded" minOccurs="1">
+    		<element name="task" type="string" maxOccurs="unbounded"
+    			minOccurs="1">
+                <annotation>
+                	<documentation>A task that is assigned to this core.</documentation>
+                </annotation>
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="string" use="required">
+    		<annotation>
+    			<documentation>The ID of the core.</documentation>
+    		</annotation></attribute>
+    </complexType>
+    
+</schema>
