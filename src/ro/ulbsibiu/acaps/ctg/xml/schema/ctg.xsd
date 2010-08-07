@@ -55,7 +55,7 @@
     <element name="ctg" type="ctg:ctgType"></element>
 
     <complexType name="communicatingTaskType">
-    	<sequence maxOccurs="1" minOccurs="1">
+    	<sequence maxOccurs="unbounded" minOccurs="1">
     		<element name="deadline" type="ctg:deadlineType"
     			maxOccurs="1" minOccurs="0">
     		</element>
