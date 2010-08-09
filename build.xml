@@ -36,6 +36,51 @@
 		<xjc schema="src/ro/ulbsibiu/acaps/ctg/xml/schema/apcg.xsd" destdir="src" package="ro.ulbsibiu.acaps.ctg.xml.apcg" />
 		<xjc schema="src/ro/ulbsibiu/acaps/ctg/xml/schema/mapping.xsd" destdir="src" package="ro.ulbsibiu.acaps.ctg.xml.mapping" />
 	</target>
+	
+	<target name="xsd-c++" description="generate C++ code from XSDs">
+		<echo>Creating C++ code based on the XSDs</echo>
+		<exec executable="xsd">
+			<arg value="cxx-tree"/>
+			<arg value="--generate-serialization"/>
+			<arg value="--generate-doxygen"/>
+			<arg value="--output-dir"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/core"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/schema/core.xsd"/>
+		</exec>
+		<exec executable="xsd">
+			<arg value="cxx-tree"/>
+			<arg value="--generate-serialization"/>
+			<arg value="--generate-doxygen"/>
+			<arg value="--output-dir"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/task"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/schema/task.xsd"/>
+		</exec>
+		<exec executable="xsd">
+			<arg value="cxx-tree"/>
+			<arg value="--generate-serialization"/>
+			<arg value="--generate-doxygen"/>
+			<arg value="--output-dir"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/ctg"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/schema/ctg.xsd"/>
+		</exec>
+		<exec executable="xsd">
+			<arg value="cxx-tree"/>
+			<arg value="--generate-serialization"/>
+			<arg value="--generate-doxygen"/>
+			<arg value="--output-dir"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/apcg"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/schema/apcg.xsd"/>
+		</exec>
+		<exec executable="xsd">
+			<arg value="cxx-tree"/>
+			<arg value="--generate-serialization"/>
+			<arg value="--generate-doxygen"/>
+			<arg value="--output-dir"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/mapping"/>
+			<arg value="src/ro/ulbsibiu/acaps/ctg/xml/schema/mapping.xsd"/>
+		</exec>
+		<echo>Done</echo>
+	</target>
 
 	<target name="dist" depends="compile,xjc" description="generate the distribution">
 		<!-- Create the distribution directory -->
