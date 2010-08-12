@@ -9,7 +9,7 @@
     			maxOccurs="unbounded" minOccurs="1">
     		</element>
     	</sequence>
-    	<attribute name="id" type="string" use="required">
+    	<attribute name="id" type="ID" use="required">
     		<annotation>
     			<documentation>The ID of this Application Characterization Graph.</documentation>
     		</annotation></attribute>
@@ -24,7 +24,7 @@
 
     <complexType name="coreType">
     	<sequence maxOccurs="unbounded" minOccurs="1">
-    		<element name="task" type="string" maxOccurs="unbounded"
+    		<element name="task" type="apcg:taskType" maxOccurs="unbounded"
     			minOccurs="1">
                 <annotation>
                 	<documentation>A task that is assigned to this core.</documentation>
@@ -37,4 +37,34 @@
     		</annotation></attribute>
     </complexType>
     
+
+    <complexType name="taskType">
+    	<attribute name="id" type="string" use="required"></attribute>
+    	<attribute name="execTime" use="optional">
+    		<annotation>
+    			<documentation>
+    				The execution time (in seconds) of this task, when
+    				it is running on a certain IP core.
+    			</documentation>
+    		</annotation>
+    		<simpleType>
+    			<restriction base="double">
+    				<minExclusive value="0"></minExclusive>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="power">
+    		<annotation>
+    			<documentation>
+    				The power (in Watts) consumed by this task, when it
+    				is running on a certain IP core.
+    			</documentation>
+    		</annotation>
+    		<simpleType>
+    			<restriction base="double">
+    				<minExclusive value="0"></minExclusive>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
 </schema>

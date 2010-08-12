@@ -9,7 +9,7 @@
     			maxOccurs="unbounded" minOccurs="0">
     		</element>
     	</sequence>
-    	<attribute name="id" type="string" use="required">
+    	<attribute name="id" type="ID" use="required">
     		<annotation>
     			<documentation>The ID of this CTG.</documentation>
     		</annotation></attribute>
@@ -39,8 +39,7 @@
     		</element>
     		<element name="volume" maxOccurs="1" minOccurs="1">
     			<annotation>
-    				<documentation>
-    					The communication volume (in bytes).
+    				<documentation>The communication volume (in bits).
     				</documentation>
     			</annotation>
     			<simpleType>

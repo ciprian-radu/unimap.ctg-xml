@@ -14,25 +14,24 @@
     	<xsd:sequence maxOccurs="1" minOccurs="1">
     		<xsd:element name="ID" type="xsd:ID" minOccurs="1"
     			maxOccurs="1">
-                <xsd:annotation>
-                	<xsd:documentation>Unique task identifier. Each task must have such an ID, for every CTG.</xsd:documentation>
-                </xsd:annotation>
-    		</xsd:element>
-    		<xsd:element name="name" type="xsd:string" maxOccurs="1"
-    			minOccurs="0">
-                <xsd:annotation>
-                	<xsd:documentation>The name of the task.</xsd:documentation></xsd:annotation>
-    		</xsd:element>
-    		<xsd:element name="execTime" type="xsd:double" maxOccurs="1"
-    			minOccurs="0">
     			<xsd:annotation>
-    				<xsd:documentation>The execution time (in miliseconds) of this task, when it is running on a certain IP core.</xsd:documentation>
+    				<xsd:documentation>
+    					Unique task identifier. Each task must have such
+    					an ID, for every CTG.
+    				</xsd:documentation>
     			</xsd:annotation>
     		</xsd:element>
-    		<xsd:element name="power" type="xsd:double" maxOccurs="1" minOccurs="0">
+    		<xsd:element name="type" type="xsd:string" maxOccurs="1" minOccurs="1">
     			<xsd:annotation>
-    				<xsd:documentation>The power (in Watts) consumed by this task, when it is running on a certain IP core.</xsd:documentation>
-    			</xsd:annotation></xsd:element>
+    				<xsd:documentation>The type of the task. It specifies to what class of tasks it belongs.</xsd:documentation></xsd:annotation></xsd:element>
+    		<xsd:element name="name" type="xsd:string" maxOccurs="1"
+    			minOccurs="0">
+    			<xsd:annotation>
+    				<xsd:documentation>
+    					The name of the task.
+    				</xsd:documentation>
+    			</xsd:annotation>
+    		</xsd:element>
     	</xsd:sequence>
     </xsd:complexType>
 

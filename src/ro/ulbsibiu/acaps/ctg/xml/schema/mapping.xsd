@@ -9,7 +9,7 @@
     			maxOccurs="unbounded" minOccurs="1">
     		</element>
     	</sequence>
-    	<attribute name="id" type="string" use="required"></attribute>
+    	<attribute name="id" type="ID" use="required"></attribute>
     	<attribute name="apcg" type="string" use="required"></attribute>
     </complexType>
 

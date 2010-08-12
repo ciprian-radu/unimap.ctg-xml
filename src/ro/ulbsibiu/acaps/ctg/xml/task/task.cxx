@@ -69,6 +69,30 @@ namespace task
     this->ID_.set (x);
   }
 
+  const taskType::type_type& taskType::
+  type () const
+  {
+    return this->type_.get ();
+  }
+
+  taskType::type_type& taskType::
+  type ()
+  {
+    return this->type_.get ();
+  }
+
+  void taskType::
+  type (const type_type& x)
+  {
+    this->type_.set (x);
+  }
+
+  void taskType::
+  type (::std::auto_ptr< type_type > x)
+  {
+    this->type_.set (x);
+  }
+
   const taskType::name_optional& taskType::
   name () const
   {
@@ -98,54 +122,6 @@ namespace task
   {
     this->name_.set (x);
   }
-
-  const taskType::execTime_optional& taskType::
-  execTime () const
-  {
-    return this->execTime_;
-  }
-
-  taskType::execTime_optional& taskType::
-  execTime ()
-  {
-    return this->execTime_;
-  }
-
-  void taskType::
-  execTime (const execTime_type& x)
-  {
-    this->execTime_.set (x);
-  }
-
-  void taskType::
-  execTime (const execTime_optional& x)
-  {
-    this->execTime_ = x;
-  }
-
-  const taskType::power_optional& taskType::
-  power () const
-  {
-    return this->power_;
-  }
-
-  taskType::power_optional& taskType::
-  power ()
-  {
-    return this->power_;
-  }
-
-  void taskType::
-  power (const power_type& x)
-  {
-    this->power_.set (x);
-  }
-
-  void taskType::
-  power (const power_optional& x)
-  {
-    this->power_ = x;
-  }
 }
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
@@ -156,12 +132,12 @@ namespace task
   //
 
   taskType::
-  taskType (const ID_type& ID)
+  taskType (const ID_type& ID,
+            const type_type& type)
   : ::xml_schema::type (),
     ID_ (ID, ::xml_schema::flags (), this),
-    name_ (::xml_schema::flags (), this),
-    execTime_ (::xml_schema::flags (), this),
-    power_ (::xml_schema::flags (), this)
+    type_ (type, ::xml_schema::flags (), this),
+    name_ (::xml_schema::flags (), this)
   {
   }
 
@@ -171,9 +147,8 @@ namespace task
             ::xml_schema::container* c)
   : ::xml_schema::type (x, f, c),
     ID_ (x.ID_, f, this),
-    name_ (x.name_, f, this),
-    execTime_ (x.execTime_, f, this),
-    power_ (x.power_, f, this)
+    type_ (x.type_, f, this),
+    name_ (x.name_, f, this)
   {
   }
 
@@ -183,9 +158,8 @@ namespace task
             ::xml_schema::container* c)
   : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
     ID_ (f, this),
-    name_ (f, this),
-    execTime_ (f, this),
-    power_ (f, this)
+    type_ (f, this),
+    name_ (f, this)
   {
     if ((f & ::xml_schema::flags::base) == 0)
     {
@@ -218,6 +192,20 @@ namespace task
         }
       }
 
+      // type
+      //
+      if (n.name () == "type" && n.namespace_ ().empty ())
+      {
+        ::std::auto_ptr< type_type > r (
+          type_traits::create (i, f, this));
+
+        if (!type_.present ())
+        {
+          this->type_.set (r);
+          continue;
+        }
+      }
+
       // name
       //
       if (n.name () == "name" && n.namespace_ ().empty ())
@@ -232,28 +220,6 @@ namespace task
         }
       }
 
-      // execTime
-      //
-      if (n.name () == "execTime" && n.namespace_ ().empty ())
-      {
-        if (!this->execTime_)
-        {
-          this->execTime_.set (execTime_traits::create (i, f, this));
-          continue;
-        }
-      }
-
-      // power
-      //
-      if (n.name () == "power" && n.namespace_ ().empty ())
-      {
-        if (!this->power_)
-        {
-          this->power_.set (power_traits::create (i, f, this));
-          continue;
-        }
-      }
-
       break;
     }
 
@@ -261,6 +227,13 @@ namespace task
     {
       throw ::xsd::cxx::tree::expected_element< char > (
         "ID",
+        "");
+    }
+
+    if (!type_.present ())
+    {
+      throw ::xsd::cxx::tree::expected_element< char > (
+        "type",
         "");
     }
   }
@@ -587,6 +560,17 @@ namespace task
       s << i.ID ();
     }
 
+    // type
+    //
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "type",
+          e));
+
+      s << i.type ();
+    }
+
     // name
     //
     if (i.name ())
@@ -597,30 +581,6 @@ namespace task
           e));
 
       s << *i.name ();
-    }
-
-    // execTime
-    //
-    if (i.execTime ())
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "execTime",
-          e));
-
-      s << ::xml_schema::as_double(*i.execTime ());
-    }
-
-    // power
-    //
-    if (i.power ())
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "power",
-          e));
-
-      s << ::xml_schema::as_double(*i.power ());
     }
   }
 

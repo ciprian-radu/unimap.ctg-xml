@@ -716,7 +716,7 @@ namespace mapping
     /**
      * @brief Attribute type.
      */
-    typedef ::xml_schema::string id_type;
+    typedef ::xml_schema::id id_type;
 
     /**
      * @brief Attribute traits type.

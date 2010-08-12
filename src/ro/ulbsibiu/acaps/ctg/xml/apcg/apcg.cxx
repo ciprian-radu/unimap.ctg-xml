@@ -156,6 +156,102 @@ namespace apcg
   {
     this->id_.set (x);
   }
+
+
+  // taskType
+  // 
+
+  const taskType::id_type& taskType::
+  id () const
+  {
+    return this->id_.get ();
+  }
+
+  taskType::id_type& taskType::
+  id ()
+  {
+    return this->id_.get ();
+  }
+
+  void taskType::
+  id (const id_type& x)
+  {
+    this->id_.set (x);
+  }
+
+  void taskType::
+  id (::std::auto_ptr< id_type > x)
+  {
+    this->id_.set (x);
+  }
+
+  const taskType::execTime_optional& taskType::
+  execTime () const
+  {
+    return this->execTime_;
+  }
+
+  taskType::execTime_optional& taskType::
+  execTime ()
+  {
+    return this->execTime_;
+  }
+
+  void taskType::
+  execTime (const execTime_type& x)
+  {
+    this->execTime_.set (x);
+  }
+
+  void taskType::
+  execTime (const execTime_optional& x)
+  {
+    this->execTime_ = x;
+  }
+
+  void taskType::
+  execTime (::std::auto_ptr< execTime_type > x)
+  {
+    this->execTime_.set (x);
+  }
+
+  const taskType::power_optional& taskType::
+  power () const
+  {
+    return this->power_;
+  }
+
+  taskType::power_optional& taskType::
+  power ()
+  {
+    return this->power_;
+  }
+
+  void taskType::
+  power (const power_type& x)
+  {
+    this->power_.set (x);
+  }
+
+  void taskType::
+  power (const power_optional& x)
+  {
+    this->power_ = x;
+  }
+
+  void taskType::
+  power (::std::auto_ptr< power_type > x)
+  {
+    this->power_.set (x);
+  }
+
+
+  // execTime
+  // 
+
+
+  // power
+  // 
 }
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
@@ -371,6 +467,211 @@ namespace apcg
 
   coreType::
   ~coreType ()
+  {
+  }
+
+  // taskType
+  //
+
+  taskType::
+  taskType (const id_type& id)
+  : ::xml_schema::type (),
+    id_ (id, ::xml_schema::flags (), this),
+    execTime_ (::xml_schema::flags (), this),
+    power_ (::xml_schema::flags (), this)
+  {
+  }
+
+  taskType::
+  taskType (const taskType& x,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+  : ::xml_schema::type (x, f, c),
+    id_ (x.id_, f, this),
+    execTime_ (x.execTime_, f, this),
+    power_ (x.power_, f, this)
+  {
+  }
+
+  taskType::
+  taskType (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+    id_ (f, this),
+    execTime_ (f, this),
+    power_ (f, this)
+  {
+    if ((f & ::xml_schema::flags::base) == 0)
+    {
+      ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+      this->parse (p, f);
+    }
+  }
+
+  void taskType::
+  parse (::xsd::cxx::xml::dom::parser< char >& p,
+         ::xml_schema::flags f)
+  {
+    while (p.more_attributes ())
+    {
+      const ::xercesc::DOMAttr& i (p.next_attribute ());
+      const ::xsd::cxx::xml::qualified_name< char > n (
+        ::xsd::cxx::xml::dom::name< char > (i));
+
+      if (n.name () == "id" && n.namespace_ ().empty ())
+      {
+        ::std::auto_ptr< id_type > r (
+          id_traits::create (i, f, this));
+
+        this->id_.set (r);
+        continue;
+      }
+
+      if (n.name () == "execTime" && n.namespace_ ().empty ())
+      {
+        ::std::auto_ptr< execTime_type > r (
+          execTime_traits::create (i, f, this));
+
+        this->execTime_.set (r);
+        continue;
+      }
+
+      if (n.name () == "power" && n.namespace_ ().empty ())
+      {
+        ::std::auto_ptr< power_type > r (
+          power_traits::create (i, f, this));
+
+        this->power_.set (r);
+        continue;
+      }
+    }
+
+    if (!id_.present ())
+    {
+      throw ::xsd::cxx::tree::expected_attribute< char > (
+        "id",
+        "");
+    }
+  }
+
+  taskType* taskType::
+  _clone (::xml_schema::flags f,
+          ::xml_schema::container* c) const
+  {
+    return new class taskType (*this, f, c);
+  }
+
+  taskType::
+  ~taskType ()
+  {
+  }
+
+  // execTime
+  //
+
+  execTime::
+  execTime (const ::xml_schema::double_& _xsd_double__base)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (_xsd_double__base)
+  {
+  }
+
+  execTime::
+  execTime (const execTime& x,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (x, f, c)
+  {
+  }
+
+  execTime::
+  execTime (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (e, f, c)
+  {
+  }
+
+  execTime::
+  execTime (const ::xercesc::DOMAttr& a,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (a, f, c)
+  {
+  }
+
+  execTime::
+  execTime (const ::std::string& s,
+            const ::xercesc::DOMElement* e,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, c)
+  {
+  }
+
+  execTime* execTime::
+  _clone (::xml_schema::flags f,
+          ::xml_schema::container* c) const
+  {
+    return new class execTime (*this, f, c);
+  }
+
+  execTime::
+  ~execTime ()
+  {
+  }
+
+  // power
+  //
+
+  power::
+  power (const ::xml_schema::double_& _xsd_double__base)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (_xsd_double__base)
+  {
+  }
+
+  power::
+  power (const power& x,
+         ::xml_schema::flags f,
+         ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (x, f, c)
+  {
+  }
+
+  power::
+  power (const ::xercesc::DOMElement& e,
+         ::xml_schema::flags f,
+         ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (e, f, c)
+  {
+  }
+
+  power::
+  power (const ::xercesc::DOMAttr& a,
+         ::xml_schema::flags f,
+         ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (a, f, c)
+  {
+  }
+
+  power::
+  power (const ::std::string& s,
+         const ::xercesc::DOMElement* e,
+         ::xml_schema::flags f,
+         ::xml_schema::container* c)
+  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, c)
+  {
+  }
+
+  power* power::
+  _clone (::xml_schema::flags f,
+          ::xml_schema::container* c) const
+  {
+    return new class power (*this, f, c);
+  }
+
+  power::
+  ~power ()
   {
   }
 }
@@ -889,6 +1190,85 @@ namespace apcg
 
       a << i.id ();
     }
+  }
+
+  void
+  operator<< (::xercesc::DOMElement& e, const taskType& i)
+  {
+    e << static_cast< const ::xml_schema::type& > (i);
+
+    // id
+    //
+    {
+      ::xercesc::DOMAttr& a (
+        ::xsd::cxx::xml::dom::create_attribute (
+          "id",
+          e));
+
+      a << i.id ();
+    }
+
+    // execTime
+    //
+    if (i.execTime ())
+    {
+      ::xercesc::DOMAttr& a (
+        ::xsd::cxx::xml::dom::create_attribute (
+          "execTime",
+          e));
+
+      a << *i.execTime ();
+    }
+
+    // power
+    //
+    if (i.power ())
+    {
+      ::xercesc::DOMAttr& a (
+        ::xsd::cxx::xml::dom::create_attribute (
+          "power",
+          e));
+
+      a << *i.power ();
+    }
+  }
+
+  void
+  operator<< (::xercesc::DOMElement& e, const execTime& i)
+  {
+    e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+  }
+
+  void
+  operator<< (::xercesc::DOMAttr& a, const execTime& i)
+  {
+    a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+  }
+
+  void
+  operator<< (::xml_schema::list_stream& l,
+              const execTime& i)
+  {
+    l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+  }
+
+  void
+  operator<< (::xercesc::DOMElement& e, const power& i)
+  {
+    e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+  }
+
+  void
+  operator<< (::xercesc::DOMAttr& a, const power& i)
+  {
+    a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+  }
+
+  void
+  operator<< (::xml_schema::list_stream& l,
+              const power& i)
+  {
+    l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
   }
 }
 

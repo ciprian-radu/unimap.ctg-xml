@@ -610,6 +610,9 @@ namespace xml_schema
 namespace core
 {
   class coreType;
+  class taskType;
+  class execTime;
+  class power;
 }
 
 
@@ -656,7 +659,7 @@ namespace core
     /**
      * @brief Element type.
      */
-    typedef ::xml_schema::id ID_type;
+    typedef ::xml_schema::string ID_type;
 
     /**
      * @brief Element traits type.
@@ -787,7 +790,7 @@ namespace core
      * @brief Accessor and modifier functions for the %frequency
      * optional element.
      *
-     * The operating frequency (in MHz).
+     * The operating frequency (in Hz).
      */
     //@{
 
@@ -854,7 +857,7 @@ namespace core
      * @brief Accessor and modifier functions for the %width
      * optional element.
      *
-     * The width (in mm) of this core.
+     * The width (in m) of this core.
      */
     //@{
 
@@ -921,7 +924,7 @@ namespace core
      * @brief Accessor and modifier functions for the %height
      * optional element.
      *
-     * The height (in mm) of this core.
+     * The height (in m) of this core.
      */
     //@{
 
@@ -988,8 +991,8 @@ namespace core
      * @brief Accessor and modifier functions for the %idlePower
      * optional element.
      *
-     * The power (in Watts) consumed by this core when it doesn't execute any
-     * task.
+     * The power (in Watts) consumed by this core when
+     * it doesn't execute any task.
      */
     //@{
 
@@ -1047,6 +1050,70 @@ namespace core
      */
     void
     idlePower (const idlePower_optional& x);
+
+    //@}
+
+    /**
+     * @name task
+     *
+     * @brief Accessor and modifier functions for the %task
+     * sequence element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
+    typedef ::core::taskType task_type;
+
+    /**
+     * @brief Element sequence container type.
+     */
+    typedef ::xsd::cxx::tree::sequence< task_type > task_sequence;
+
+    /**
+     * @brief Element iterator type.
+     */
+    typedef task_sequence::iterator task_iterator;
+
+    /**
+     * @brief Element constant iterator type.
+     */
+    typedef task_sequence::const_iterator task_const_iterator;
+
+    /**
+     * @brief Element traits type.
+     */
+    typedef ::xsd::cxx::tree::traits< task_type, char > task_traits;
+
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * sequence.
+     *
+     * @return A constant reference to the sequence container.
+     */
+    const task_sequence&
+    task () const;
+
+    /**
+     * @brief Return a read-write reference to the element sequence.
+     *
+     * @return A reference to the sequence container.
+     */
+    task_sequence&
+    task ();
+
+    /**
+     * @brief Copy elements from a given sequence.
+     *
+     * @param s A sequence to copy elements from.
+     *
+     * For each element in @a s this function makes a copy and adds it 
+     * to the sequence. Note that this operation completely changes the 
+     * sequence and all old elements will be lost.
+     */
+    void
+    task (const task_sequence& s);
 
     //@}
 
@@ -1126,8 +1193,500 @@ namespace core
     width_optional width_;
     height_optional height_;
     idlePower_optional idlePower_;
+    task_sequence task_;
 
     //@endcond
+  };
+
+  /**
+   * @brief Class corresponding to the %taskType schema type.
+   *
+   * @nosubgrouping
+   */
+  class taskType: public ::xml_schema::type
+  {
+    public:
+    /**
+     * @name type
+     *
+     * @brief Accessor and modifier functions for the %type
+     * required attribute.
+     *
+     * The type of the task. It specifies to what class of tasks it belongs.
+     */
+    //@{
+
+    /**
+     * @brief Attribute type.
+     */
+    typedef ::xml_schema::string type_type;
+
+    /**
+     * @brief Attribute traits type.
+     */
+    typedef ::xsd::cxx::tree::traits< type_type, char > type_traits;
+
+    /**
+     * @brief Return a read-only (constant) reference to the attribute.
+     *
+     * @return A constant reference to the attribute.
+     */
+    const type_type&
+    type () const;
+
+    /**
+     * @brief Return a read-write reference to the attribute.
+     *
+     * @return A reference to the attribute.
+     */
+    type_type&
+    type ();
+
+    /**
+     * @brief Set the attribute value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the attribute.
+     */
+    void
+    type (const type_type& x);
+
+    /**
+     * @brief Set the attribute value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly
+     * instead of making a copy.
+     */
+    void
+    type (::std::auto_ptr< type_type > p);
+
+    //@}
+
+    /**
+     * @name execTime
+     *
+     * @brief Accessor and modifier functions for the %execTime
+     * optional attribute.
+     *
+     * The execution time (in seconds) of this task, when
+     * it is running on a certain IP core.
+     */
+    //@{
+
+    /**
+     * @brief Attribute type.
+     */
+    typedef ::core::execTime execTime_type;
+
+    /**
+     * @brief Attribute optional container type.
+     */
+    typedef ::xsd::cxx::tree::optional< execTime_type > execTime_optional;
+
+    /**
+     * @brief Attribute traits type.
+     */
+    typedef ::xsd::cxx::tree::traits< execTime_type, char > execTime_traits;
+
+    /**
+     * @brief Return a read-only (constant) reference to the attribute
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
+    const execTime_optional&
+    execTime () const;
+
+    /**
+     * @brief Return a read-write reference to the attribute container.
+     *
+     * @return A reference to the optional container.
+     */
+    execTime_optional&
+    execTime ();
+
+    /**
+     * @brief Set the attribute value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the attribute.
+     */
+    void
+    execTime (const execTime_type& x);
+
+    /**
+     * @brief Set the attribute value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the attribute.
+     * Otherwise the attribute container is set the 'not present' state.
+     */
+    void
+    execTime (const execTime_optional& x);
+
+    /**
+     * @brief Set the attribute value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
+    void
+    execTime (::std::auto_ptr< execTime_type > p);
+
+    //@}
+
+    /**
+     * @name power
+     *
+     * @brief Accessor and modifier functions for the %power
+     * optional attribute.
+     *
+     * The power (in Watts) consumed by this task, when it is running on a
+     * certain IP core.
+     */
+    //@{
+
+    /**
+     * @brief Attribute type.
+     */
+    typedef ::core::power power_type;
+
+    /**
+     * @brief Attribute optional container type.
+     */
+    typedef ::xsd::cxx::tree::optional< power_type > power_optional;
+
+    /**
+     * @brief Attribute traits type.
+     */
+    typedef ::xsd::cxx::tree::traits< power_type, char > power_traits;
+
+    /**
+     * @brief Return a read-only (constant) reference to the attribute
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
+    const power_optional&
+    power () const;
+
+    /**
+     * @brief Return a read-write reference to the attribute container.
+     *
+     * @return A reference to the optional container.
+     */
+    power_optional&
+    power ();
+
+    /**
+     * @brief Set the attribute value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the attribute.
+     */
+    void
+    power (const power_type& x);
+
+    /**
+     * @brief Set the attribute value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the attribute.
+     * Otherwise the attribute container is set the 'not present' state.
+     */
+    void
+    power (const power_optional& x);
+
+    /**
+     * @brief Set the attribute value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
+    void
+    power (::std::auto_ptr< power_type > p);
+
+    //@}
+
+    /**
+     * @name Constructors
+     */
+    //@{
+
+    /**
+     * @brief Create an instance from the ultimate base and
+     * initializers for required elements and attributes.
+     */
+    taskType (const type_type&);
+
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    taskType (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
+    taskType (const taskType& x,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
+    virtual taskType*
+    _clone (::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0) const;
+
+    //@}
+
+    /**
+     * @brief Destructor.
+     */
+    virtual 
+    ~taskType ();
+
+    // Implementation.
+    //
+
+    //@cond
+
+    protected:
+    void
+    parse (::xsd::cxx::xml::dom::parser< char >&,
+           ::xml_schema::flags);
+
+    protected:
+    ::xsd::cxx::tree::one< type_type > type_;
+    execTime_optional execTime_;
+    power_optional power_;
+
+    //@endcond
+  };
+
+  /**
+   * @brief Class corresponding to the %execTime schema type.
+   *
+   * @nosubgrouping
+   */
+  class execTime: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+  {
+    public:
+    /**
+     * @name Constructors
+     */
+    //@{
+
+    /**
+     * @brief Create an instance from the ultimate base and
+     * initializers for required elements and attributes.
+     */
+    execTime (const ::xml_schema::double_&);
+
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    execTime (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    execTime (const ::xercesc::DOMAttr& a,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    execTime (const ::std::string& s,
+              const ::xercesc::DOMElement* e,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
+    execTime (const execTime& x,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
+    virtual execTime*
+    _clone (::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0) const;
+
+    //@}
+
+    /**
+     * @brief Destructor.
+     */
+    virtual 
+    ~execTime ();
+  };
+
+  /**
+   * @brief Class corresponding to the %power schema type.
+   *
+   * @nosubgrouping
+   */
+  class power: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+  {
+    public:
+    /**
+     * @name Constructors
+     */
+    //@{
+
+    /**
+     * @brief Create an instance from the ultimate base and
+     * initializers for required elements and attributes.
+     */
+    power (const ::xml_schema::double_&);
+
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    power (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f = 0,
+           ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    power (const ::xercesc::DOMAttr& a,
+           ::xml_schema::flags f = 0,
+           ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    power (const ::std::string& s,
+           const ::xercesc::DOMElement* e,
+           ::xml_schema::flags f = 0,
+           ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
+    power (const power& x,
+           ::xml_schema::flags f = 0,
+           ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
+    virtual power*
+    _clone (::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0) const;
+
+    //@}
+
+    /**
+     * @brief Destructor.
+     */
+    virtual 
+    ~power ();
   };
 }
 
@@ -1564,6 +2123,29 @@ namespace core
         ::xml_schema::flags f = 0);
 
   //@}
+
+  void
+  operator<< (::xercesc::DOMElement&, const taskType&);
+
+  void
+  operator<< (::xercesc::DOMElement&, const execTime&);
+
+  void
+  operator<< (::xercesc::DOMAttr&, const execTime&);
+
+  void
+  operator<< (::xml_schema::list_stream&,
+              const execTime&);
+
+  void
+  operator<< (::xercesc::DOMElement&, const power&);
+
+  void
+  operator<< (::xercesc::DOMAttr&, const power&);
+
+  void
+  operator<< (::xml_schema::list_stream&,
+              const power&);
 }
 
 #include <xsd/cxx/post.hxx>

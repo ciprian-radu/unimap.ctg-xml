@@ -646,7 +646,8 @@ namespace task
      * @brief Accessor and modifier functions for the %ID
      * required element.
      *
-     * Unique task identifier. Each task must have such an ID, for every CTG.
+     * Unique task identifier. Each task must have such
+     * an ID, for every CTG.
      */
     //@{
 
@@ -697,6 +698,66 @@ namespace task
      */
     void
     ID (::std::auto_ptr< ID_type > p);
+
+    //@}
+
+    /**
+     * @name type
+     *
+     * @brief Accessor and modifier functions for the %type
+     * required element.
+     *
+     * The type of the task. It specifies to what class of tasks it belongs.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
+    typedef ::xml_schema::string type_type;
+
+    /**
+     * @brief Element traits type.
+     */
+    typedef ::xsd::cxx::tree::traits< type_type, char > type_traits;
+
+    /**
+     * @brief Return a read-only (constant) reference to the element.
+     *
+     * @return A constant reference to the element.
+     */
+    const type_type&
+    type () const;
+
+    /**
+     * @brief Return a read-write reference to the element.
+     *
+     * @return A reference to the element.
+     */
+    type_type&
+    type ();
+
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
+    void
+    type (const type_type& x);
+
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly
+     * instead of making a copy.
+     */
+    void
+    type (::std::auto_ptr< type_type > p);
 
     //@}
 
@@ -779,142 +840,6 @@ namespace task
     //@}
 
     /**
-     * @name execTime
-     *
-     * @brief Accessor and modifier functions for the %execTime
-     * optional element.
-     *
-     * The execution time (in miliseconds) of this task, when it is running
-     * on a certain IP core.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::double_ execTime_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< execTime_type > execTime_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< execTime_type, char, ::xsd::cxx::tree::schema_type::double_ > execTime_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const execTime_optional&
-    execTime () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    execTime_optional&
-    execTime ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    execTime (const execTime_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    execTime (const execTime_optional& x);
-
-    //@}
-
-    /**
-     * @name power
-     *
-     * @brief Accessor and modifier functions for the %power
-     * optional element.
-     *
-     * The power (in Watts) consumed by this task, when it is running on a
-     * certain IP core.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::double_ power_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< power_type > power_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< power_type, char, ::xsd::cxx::tree::schema_type::double_ > power_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const power_optional&
-    power () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    power_optional&
-    power ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    power (const power_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    power (const power_optional& x);
-
-    //@}
-
-    /**
      * @name Constructors
      */
     //@{
@@ -923,7 +848,8 @@ namespace task
      * @brief Create an instance from the ultimate base and
      * initializers for required elements and attributes.
      */
-    taskType (const ID_type&);
+    taskType (const ID_type&,
+              const type_type&);
 
     /**
      * @brief Create an instance from a DOM element.
@@ -985,9 +911,8 @@ namespace task
 
     protected:
     ::xsd::cxx::tree::one< ID_type > ID_;
+    ::xsd::cxx::tree::one< type_type > type_;
     name_optional name_;
-    execTime_optional execTime_;
-    power_optional power_;
 
     //@endcond
   };

@@ -723,7 +723,7 @@ namespace ctg
     /**
      * @brief Attribute type.
      */
-    typedef ::xml_schema::string id_type;
+    typedef ::xml_schema::id id_type;
 
     /**
      * @brief Attribute traits type.
@@ -1059,7 +1059,7 @@ namespace ctg
      * @brief Accessor and modifier functions for the %volume
      * required element.
      *
-     * The communication volume (in bytes).
+     * The communication volume (in bits).
      */
     //@{
 
