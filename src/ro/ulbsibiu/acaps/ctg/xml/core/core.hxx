@@ -607,12 +607,27 @@ namespace xml_schema
 
 // Forward declarations.
 //
-namespace core
+namespace research
 {
-  class coreType;
-  class taskType;
-  class execTime;
-  class power;
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace core
+          {
+            class coreType;
+            class taskType;
+            class execTime;
+            class power;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -629,1065 +644,1080 @@ namespace core
 
 #include <xsd/cxx/xml/dom/parsing-header.hxx>
 
-/**
- * @brief C++ namespace for the %http://www.example.org/core
- * schema namespace.
- */
-namespace core
+namespace research
 {
-  /**
-   * @brief Class corresponding to the %coreType schema type.
-   *
-   * XML representing an Intellectual Property (IP) core.
-   *
-   * @nosubgrouping
-   */
-  class coreType: public ::xml_schema::type
+  namespace noc
   {
-    public:
-    /**
-     * @name ID
-     *
-     * @brief Accessor and modifier functions for the %ID
-     * required element.
-     *
-     * Unique IP (Intellectual Property) core
-     * identifier. Each IP core must have such an ID.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::string ID_type;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< ID_type, char > ID_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element.
-     *
-     * @return A constant reference to the element.
-     */
-    const ID_type&
-    ID () const;
-
-    /**
-     * @brief Return a read-write reference to the element.
-     *
-     * @return A reference to the element.
-     */
-    ID_type&
-    ID ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    ID (const ID_type& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    ID (::std::auto_ptr< ID_type > p);
-
-    //@}
-
-    /**
-     * @name name
-     *
-     * @brief Accessor and modifier functions for the %name
-     * optional element.
-     *
-     * The name of the core.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::string name_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< name_type > name_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< name_type, char > name_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const name_optional&
-    name () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    name_optional&
-    name ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    name (const name_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    name (const name_optional& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    name (::std::auto_ptr< name_type > p);
-
-    //@}
-
-    /**
-     * @name frequency
-     *
-     * @brief Accessor and modifier functions for the %frequency
-     * optional element.
-     *
-     * The operating frequency (in Hz).
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::double_ frequency_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< frequency_type > frequency_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< frequency_type, char, ::xsd::cxx::tree::schema_type::double_ > frequency_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const frequency_optional&
-    frequency () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    frequency_optional&
-    frequency ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    frequency (const frequency_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    frequency (const frequency_optional& x);
-
-    //@}
-
-    /**
-     * @name width
-     *
-     * @brief Accessor and modifier functions for the %width
-     * optional element.
-     *
-     * The width (in m) of this core.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::double_ width_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< width_type > width_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< width_type, char, ::xsd::cxx::tree::schema_type::double_ > width_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const width_optional&
-    width () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    width_optional&
-    width ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    width (const width_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    width (const width_optional& x);
-
-    //@}
-
-    /**
-     * @name height
-     *
-     * @brief Accessor and modifier functions for the %height
-     * optional element.
-     *
-     * The height (in m) of this core.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::double_ height_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< height_type > height_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< height_type, char, ::xsd::cxx::tree::schema_type::double_ > height_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const height_optional&
-    height () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    height_optional&
-    height ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    height (const height_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    height (const height_optional& x);
-
-    //@}
-
-    /**
-     * @name idlePower
-     *
-     * @brief Accessor and modifier functions for the %idlePower
-     * optional element.
-     *
-     * The power (in Watts) consumed by this core when
-     * it doesn't execute any task.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::double_ idlePower_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< idlePower_type > idlePower_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< idlePower_type, char, ::xsd::cxx::tree::schema_type::double_ > idlePower_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const idlePower_optional&
-    idlePower () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    idlePower_optional&
-    idlePower ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    idlePower (const idlePower_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    idlePower (const idlePower_optional& x);
-
-    //@}
-
-    /**
-     * @name task
-     *
-     * @brief Accessor and modifier functions for the %task
-     * sequence element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::core::taskType task_type;
-
-    /**
-     * @brief Element sequence container type.
-     */
-    typedef ::xsd::cxx::tree::sequence< task_type > task_sequence;
-
-    /**
-     * @brief Element iterator type.
-     */
-    typedef task_sequence::iterator task_iterator;
-
-    /**
-     * @brief Element constant iterator type.
-     */
-    typedef task_sequence::const_iterator task_const_iterator;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< task_type, char > task_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * sequence.
-     *
-     * @return A constant reference to the sequence container.
-     */
-    const task_sequence&
-    task () const;
-
-    /**
-     * @brief Return a read-write reference to the element sequence.
-     *
-     * @return A reference to the sequence container.
-     */
-    task_sequence&
-    task ();
-
-    /**
-     * @brief Copy elements from a given sequence.
-     *
-     * @param s A sequence to copy elements from.
-     *
-     * For each element in @a s this function makes a copy and adds it 
-     * to the sequence. Note that this operation completely changes the 
-     * sequence and all old elements will be lost.
-     */
-    void
-    task (const task_sequence& s);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    coreType (const ID_type&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    coreType (const ::xercesc::DOMElement& e,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    coreType (const coreType& x,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual coreType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~coreType ();
-
-    // Implementation.
-    //
-
-    //@cond
-
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
-
-    protected:
-    ::xsd::cxx::tree::one< ID_type > ID_;
-    name_optional name_;
-    frequency_optional frequency_;
-    width_optional width_;
-    height_optional height_;
-    idlePower_optional idlePower_;
-    task_sequence task_;
-
-    //@endcond
-  };
-
-  /**
-   * @brief Class corresponding to the %taskType schema type.
-   *
-   * @nosubgrouping
-   */
-  class taskType: public ::xml_schema::type
-  {
-    public:
-    /**
-     * @name type
-     *
-     * @brief Accessor and modifier functions for the %type
-     * required attribute.
-     *
-     * The type of the task. It specifies to what class of tasks it belongs.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::xml_schema::string type_type;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< type_type, char > type_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute.
-     *
-     * @return A constant reference to the attribute.
-     */
-    const type_type&
-    type () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute.
-     *
-     * @return A reference to the attribute.
-     */
-    type_type&
-    type ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    type (const type_type& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    type (::std::auto_ptr< type_type > p);
-
-    //@}
-
-    /**
-     * @name execTime
-     *
-     * @brief Accessor and modifier functions for the %execTime
-     * optional attribute.
-     *
-     * The execution time (in seconds) of this task, when
-     * it is running on a certain IP core.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::core::execTime execTime_type;
-
-    /**
-     * @brief Attribute optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< execTime_type > execTime_optional;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< execTime_type, char > execTime_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const execTime_optional&
-    execTime () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute container.
-     *
-     * @return A reference to the optional container.
-     */
-    execTime_optional&
-    execTime ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    execTime (const execTime_type& x);
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the attribute.
-     * Otherwise the attribute container is set the 'not present' state.
-     */
-    void
-    execTime (const execTime_optional& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    execTime (::std::auto_ptr< execTime_type > p);
-
-    //@}
-
-    /**
-     * @name power
-     *
-     * @brief Accessor and modifier functions for the %power
-     * optional attribute.
-     *
-     * The power (in Watts) consumed by this task, when it is running on a
-     * certain IP core.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::core::power power_type;
-
-    /**
-     * @brief Attribute optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< power_type > power_optional;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< power_type, char > power_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const power_optional&
-    power () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute container.
-     *
-     * @return A reference to the optional container.
-     */
-    power_optional&
-    power ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    power (const power_type& x);
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the attribute.
-     * Otherwise the attribute container is set the 'not present' state.
-     */
-    void
-    power (const power_optional& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    power (::std::auto_ptr< power_type > p);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    taskType (const type_type&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    taskType (const ::xercesc::DOMElement& e,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    taskType (const taskType& x,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual taskType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~taskType ();
-
-    // Implementation.
-    //
-
-    //@cond
-
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
-
-    protected:
-    ::xsd::cxx::tree::one< type_type > type_;
-    execTime_optional execTime_;
-    power_optional power_;
-
-    //@endcond
-  };
-
-  /**
-   * @brief Class corresponding to the %execTime schema type.
-   *
-   * @nosubgrouping
-   */
-  class execTime: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
-  {
-    public:
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    execTime (const ::xml_schema::double_&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    execTime (const ::xercesc::DOMElement& e,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a DOM attribute.
-     *
-     * @param a A DOM attribute to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    execTime (const ::xercesc::DOMAttr& a,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a string fragment.
-     *
-     * @param s A string fragment to extract the data from.
-     * @param e A pointer to DOM element containing the string fragment.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    execTime (const ::std::string& s,
-              const ::xercesc::DOMElement* e,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    execTime (const execTime& x,
-              ::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual execTime*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~execTime ();
-  };
-
-  /**
-   * @brief Class corresponding to the %power schema type.
-   *
-   * @nosubgrouping
-   */
-  class power: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
-  {
-    public:
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    power (const ::xml_schema::double_&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    power (const ::xercesc::DOMElement& e,
-           ::xml_schema::flags f = 0,
-           ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a DOM attribute.
-     *
-     * @param a A DOM attribute to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    power (const ::xercesc::DOMAttr& a,
-           ::xml_schema::flags f = 0,
-           ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a string fragment.
-     *
-     * @param s A string fragment to extract the data from.
-     * @param e A pointer to DOM element containing the string fragment.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    power (const ::std::string& s,
-           const ::xercesc::DOMElement* e,
-           ::xml_schema::flags f = 0,
-           ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    power (const power& x,
-           ::xml_schema::flags f = 0,
-           ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual power*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~power ();
-  };
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          /**
+           * @brief C++ namespace for the %http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/core
+           * schema namespace.
+           */
+          namespace core
+          {
+            /**
+             * @brief Class corresponding to the %coreType schema type.
+             *
+             * XML representing an Intellectual Property (IP) core.
+             *
+             * @nosubgrouping
+             */
+            class coreType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name ID
+               *
+               * @brief Accessor and modifier functions for the %ID
+               * required element.
+               *
+               * Unique IP (Intellectual Property) core
+               * identifier. Each IP core must have such an ID.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::string ID_type;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< ID_type, char > ID_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element.
+               *
+               * @return A constant reference to the element.
+               */
+              const ID_type&
+              ID () const;
+
+              /**
+               * @brief Return a read-write reference to the element.
+               *
+               * @return A reference to the element.
+               */
+              ID_type&
+              ID ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              ID (const ID_type& x);
+
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              ID (::std::auto_ptr< ID_type > p);
+
+              //@}
+
+              /**
+               * @name name
+               *
+               * @brief Accessor and modifier functions for the %name
+               * optional element.
+               *
+               * The name of the core.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::string name_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< name_type > name_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< name_type, char > name_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const name_optional&
+              name () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              name_optional&
+              name ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              name (const name_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              name (const name_optional& x);
+
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              name (::std::auto_ptr< name_type > p);
+
+              //@}
+
+              /**
+               * @name frequency
+               *
+               * @brief Accessor and modifier functions for the %frequency
+               * optional element.
+               *
+               * The operating frequency (in Hz).
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::double_ frequency_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< frequency_type > frequency_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< frequency_type, char, ::xsd::cxx::tree::schema_type::double_ > frequency_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const frequency_optional&
+              frequency () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              frequency_optional&
+              frequency ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              frequency (const frequency_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              frequency (const frequency_optional& x);
+
+              //@}
+
+              /**
+               * @name width
+               *
+               * @brief Accessor and modifier functions for the %width
+               * optional element.
+               *
+               * The width (in m) of this core.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::double_ width_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< width_type > width_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< width_type, char, ::xsd::cxx::tree::schema_type::double_ > width_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const width_optional&
+              width () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              width_optional&
+              width ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              width (const width_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              width (const width_optional& x);
+
+              //@}
+
+              /**
+               * @name height
+               *
+               * @brief Accessor and modifier functions for the %height
+               * optional element.
+               *
+               * The height (in m) of this core.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::double_ height_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< height_type > height_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< height_type, char, ::xsd::cxx::tree::schema_type::double_ > height_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const height_optional&
+              height () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              height_optional&
+              height ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              height (const height_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              height (const height_optional& x);
+
+              //@}
+
+              /**
+               * @name idlePower
+               *
+               * @brief Accessor and modifier functions for the %idlePower
+               * optional element.
+               *
+               * The power (in Watts) consumed by this core when
+               * it doesn't execute any task.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::double_ idlePower_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< idlePower_type > idlePower_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< idlePower_type, char, ::xsd::cxx::tree::schema_type::double_ > idlePower_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const idlePower_optional&
+              idlePower () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              idlePower_optional&
+              idlePower ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              idlePower (const idlePower_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              idlePower (const idlePower_optional& x);
+
+              //@}
+
+              /**
+               * @name task
+               *
+               * @brief Accessor and modifier functions for the %task
+               * sequence element.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::core::taskType task_type;
+
+              /**
+               * @brief Element sequence container type.
+               */
+              typedef ::xsd::cxx::tree::sequence< task_type > task_sequence;
+
+              /**
+               * @brief Element iterator type.
+               */
+              typedef task_sequence::iterator task_iterator;
+
+              /**
+               * @brief Element constant iterator type.
+               */
+              typedef task_sequence::const_iterator task_const_iterator;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< task_type, char > task_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * sequence.
+               *
+               * @return A constant reference to the sequence container.
+               */
+              const task_sequence&
+              task () const;
+
+              /**
+               * @brief Return a read-write reference to the element sequence.
+               *
+               * @return A reference to the sequence container.
+               */
+              task_sequence&
+              task ();
+
+              /**
+               * @brief Copy elements from a given sequence.
+               *
+               * @param s A sequence to copy elements from.
+               *
+               * For each element in @a s this function makes a copy and adds it 
+               * to the sequence. Note that this operation completely changes the 
+               * sequence and all old elements will be lost.
+               */
+              void
+              task (const task_sequence& s);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              coreType (const ID_type&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              coreType (const ::xercesc::DOMElement& e,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              coreType (const coreType& x,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual coreType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~coreType ();
+
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              ::xsd::cxx::tree::one< ID_type > ID_;
+              name_optional name_;
+              frequency_optional frequency_;
+              width_optional width_;
+              height_optional height_;
+              idlePower_optional idlePower_;
+              task_sequence task_;
+
+              //@endcond
+            };
+
+            /**
+             * @brief Class corresponding to the %taskType schema type.
+             *
+             * @nosubgrouping
+             */
+            class taskType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name type
+               *
+               * @brief Accessor and modifier functions for the %type
+               * required attribute.
+               *
+               * The type of the task. It specifies to what class of tasks it belongs.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::string type_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< type_type, char > type_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const type_type&
+              type () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              type_type&
+              type ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              type (const type_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              type (::std::auto_ptr< type_type > p);
+
+              //@}
+
+              /**
+               * @name execTime
+               *
+               * @brief Accessor and modifier functions for the %execTime
+               * optional attribute.
+               *
+               * The execution time (in seconds) of this task, when
+               * it is running on a certain IP core.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::core::execTime execTime_type;
+
+              /**
+               * @brief Attribute optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< execTime_type > execTime_optional;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< execTime_type, char > execTime_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const execTime_optional&
+              execTime () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute container.
+               *
+               * @return A reference to the optional container.
+               */
+              execTime_optional&
+              execTime ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              execTime (const execTime_type& x);
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the attribute.
+               * Otherwise the attribute container is set the 'not present' state.
+               */
+              void
+              execTime (const execTime_optional& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              execTime (::std::auto_ptr< execTime_type > p);
+
+              //@}
+
+              /**
+               * @name power
+               *
+               * @brief Accessor and modifier functions for the %power
+               * optional attribute.
+               *
+               * The power (in Watts) consumed by this task, when it is running on a
+               * certain IP core.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::core::power power_type;
+
+              /**
+               * @brief Attribute optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< power_type > power_optional;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< power_type, char > power_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const power_optional&
+              power () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute container.
+               *
+               * @return A reference to the optional container.
+               */
+              power_optional&
+              power ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              power (const power_type& x);
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the attribute.
+               * Otherwise the attribute container is set the 'not present' state.
+               */
+              void
+              power (const power_optional& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              power (::std::auto_ptr< power_type > p);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              taskType (const type_type&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              taskType (const ::xercesc::DOMElement& e,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              taskType (const taskType& x,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual taskType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~taskType ();
+
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              ::xsd::cxx::tree::one< type_type > type_;
+              execTime_optional execTime_;
+              power_optional power_;
+
+              //@endcond
+            };
+
+            /**
+             * @brief Class corresponding to the %execTime schema type.
+             *
+             * @nosubgrouping
+             */
+            class execTime: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+            {
+              public:
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              execTime (const ::xml_schema::double_&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              execTime (const ::xercesc::DOMElement& e,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a DOM attribute.
+               *
+               * @param a A DOM attribute to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              execTime (const ::xercesc::DOMAttr& a,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a string fragment.
+               *
+               * @param s A string fragment to extract the data from.
+               * @param e A pointer to DOM element containing the string fragment.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              execTime (const ::std::string& s,
+                        const ::xercesc::DOMElement* e,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              execTime (const execTime& x,
+                        ::xml_schema::flags f = 0,
+                        ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual execTime*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~execTime ();
+            };
+
+            /**
+             * @brief Class corresponding to the %power schema type.
+             *
+             * @nosubgrouping
+             */
+            class power: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+            {
+              public:
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              power (const ::xml_schema::double_&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              power (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a DOM attribute.
+               *
+               * @param a A DOM attribute to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              power (const ::xercesc::DOMAttr& a,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a string fragment.
+               *
+               * @param s A string fragment to extract the data from.
+               * @param e A pointer to DOM element containing the string fragment.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              power (const ::std::string& s,
+                     const ::xercesc::DOMElement* e,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              power (const power& x,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual power*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~power ();
+            };
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <iosfwd>
@@ -1696,260 +1726,275 @@ namespace core
 #include <xercesc/dom/DOMDocument.hpp>
 #include <xercesc/dom/DOMErrorHandler.hpp>
 
-namespace core
+namespace research
 {
-  /**
-   * @name Parsing functions for the %core document root.
-   */
-  //@{
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace core
+          {
+            /**
+             * @name Parsing functions for the %core document root.
+             */
+            //@{
 
-  /**
-   * @brief Parse a URI or a local file.
-   *
-   * @param uri A URI or a local file name.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (const ::std::string& uri,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file.
+             *
+             * @param uri A URI or a local file name.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (const ::std::string& uri,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a URI or a local file with an error handler.
-   *
-   * @param uri A URI or a local file name.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (const ::std::string& uri,
-        ::xml_schema::error_handler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file with an error handler.
+             *
+             * @param uri A URI or a local file name.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (const ::std::string& uri,
+                  ::xml_schema::error_handler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a URI or a local file with a Xerces-C++ DOM error
-   * handler.
-   *
-   * @param uri A URI or a local file name.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (const ::std::string& uri,
-        ::xercesc::DOMErrorHandler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+             * handler.
+             *
+             * @param uri A URI or a local file name.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (const ::std::string& uri,
+                  ::xercesc::DOMErrorHandler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream.
-   *
-   * @param is A standrad input stream.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::std::istream& is,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream.
+             *
+             * @param is A standrad input stream.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::std::istream& is,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with an error handler.
-   *
-   * @param is A standrad input stream.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::std::istream& is,
-        ::xml_schema::error_handler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with an error handler.
+             *
+             * @param is A standrad input stream.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::std::istream& is,
+                  ::xml_schema::error_handler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a Xerces-C++ DOM error
-   * handler.
-   *
-   * @param is A standrad input stream.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::std::istream& is,
-        ::xercesc::DOMErrorHandler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a Xerces-C++ DOM error
+             * handler.
+             *
+             * @param is A standrad input stream.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::std::istream& is,
+                  ::xercesc::DOMErrorHandler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::std::istream& is,
-        const ::std::string& id,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::std::istream& is,
+                  const ::std::string& id,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id and an
-   * error handler.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::std::istream& is,
-        const ::std::string& id,
-        ::xml_schema::error_handler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id and an
+             * error handler.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::std::istream& is,
+                  const ::std::string& id,
+                  ::xml_schema::error_handler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id and a
-   * Xerces-C++ DOM error handler.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::std::istream& is,
-        const ::std::string& id,
-        ::xercesc::DOMErrorHandler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id and a
+             * Xerces-C++ DOM error handler.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::std::istream& is,
+                  const ::std::string& id,
+                  ::xercesc::DOMErrorHandler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::xercesc::InputSource& is,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::xercesc::InputSource& is,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source with an error handler.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::xercesc::InputSource& is,
-        ::xml_schema::error_handler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source with an error handler.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::xercesc::InputSource& is,
+                  ::xml_schema::error_handler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
-   * error handler.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::xercesc::InputSource& is,
-        ::xercesc::DOMErrorHandler& eh,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+             * error handler.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::xercesc::InputSource& is,
+                  ::xercesc::DOMErrorHandler& eh,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ DOM document.
-   *
-   * @param d A Xerces-C++ DOM document.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (const ::xercesc::DOMDocument& d,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ DOM document.
+             *
+             * @param d A Xerces-C++ DOM document.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (const ::xercesc::DOMDocument& d,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ DOM document.
-   *
-   * @param d A pointer to the Xerces-C++ DOM document.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function is normally used together with the keep_dom and
-   * own_dom parsing flags to assign ownership of the DOM document
-   * to the object model.
-   */
-  ::std::auto_ptr< ::core::coreType >
-  core (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
-        ::xml_schema::flags f = 0,
-        const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ DOM document.
+             *
+             * @param d A pointer to the Xerces-C++ DOM document.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function is normally used together with the keep_dom and
+             * own_dom parsing flags to assign ownership of the DOM document
+             * to the object model.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::core::coreType >
+            core (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+                  ::xml_schema::flags f = 0,
+                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  //@}
+            //@}
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <iosfwd>
@@ -1960,192 +2005,207 @@ namespace core
 
 #include <xsd/cxx/xml/dom/auto-ptr.hxx>
 
-namespace core
+namespace research
 {
-  void
-  operator<< (::xercesc::DOMElement&, const coreType&);
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace core
+          {
+            void
+            operator<< (::xercesc::DOMElement&, const coreType&);
 
-  /**
-   * @name Serialization functions for the %core document root.
-   */
-  //@{
+            /**
+             * @name Serialization functions for the %core document root.
+             */
+            //@{
 
-  /**
-   * @brief Serialize to a standard output stream.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function uses exceptions to report serialization errors.
-   */
-  void
-  core (::std::ostream& os,
-        const ::core::coreType& x, 
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        const ::std::string& e = "UTF-8",
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function uses exceptions to report serialization errors.
+             */
+            void
+            core (::std::ostream& os,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  const ::std::string& e = "UTF-8",
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a standard output stream with an error handler.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param eh An error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  core (::std::ostream& os,
-        const ::core::coreType& x, 
-        ::xml_schema::error_handler& eh,
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        const ::std::string& e = "UTF-8",
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream with an error handler.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param eh An error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            core (::std::ostream& os,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  ::xml_schema::error_handler& eh,
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  const ::std::string& e = "UTF-8",
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a standard output stream with a Xerces-C++ DOM
-   * error handler.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  core (::std::ostream& os,
-        const ::core::coreType& x, 
-        ::xercesc::DOMErrorHandler& eh,
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        const ::std::string& e = "UTF-8",
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+             * error handler.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            core (::std::ostream& os,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  ::xercesc::DOMErrorHandler& eh,
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  const ::std::string& e = "UTF-8",
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function uses exceptions to report serialization errors.
-   */
-  void
-  core (::xercesc::XMLFormatTarget& ft,
-        const ::core::coreType& x, 
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        const ::std::string& e = "UTF-8",
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function uses exceptions to report serialization errors.
+             */
+            void
+            core (::xercesc::XMLFormatTarget& ft,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  const ::std::string& e = "UTF-8",
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target with an error
-   * handler.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param eh An error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  core (::xercesc::XMLFormatTarget& ft,
-        const ::core::coreType& x, 
-        ::xml_schema::error_handler& eh,
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        const ::std::string& e = "UTF-8",
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target with an error
+             * handler.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param eh An error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            core (::xercesc::XMLFormatTarget& ft,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  ::xml_schema::error_handler& eh,
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  const ::std::string& e = "UTF-8",
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target with a
-   * Xerces-C++ DOM error handler.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  core (::xercesc::XMLFormatTarget& ft,
-        const ::core::coreType& x, 
-        ::xercesc::DOMErrorHandler& eh,
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        const ::std::string& e = "UTF-8",
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target with a
+             * Xerces-C++ DOM error handler.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            core (::xercesc::XMLFormatTarget& ft,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  ::xercesc::DOMErrorHandler& eh,
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  const ::std::string& e = "UTF-8",
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to an existing Xerces-C++ DOM document.
-   *
-   * @param d A Xerces-C++ DOM document.
-   * @param x An object model to serialize.
-   * @param f Serialization flags.
-   *
-   * Note that it is your responsibility to create the DOM document
-   * with the correct root element as well as set the necessary
-   * namespace mapping attributes.
-   */
-  void
-  core (::xercesc::DOMDocument& d,
-        const ::core::coreType& x,
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to an existing Xerces-C++ DOM document.
+             *
+             * @param d A Xerces-C++ DOM document.
+             * @param x An object model to serialize.
+             * @param f Serialization flags.
+             *
+             * Note that it is your responsibility to create the DOM document
+             * with the correct root element as well as set the necessary
+             * namespace mapping attributes.
+             */
+            void
+            core (::xercesc::DOMDocument& d,
+                  const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x,
+                  ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a new Xerces-C++ DOM document.
-   *
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param f Serialization flags.
-   * @return A pointer to the new Xerces-C++ DOM document.
-   */
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
-  core (const ::core::coreType& x, 
-        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-        ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a new Xerces-C++ DOM document.
+             *
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param f Serialization flags.
+             * @return A pointer to the new Xerces-C++ DOM document.
+             */
+            ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+            core (const ::research::noc::application_mapping::unified_framework::schema::core::coreType& x, 
+                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                  ::xml_schema::flags f = 0);
 
-  //@}
+            //@}
 
-  void
-  operator<< (::xercesc::DOMElement&, const taskType&);
+            void
+            operator<< (::xercesc::DOMElement&, const taskType&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const execTime&);
+            void
+            operator<< (::xercesc::DOMElement&, const execTime&);
 
-  void
-  operator<< (::xercesc::DOMAttr&, const execTime&);
+            void
+            operator<< (::xercesc::DOMAttr&, const execTime&);
 
-  void
-  operator<< (::xml_schema::list_stream&,
-              const execTime&);
+            void
+            operator<< (::xml_schema::list_stream&,
+                        const execTime&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const power&);
+            void
+            operator<< (::xercesc::DOMElement&, const power&);
 
-  void
-  operator<< (::xercesc::DOMAttr&, const power&);
+            void
+            operator<< (::xercesc::DOMAttr&, const power&);
 
-  void
-  operator<< (::xml_schema::list_stream&,
-              const power&);
+            void
+            operator<< (::xml_schema::list_stream&,
+                        const power&);
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <xsd/cxx/post.hxx>

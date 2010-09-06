@@ -40,353 +40,381 @@
 
 #include "mapping.hxx"
 
-namespace mapping
+namespace research
 {
-  // mappingType
-  // 
-
-  const mappingType::map_sequence& mappingType::
-  map () const
+  namespace noc
   {
-    return this->map_;
-  }
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace mapping
+          {
+            // mappingType
+            // 
 
-  mappingType::map_sequence& mappingType::
-  map ()
-  {
-    return this->map_;
-  }
+            const mappingType::map_sequence& mappingType::
+            map () const
+            {
+              return this->map_;
+            }
 
-  void mappingType::
-  map (const map_sequence& s)
-  {
-    this->map_ = s;
-  }
+            mappingType::map_sequence& mappingType::
+            map ()
+            {
+              return this->map_;
+            }
 
-  const mappingType::id_type& mappingType::
-  id () const
-  {
-    return this->id_.get ();
-  }
+            void mappingType::
+            map (const map_sequence& s)
+            {
+              this->map_ = s;
+            }
 
-  mappingType::id_type& mappingType::
-  id ()
-  {
-    return this->id_.get ();
-  }
+            const mappingType::id_type& mappingType::
+            id () const
+            {
+              return this->id_.get ();
+            }
 
-  void mappingType::
-  id (const id_type& x)
-  {
-    this->id_.set (x);
-  }
+            mappingType::id_type& mappingType::
+            id ()
+            {
+              return this->id_.get ();
+            }
 
-  void mappingType::
-  id (::std::auto_ptr< id_type > x)
-  {
-    this->id_.set (x);
-  }
+            void mappingType::
+            id (const id_type& x)
+            {
+              this->id_.set (x);
+            }
 
-  const mappingType::apcg_type& mappingType::
-  apcg () const
-  {
-    return this->apcg_.get ();
-  }
+            void mappingType::
+            id (::std::auto_ptr< id_type > x)
+            {
+              this->id_.set (x);
+            }
 
-  mappingType::apcg_type& mappingType::
-  apcg ()
-  {
-    return this->apcg_.get ();
-  }
+            const mappingType::apcg_type& mappingType::
+            apcg () const
+            {
+              return this->apcg_.get ();
+            }
 
-  void mappingType::
-  apcg (const apcg_type& x)
-  {
-    this->apcg_.set (x);
-  }
+            mappingType::apcg_type& mappingType::
+            apcg ()
+            {
+              return this->apcg_.get ();
+            }
 
-  void mappingType::
-  apcg (::std::auto_ptr< apcg_type > x)
-  {
-    this->apcg_.set (x);
-  }
+            void mappingType::
+            apcg (const apcg_type& x)
+            {
+              this->apcg_.set (x);
+            }
+
+            void mappingType::
+            apcg (::std::auto_ptr< apcg_type > x)
+            {
+              this->apcg_.set (x);
+            }
 
 
-  // mapType
-  // 
+            // mapType
+            // 
 
-  const mapType::node_type& mapType::
-  node () const
-  {
-    return this->node_.get ();
-  }
+            const mapType::node_type& mapType::
+            node () const
+            {
+              return this->node_.get ();
+            }
 
-  mapType::node_type& mapType::
-  node ()
-  {
-    return this->node_.get ();
-  }
+            mapType::node_type& mapType::
+            node ()
+            {
+              return this->node_.get ();
+            }
 
-  void mapType::
-  node (const node_type& x)
-  {
-    this->node_.set (x);
-  }
+            void mapType::
+            node (const node_type& x)
+            {
+              this->node_.set (x);
+            }
 
-  void mapType::
-  node (::std::auto_ptr< node_type > x)
-  {
-    this->node_.set (x);
-  }
+            void mapType::
+            node (::std::auto_ptr< node_type > x)
+            {
+              this->node_.set (x);
+            }
 
-  const mapType::core_type& mapType::
-  core () const
-  {
-    return this->core_.get ();
-  }
+            const mapType::core_optional& mapType::
+            core () const
+            {
+              return this->core_;
+            }
 
-  mapType::core_type& mapType::
-  core ()
-  {
-    return this->core_.get ();
-  }
+            mapType::core_optional& mapType::
+            core ()
+            {
+              return this->core_;
+            }
 
-  void mapType::
-  core (const core_type& x)
-  {
-    this->core_.set (x);
-  }
+            void mapType::
+            core (const core_type& x)
+            {
+              this->core_.set (x);
+            }
 
-  void mapType::
-  core (::std::auto_ptr< core_type > x)
-  {
-    this->core_.set (x);
+            void mapType::
+            core (const core_optional& x)
+            {
+              this->core_ = x;
+            }
+
+            void mapType::
+            core (::std::auto_ptr< core_type > x)
+            {
+              this->core_.set (x);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
 
-namespace mapping
+namespace research
 {
-  // mappingType
-  //
-
-  mappingType::
-  mappingType (const id_type& id,
-               const apcg_type& apcg)
-  : ::xml_schema::type (),
-    map_ (::xml_schema::flags (), this),
-    id_ (id, ::xml_schema::flags (), this),
-    apcg_ (apcg, ::xml_schema::flags (), this)
+  namespace noc
   {
-  }
-
-  mappingType::
-  mappingType (const mappingType& x,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    map_ (x.map_, f, this),
-    id_ (x.id_, f, this),
-    apcg_ (x.apcg_, f, this)
-  {
-  }
-
-  mappingType::
-  mappingType (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    map_ (f, this),
-    id_ (f, this),
-    apcg_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
+    namespace application_mapping
     {
-      ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
-      this->parse (p, f);
-    }
-  }
-
-  void mappingType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    for (; p.more_elements (); p.next_element ())
-    {
-      const ::xercesc::DOMElement& i (p.cur_element ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      // map
-      //
-      if (n.name () == "map" && n.namespace_ () == "http://www.example.org/mapping")
+      namespace unified_framework
       {
-        ::std::auto_ptr< map_type > r (
-          map_traits::create (i, f, this));
-
-        this->map_.push_back (r);
-        continue;
-      }
-
-      break;
-    }
-
-    while (p.more_attributes ())
-    {
-      const ::xercesc::DOMAttr& i (p.next_attribute ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      if (n.name () == "id" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< id_type > r (
-          id_traits::create (i, f, this));
-
-        this->id_.set (r);
-        continue;
-      }
-
-      if (n.name () == "apcg" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< apcg_type > r (
-          apcg_traits::create (i, f, this));
-
-        this->apcg_.set (r);
-        continue;
-      }
-    }
-
-    if (!id_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_attribute< char > (
-        "id",
-        "");
-    }
-
-    if (!apcg_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_attribute< char > (
-        "apcg",
-        "");
-    }
-  }
-
-  mappingType* mappingType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class mappingType (*this, f, c);
-  }
-
-  mappingType::
-  ~mappingType ()
-  {
-  }
-
-  // mapType
-  //
-
-  mapType::
-  mapType (const node_type& node,
-           const core_type& core)
-  : ::xml_schema::type (),
-    node_ (node, ::xml_schema::flags (), this),
-    core_ (core, ::xml_schema::flags (), this)
-  {
-  }
-
-  mapType::
-  mapType (const mapType& x,
-           ::xml_schema::flags f,
-           ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    node_ (x.node_, f, this),
-    core_ (x.core_, f, this)
-  {
-  }
-
-  mapType::
-  mapType (const ::xercesc::DOMElement& e,
-           ::xml_schema::flags f,
-           ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    node_ (f, this),
-    core_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
-    {
-      ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
-      this->parse (p, f);
-    }
-  }
-
-  void mapType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    for (; p.more_elements (); p.next_element ())
-    {
-      const ::xercesc::DOMElement& i (p.cur_element ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      // node
-      //
-      if (n.name () == "node" && n.namespace_ () == "http://www.example.org/mapping")
-      {
-        ::std::auto_ptr< node_type > r (
-          node_traits::create (i, f, this));
-
-        if (!node_.present ())
+        namespace schema
         {
-          this->node_.set (r);
-          continue;
+          namespace mapping
+          {
+            // mappingType
+            //
+
+            mappingType::
+            mappingType (const id_type& id,
+                         const apcg_type& apcg)
+            : ::xml_schema::type (),
+              map_ (::xml_schema::flags (), this),
+              id_ (id, ::xml_schema::flags (), this),
+              apcg_ (apcg, ::xml_schema::flags (), this)
+            {
+            }
+
+            mappingType::
+            mappingType (const mappingType& x,
+                         ::xml_schema::flags f,
+                         ::xml_schema::container* c)
+            : ::xml_schema::type (x, f, c),
+              map_ (x.map_, f, this),
+              id_ (x.id_, f, this),
+              apcg_ (x.apcg_, f, this)
+            {
+            }
+
+            mappingType::
+            mappingType (const ::xercesc::DOMElement& e,
+                         ::xml_schema::flags f,
+                         ::xml_schema::container* c)
+            : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              map_ (f, this),
+              id_ (f, this),
+              apcg_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
+                this->parse (p, f);
+              }
+            }
+
+            void mappingType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              for (; p.more_elements (); p.next_element ())
+              {
+                const ::xercesc::DOMElement& i (p.cur_element ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                // map
+                //
+                if (n.name () == "map" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping")
+                {
+                  ::std::auto_ptr< map_type > r (
+                    map_traits::create (i, f, this));
+
+                  this->map_.push_back (r);
+                  continue;
+                }
+
+                break;
+              }
+
+              while (p.more_attributes ())
+              {
+                const ::xercesc::DOMAttr& i (p.next_attribute ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                if (n.name () == "id" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< id_type > r (
+                    id_traits::create (i, f, this));
+
+                  this->id_.set (r);
+                  continue;
+                }
+
+                if (n.name () == "apcg" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< apcg_type > r (
+                    apcg_traits::create (i, f, this));
+
+                  this->apcg_.set (r);
+                  continue;
+                }
+              }
+
+              if (!id_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_attribute< char > (
+                  "id",
+                  "");
+              }
+
+              if (!apcg_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_attribute< char > (
+                  "apcg",
+                  "");
+              }
+            }
+
+            mappingType* mappingType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class mappingType (*this, f, c);
+            }
+
+            mappingType::
+            ~mappingType ()
+            {
+            }
+
+            // mapType
+            //
+
+            mapType::
+            mapType (const node_type& node)
+            : ::xml_schema::type (),
+              node_ (node, ::xml_schema::flags (), this),
+              core_ (::xml_schema::flags (), this)
+            {
+            }
+
+            mapType::
+            mapType (const mapType& x,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+            : ::xml_schema::type (x, f, c),
+              node_ (x.node_, f, this),
+              core_ (x.core_, f, this)
+            {
+            }
+
+            mapType::
+            mapType (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+            : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              node_ (f, this),
+              core_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+                this->parse (p, f);
+              }
+            }
+
+            void mapType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              for (; p.more_elements (); p.next_element ())
+              {
+                const ::xercesc::DOMElement& i (p.cur_element ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                // node
+                //
+                if (n.name () == "node" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping")
+                {
+                  ::std::auto_ptr< node_type > r (
+                    node_traits::create (i, f, this));
+
+                  if (!node_.present ())
+                  {
+                    this->node_.set (r);
+                    continue;
+                  }
+                }
+
+                // core
+                //
+                if (n.name () == "core" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping")
+                {
+                  ::std::auto_ptr< core_type > r (
+                    core_traits::create (i, f, this));
+
+                  if (!this->core_)
+                  {
+                    this->core_.set (r);
+                    continue;
+                  }
+                }
+
+                break;
+              }
+
+              if (!node_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_element< char > (
+                  "node",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping");
+              }
+            }
+
+            mapType* mapType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class mapType (*this, f, c);
+            }
+
+            mapType::
+            ~mapType ()
+            {
+            }
+          }
         }
       }
-
-      // core
-      //
-      if (n.name () == "core" && n.namespace_ () == "http://www.example.org/mapping")
-      {
-        ::std::auto_ptr< core_type > r (
-          core_traits::create (i, f, this));
-
-        if (!core_.present ())
-        {
-          this->core_.set (r);
-          continue;
-        }
-      }
-
-      break;
     }
-
-    if (!node_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "node",
-        "http://www.example.org/mapping");
-    }
-
-    if (!core_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "core",
-        "http://www.example.org/mapping");
-    }
-  }
-
-  mapType* mapType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class mapType (*this, f, c);
-  }
-
-  mapType::
-  ~mapType ()
-  {
   }
 }
 
@@ -394,286 +422,301 @@ namespace mapping
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
 
-namespace mapping
+namespace research
 {
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::std::string& u,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
+  namespace noc
   {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-    ::std::auto_ptr< ::mapping::mappingType > r (
-      ::mapping::mapping (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::std::string& u,
-           ::xml_schema::error_handler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::mapping::mappingType > r (
-      ::mapping::mapping (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::std::string& u,
-           ::xercesc::DOMErrorHandler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::mapping::mappingType > r (
-      ::mapping::mapping (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::mapping::mapping (isrc, f, p);
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           ::xml_schema::error_handler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::mapping::mapping (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           ::xercesc::DOMErrorHandler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::mapping::mapping (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           const ::std::string& sid,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::mapping::mapping (isrc, f, p);
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           const ::std::string& sid,
-           ::xml_schema::error_handler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::mapping::mapping (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           const ::std::string& sid,
-           ::xercesc::DOMErrorHandler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::mapping::mapping (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xercesc::InputSource& i,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-    ::std::auto_ptr< ::mapping::mappingType > r (
-      ::mapping::mapping (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xercesc::InputSource& i,
-           ::xml_schema::error_handler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::mapping::mappingType > r (
-      ::mapping::mapping (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xercesc::InputSource& i,
-           ::xercesc::DOMErrorHandler& h,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::mapping::mappingType > r (
-      ::mapping::mapping (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::xercesc::DOMDocument& d,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties& p)
-  {
-    if (f & ::xml_schema::flags::keep_dom)
+    namespace application_mapping
     {
-      ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
-        static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace mapping
+          {
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::std::string& u,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
 
-      ::std::auto_ptr< ::mapping::mappingType > r (
-        ::mapping::mapping (
-          c, f | ::xml_schema::flags::own_dom, p));
+              ::xsd::cxx::tree::error_handler< char > h;
 
-      return r;
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::std::string& u,
+                     ::xml_schema::error_handler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::std::string& u,
+                     ::xercesc::DOMErrorHandler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (isrc, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     ::xml_schema::error_handler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     ::xercesc::DOMErrorHandler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     const ::std::string& sid,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (isrc, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     const ::std::string& sid,
+                     ::xml_schema::error_handler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     const ::std::string& sid,
+                     ::xercesc::DOMErrorHandler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xercesc::InputSource& i,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xercesc::InputSource& i,
+                     ::xml_schema::error_handler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xercesc::InputSource& i,
+                     ::xercesc::DOMErrorHandler& h,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::xercesc::DOMDocument& d,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties& p)
+            {
+              if (f & ::xml_schema::flags::keep_dom)
+              {
+                ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+                  static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                  ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (
+                    c, f | ::xml_schema::flags::own_dom, p));
+
+                return r;
+              }
+
+              const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (n.name () == "mapping" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping")
+              {
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                  ::xsd::cxx::tree::traits< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType, char >::create (
+                    e, f, 0));
+                return r;
+              }
+
+              throw ::xsd::cxx::tree::unexpected_element < char > (
+                n.name (),
+                n.namespace_ (),
+                "mapping",
+                "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping");
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+                     ::xml_schema::flags f,
+                     const ::xml_schema::properties&)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+                ((f & ::xml_schema::flags::keep_dom) &&
+                 !(f & ::xml_schema::flags::own_dom))
+                ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+                : 0);
+
+              ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+              const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (f & ::xml_schema::flags::keep_dom)
+                doc.setUserData (::xml_schema::dom::tree_node_key,
+                                 (c.get () ? &c : &d),
+                                 0);
+
+              if (n.name () == "mapping" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping")
+              {
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType > r (
+                  ::xsd::cxx::tree::traits< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType, char >::create (
+                    e, f, 0));
+                return r;
+              }
+
+              throw ::xsd::cxx::tree::unexpected_element < char > (
+                n.name (),
+                n.namespace_ (),
+                "mapping",
+                "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping");
+            }
+          }
+        }
+      }
     }
-
-    const ::xercesc::DOMElement& e (*d.getDocumentElement ());
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (n.name () == "mapping" &&
-        n.namespace_ () == "http://www.example.org/mapping")
-    {
-      ::std::auto_ptr< ::mapping::mappingType > r (
-        ::xsd::cxx::tree::traits< ::mapping::mappingType, char >::create (
-          e, f, 0));
-      return r;
-    }
-
-    throw ::xsd::cxx::tree::unexpected_element < char > (
-      n.name (),
-      n.namespace_ (),
-      "mapping",
-      "http://www.example.org/mapping");
-  }
-
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
-           ::xml_schema::flags f,
-           const ::xml_schema::properties&)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
-      ((f & ::xml_schema::flags::keep_dom) &&
-       !(f & ::xml_schema::flags::own_dom))
-      ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
-      : 0);
-
-    ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
-    const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
-
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (f & ::xml_schema::flags::keep_dom)
-      doc.setUserData (::xml_schema::dom::tree_node_key,
-                       (c.get () ? &c : &d),
-                       0);
-
-    if (n.name () == "mapping" &&
-        n.namespace_ () == "http://www.example.org/mapping")
-    {
-      ::std::auto_ptr< ::mapping::mappingType > r (
-        ::xsd::cxx::tree::traits< ::mapping::mappingType, char >::create (
-          e, f, 0));
-      return r;
-    }
-
-    throw ::xsd::cxx::tree::unexpected_element < char > (
-      n.name (),
-      n.namespace_ (),
-      "mapping",
-      "http://www.example.org/mapping");
   }
 }
 
@@ -681,226 +724,242 @@ namespace mapping
 #include <xsd/cxx/tree/error-handler.hxx>
 #include <xsd/cxx/xml/dom/serialization-source.hxx>
 
-namespace mapping
+namespace research
 {
-  void
-  operator<< (::xercesc::DOMElement& e, const mappingType& i)
+  namespace noc
   {
-    e << static_cast< const ::xml_schema::type& > (i);
-
-    // map
-    //
-    for (mappingType::map_const_iterator
-         b (i.map ().begin ()), n (i.map ().end ());
-         b != n; ++b)
+    namespace application_mapping
     {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "map",
-          "http://www.example.org/mapping",
-          e));
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace mapping
+          {
+            void
+            operator<< (::xercesc::DOMElement& e, const mappingType& i)
+            {
+              e << static_cast< const ::xml_schema::type& > (i);
 
-      s << *b;
-    }
+              // map
+              //
+              for (mappingType::map_const_iterator
+                   b (i.map ().begin ()), n (i.map ().end ());
+                   b != n; ++b)
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "map",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping",
+                    e));
 
-    // id
-    //
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "id",
-          e));
+                s << *b;
+              }
 
-      a << i.id ();
-    }
+              // id
+              //
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "id",
+                    e));
 
-    // apcg
-    //
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "apcg",
-          e));
+                a << i.id ();
+              }
 
-      a << i.apcg ();
-    }
-  }
+              // apcg
+              //
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "apcg",
+                    e));
 
-  void
-  mapping (::std::ostream& o,
-           const ::mapping::mappingType& s,
-           const ::xml_schema::namespace_infomap& m,
-           const ::std::string& e,
-           ::xml_schema::flags f)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0);
+                a << i.apcg ();
+              }
+            }
 
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::mapping::mapping (s, m, f));
+            void
+            mapping (::std::ostream& o,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     const ::xml_schema::namespace_infomap& m,
+                     const ::std::string& e,
+                     ::xml_schema::flags f)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0);
 
-    ::xsd::cxx::tree::error_handler< char > h;
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (s, m, f));
 
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-    }
-  }
+              ::xsd::cxx::tree::error_handler< char > h;
 
-  void
-  mapping (::std::ostream& o,
-           const ::mapping::mappingType& s,
-           ::xml_schema::error_handler& h,
-           const ::xml_schema::namespace_infomap& m,
-           const ::std::string& e,
-           ::xml_schema::flags f)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0);
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+              }
+            }
 
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::mapping::mapping (s, m, f));
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
+            void
+            mapping (::std::ostream& o,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     ::xml_schema::error_handler& h,
+                     const ::xml_schema::namespace_infomap& m,
+                     const ::std::string& e,
+                     ::xml_schema::flags f)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0);
 
-  void
-  mapping (::std::ostream& o,
-           const ::mapping::mappingType& s,
-           ::xercesc::DOMErrorHandler& h,
-           const ::xml_schema::namespace_infomap& m,
-           const ::std::string& e,
-           ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::mapping::mapping (s, m, f));
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (s, m, f));
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
 
-  void
-  mapping (::xercesc::XMLFormatTarget& t,
-           const ::mapping::mappingType& s,
-           const ::xml_schema::namespace_infomap& m,
-           const ::std::string& e,
-           ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::mapping::mapping (s, m, f));
+            void
+            mapping (::std::ostream& o,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     ::xercesc::DOMErrorHandler& h,
+                     const ::xml_schema::namespace_infomap& m,
+                     const ::std::string& e,
+                     ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (s, m, f));
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
 
-    ::xsd::cxx::tree::error_handler< char > h;
+            void
+            mapping (::xercesc::XMLFormatTarget& t,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     const ::xml_schema::namespace_infomap& m,
+                     const ::std::string& e,
+                     ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (s, m, f));
 
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-    }
-  }
+              ::xsd::cxx::tree::error_handler< char > h;
 
-  void
-  mapping (::xercesc::XMLFormatTarget& t,
-           const ::mapping::mappingType& s,
-           ::xml_schema::error_handler& h,
-           const ::xml_schema::namespace_infomap& m,
-           const ::std::string& e,
-           ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::mapping::mapping (s, m, f));
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+              }
+            }
 
-  void
-  mapping (::xercesc::XMLFormatTarget& t,
-           const ::mapping::mappingType& s,
-           ::xercesc::DOMErrorHandler& h,
-           const ::xml_schema::namespace_infomap& m,
-           const ::std::string& e,
-           ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::mapping::mapping (s, m, f));
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
+            void
+            mapping (::xercesc::XMLFormatTarget& t,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     ::xml_schema::error_handler& h,
+                     const ::xml_schema::namespace_infomap& m,
+                     const ::std::string& e,
+                     ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (s, m, f));
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
 
-  void
-  mapping (::xercesc::DOMDocument& d,
-           const ::mapping::mappingType& s,
-           ::xml_schema::flags)
-  {
-    ::xercesc::DOMElement& e (*d.getDocumentElement ());
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
+            void
+            mapping (::xercesc::XMLFormatTarget& t,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     ::xercesc::DOMErrorHandler& h,
+                     const ::xml_schema::namespace_infomap& m,
+                     const ::std::string& e,
+                     ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (s, m, f));
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
 
-    if (n.name () == "mapping" &&
-        n.namespace_ () == "http://www.example.org/mapping")
-    {
-      e << s;
-    }
-    else
-    {
-      throw ::xsd::cxx::tree::unexpected_element < char > (
-        n.name (),
-        n.namespace_ (),
-        "mapping",
-        "http://www.example.org/mapping");
-    }
-  }
+            void
+            mapping (::xercesc::DOMDocument& d,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     ::xml_schema::flags)
+            {
+              ::xercesc::DOMElement& e (*d.getDocumentElement ());
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
 
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
-  mapping (const ::mapping::mappingType& s,
-           const ::xml_schema::namespace_infomap& m,
-           ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::serialize< char > (
-        "mapping",
-        "http://www.example.org/mapping",
-        m, f));
+              if (n.name () == "mapping" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping")
+              {
+                e << s;
+              }
+              else
+              {
+                throw ::xsd::cxx::tree::unexpected_element < char > (
+                  n.name (),
+                  n.namespace_ (),
+                  "mapping",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping");
+              }
+            }
 
-    ::mapping::mapping (*d, s, f);
-    return d;
-  }
+            ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+            mapping (const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& s,
+                     const ::xml_schema::namespace_infomap& m,
+                     ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::serialize< char > (
+                  "mapping",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping",
+                  m, f));
 
-  void
-  operator<< (::xercesc::DOMElement& e, const mapType& i)
-  {
-    e << static_cast< const ::xml_schema::type& > (i);
+              ::research::noc::application_mapping::unified_framework::schema::mapping::mapping (*d, s, f);
+              return d;
+            }
 
-    // node
-    //
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "node",
-          "http://www.example.org/mapping",
-          e));
+            void
+            operator<< (::xercesc::DOMElement& e, const mapType& i)
+            {
+              e << static_cast< const ::xml_schema::type& > (i);
 
-      s << i.node ();
-    }
+              // node
+              //
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "node",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping",
+                    e));
 
-    // core
-    //
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "core",
-          "http://www.example.org/mapping",
-          e));
+                s << i.node ();
+              }
 
-      s << i.core ();
+              // core
+              //
+              if (i.core ())
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "core",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping",
+                    e));
+
+                s << *i.core ();
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

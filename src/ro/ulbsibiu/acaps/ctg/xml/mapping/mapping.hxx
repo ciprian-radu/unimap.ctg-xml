@@ -607,10 +607,25 @@ namespace xml_schema
 
 // Forward declarations.
 //
-namespace mapping
+namespace research
 {
-  class mappingType;
-  class mapType;
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace mapping
+          {
+            class mappingType;
+            class mapType;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -627,482 +642,514 @@ namespace mapping
 
 #include <xsd/cxx/xml/dom/parsing-header.hxx>
 
-/**
- * @brief C++ namespace for the %http://www.example.org/mapping
- * schema namespace.
- */
-namespace mapping
+namespace research
 {
-  /**
-   * @brief Class corresponding to the %mappingType schema type.
-   *
-   * @nosubgrouping
-   */
-  class mappingType: public ::xml_schema::type
+  namespace noc
   {
-    public:
-    /**
-     * @name map
-     *
-     * @brief Accessor and modifier functions for the %map
-     * sequence element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::mapping::mapType map_type;
-
-    /**
-     * @brief Element sequence container type.
-     */
-    typedef ::xsd::cxx::tree::sequence< map_type > map_sequence;
-
-    /**
-     * @brief Element iterator type.
-     */
-    typedef map_sequence::iterator map_iterator;
-
-    /**
-     * @brief Element constant iterator type.
-     */
-    typedef map_sequence::const_iterator map_const_iterator;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< map_type, char > map_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * sequence.
-     *
-     * @return A constant reference to the sequence container.
-     */
-    const map_sequence&
-    map () const;
-
-    /**
-     * @brief Return a read-write reference to the element sequence.
-     *
-     * @return A reference to the sequence container.
-     */
-    map_sequence&
-    map ();
-
-    /**
-     * @brief Copy elements from a given sequence.
-     *
-     * @param s A sequence to copy elements from.
-     *
-     * For each element in @a s this function makes a copy and adds it 
-     * to the sequence. Note that this operation completely changes the 
-     * sequence and all old elements will be lost.
-     */
-    void
-    map (const map_sequence& s);
-
-    //@}
-
-    /**
-     * @name id
-     *
-     * @brief Accessor and modifier functions for the %id
-     * required attribute.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::xml_schema::id id_type;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< id_type, char > id_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute.
-     *
-     * @return A constant reference to the attribute.
-     */
-    const id_type&
-    id () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute.
-     *
-     * @return A reference to the attribute.
-     */
-    id_type&
-    id ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    id (const id_type& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    id (::std::auto_ptr< id_type > p);
-
-    //@}
-
-    /**
-     * @name apcg
-     *
-     * @brief Accessor and modifier functions for the %apcg
-     * required attribute.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::xml_schema::string apcg_type;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< apcg_type, char > apcg_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute.
-     *
-     * @return A constant reference to the attribute.
-     */
-    const apcg_type&
-    apcg () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute.
-     *
-     * @return A reference to the attribute.
-     */
-    apcg_type&
-    apcg ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    apcg (const apcg_type& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    apcg (::std::auto_ptr< apcg_type > p);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    mappingType (const id_type&,
-                 const apcg_type&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    mappingType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    mappingType (const mappingType& x,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual mappingType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~mappingType ();
-
-    // Implementation.
-    //
-
-    //@cond
-
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
-
-    protected:
-    map_sequence map_;
-    ::xsd::cxx::tree::one< id_type > id_;
-    ::xsd::cxx::tree::one< apcg_type > apcg_;
-
-    //@endcond
-  };
-
-  /**
-   * @brief Class corresponding to the %mapType schema type.
-   *
-   * @nosubgrouping
-   */
-  class mapType: public ::xml_schema::type
-  {
-    public:
-    /**
-     * @name node
-     *
-     * @brief Accessor and modifier functions for the %node
-     * required element.
-     *
-     * The ID of the NoC node.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::string node_type;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< node_type, char > node_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element.
-     *
-     * @return A constant reference to the element.
-     */
-    const node_type&
-    node () const;
-
-    /**
-     * @brief Return a read-write reference to the element.
-     *
-     * @return A reference to the element.
-     */
-    node_type&
-    node ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    node (const node_type& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    node (::std::auto_ptr< node_type > p);
-
-    //@}
-
-    /**
-     * @name core
-     *
-     * @brief Accessor and modifier functions for the %core
-     * required element.
-     *
-     * The ID of the IP core.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::string core_type;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< core_type, char > core_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element.
-     *
-     * @return A constant reference to the element.
-     */
-    const core_type&
-    core () const;
-
-    /**
-     * @brief Return a read-write reference to the element.
-     *
-     * @return A reference to the element.
-     */
-    core_type&
-    core ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    core (const core_type& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    core (::std::auto_ptr< core_type > p);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    mapType (const node_type&,
-             const core_type&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    mapType (const ::xercesc::DOMElement& e,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    mapType (const mapType& x,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual mapType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~mapType ();
-
-    // Implementation.
-    //
-
-    //@cond
-
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
-
-    protected:
-    ::xsd::cxx::tree::one< node_type > node_;
-    ::xsd::cxx::tree::one< core_type > core_;
-
-    //@endcond
-  };
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          /**
+           * @brief C++ namespace for the %http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping
+           * schema namespace.
+           */
+          namespace mapping
+          {
+            /**
+             * @brief Class corresponding to the %mappingType schema type.
+             *
+             * @nosubgrouping
+             */
+            class mappingType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name map
+               *
+               * @brief Accessor and modifier functions for the %map
+               * sequence element.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::mapping::mapType map_type;
+
+              /**
+               * @brief Element sequence container type.
+               */
+              typedef ::xsd::cxx::tree::sequence< map_type > map_sequence;
+
+              /**
+               * @brief Element iterator type.
+               */
+              typedef map_sequence::iterator map_iterator;
+
+              /**
+               * @brief Element constant iterator type.
+               */
+              typedef map_sequence::const_iterator map_const_iterator;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< map_type, char > map_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * sequence.
+               *
+               * @return A constant reference to the sequence container.
+               */
+              const map_sequence&
+              map () const;
+
+              /**
+               * @brief Return a read-write reference to the element sequence.
+               *
+               * @return A reference to the sequence container.
+               */
+              map_sequence&
+              map ();
+
+              /**
+               * @brief Copy elements from a given sequence.
+               *
+               * @param s A sequence to copy elements from.
+               *
+               * For each element in @a s this function makes a copy and adds it 
+               * to the sequence. Note that this operation completely changes the 
+               * sequence and all old elements will be lost.
+               */
+              void
+              map (const map_sequence& s);
+
+              //@}
+
+              /**
+               * @name id
+               *
+               * @brief Accessor and modifier functions for the %id
+               * required attribute.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::id id_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< id_type, char > id_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const id_type&
+              id () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              id_type&
+              id ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              id (const id_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              id (::std::auto_ptr< id_type > p);
+
+              //@}
+
+              /**
+               * @name apcg
+               *
+               * @brief Accessor and modifier functions for the %apcg
+               * required attribute.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::string apcg_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< apcg_type, char > apcg_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const apcg_type&
+              apcg () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              apcg_type&
+              apcg ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              apcg (const apcg_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              apcg (::std::auto_ptr< apcg_type > p);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              mappingType (const id_type&,
+                           const apcg_type&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              mappingType (const ::xercesc::DOMElement& e,
+                           ::xml_schema::flags f = 0,
+                           ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              mappingType (const mappingType& x,
+                           ::xml_schema::flags f = 0,
+                           ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual mappingType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~mappingType ();
+
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              map_sequence map_;
+              ::xsd::cxx::tree::one< id_type > id_;
+              ::xsd::cxx::tree::one< apcg_type > apcg_;
+
+              //@endcond
+            };
+
+            /**
+             * @brief Class corresponding to the %mapType schema type.
+             *
+             * @nosubgrouping
+             */
+            class mapType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name node
+               *
+               * @brief Accessor and modifier functions for the %node
+               * required element.
+               *
+               * The ID of the NoC node.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::string node_type;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< node_type, char > node_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element.
+               *
+               * @return A constant reference to the element.
+               */
+              const node_type&
+              node () const;
+
+              /**
+               * @brief Return a read-write reference to the element.
+               *
+               * @return A reference to the element.
+               */
+              node_type&
+              node ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              node (const node_type& x);
+
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              node (::std::auto_ptr< node_type > p);
+
+              //@}
+
+              /**
+               * @name core
+               *
+               * @brief Accessor and modifier functions for the %core
+               * optional element.
+               *
+               * The ID of the IP core.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::string core_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< core_type > core_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< core_type, char > core_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const core_optional&
+              core () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              core_optional&
+              core ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              core (const core_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              core (const core_optional& x);
+
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              core (::std::auto_ptr< core_type > p);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              mapType (const node_type&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              mapType (const ::xercesc::DOMElement& e,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              mapType (const mapType& x,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual mapType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~mapType ();
+
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              ::xsd::cxx::tree::one< node_type > node_;
+              core_optional core_;
+
+              //@endcond
+            };
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <iosfwd>
@@ -1111,260 +1158,275 @@ namespace mapping
 #include <xercesc/dom/DOMDocument.hpp>
 #include <xercesc/dom/DOMErrorHandler.hpp>
 
-namespace mapping
+namespace research
 {
-  /**
-   * @name Parsing functions for the %mapping document root.
-   */
-  //@{
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace mapping
+          {
+            /**
+             * @name Parsing functions for the %mapping document root.
+             */
+            //@{
 
-  /**
-   * @brief Parse a URI or a local file.
-   *
-   * @param uri A URI or a local file name.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::std::string& uri,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file.
+             *
+             * @param uri A URI or a local file name.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::std::string& uri,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a URI or a local file with an error handler.
-   *
-   * @param uri A URI or a local file name.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::std::string& uri,
-           ::xml_schema::error_handler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file with an error handler.
+             *
+             * @param uri A URI or a local file name.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::std::string& uri,
+                     ::xml_schema::error_handler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a URI or a local file with a Xerces-C++ DOM error
-   * handler.
-   *
-   * @param uri A URI or a local file name.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::std::string& uri,
-           ::xercesc::DOMErrorHandler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+             * handler.
+             *
+             * @param uri A URI or a local file name.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::std::string& uri,
+                     ::xercesc::DOMErrorHandler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream.
-   *
-   * @param is A standrad input stream.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream.
+             *
+             * @param is A standrad input stream.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with an error handler.
-   *
-   * @param is A standrad input stream.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           ::xml_schema::error_handler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with an error handler.
+             *
+             * @param is A standrad input stream.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     ::xml_schema::error_handler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a Xerces-C++ DOM error
-   * handler.
-   *
-   * @param is A standrad input stream.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           ::xercesc::DOMErrorHandler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a Xerces-C++ DOM error
+             * handler.
+             *
+             * @param is A standrad input stream.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     ::xercesc::DOMErrorHandler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           const ::std::string& id,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     const ::std::string& id,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id and an
-   * error handler.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           const ::std::string& id,
-           ::xml_schema::error_handler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id and an
+             * error handler.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     const ::std::string& id,
+                     ::xml_schema::error_handler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id and a
-   * Xerces-C++ DOM error handler.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::std::istream& is,
-           const ::std::string& id,
-           ::xercesc::DOMErrorHandler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id and a
+             * Xerces-C++ DOM error handler.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::std::istream& is,
+                     const ::std::string& id,
+                     ::xercesc::DOMErrorHandler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xercesc::InputSource& is,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xercesc::InputSource& is,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source with an error handler.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xercesc::InputSource& is,
-           ::xml_schema::error_handler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source with an error handler.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xercesc::InputSource& is,
+                     ::xml_schema::error_handler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
-   * error handler.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xercesc::InputSource& is,
-           ::xercesc::DOMErrorHandler& eh,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+             * error handler.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xercesc::InputSource& is,
+                     ::xercesc::DOMErrorHandler& eh,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ DOM document.
-   *
-   * @param d A Xerces-C++ DOM document.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (const ::xercesc::DOMDocument& d,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ DOM document.
+             *
+             * @param d A Xerces-C++ DOM document.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (const ::xercesc::DOMDocument& d,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ DOM document.
-   *
-   * @param d A pointer to the Xerces-C++ DOM document.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function is normally used together with the keep_dom and
-   * own_dom parsing flags to assign ownership of the DOM document
-   * to the object model.
-   */
-  ::std::auto_ptr< ::mapping::mappingType >
-  mapping (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
-           ::xml_schema::flags f = 0,
-           const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ DOM document.
+             *
+             * @param d A pointer to the Xerces-C++ DOM document.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function is normally used together with the keep_dom and
+             * own_dom parsing flags to assign ownership of the DOM document
+             * to the object model.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType >
+            mapping (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+                     ::xml_schema::flags f = 0,
+                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  //@}
+            //@}
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <iosfwd>
@@ -1375,172 +1437,187 @@ namespace mapping
 
 #include <xsd/cxx/xml/dom/auto-ptr.hxx>
 
-namespace mapping
+namespace research
 {
-  void
-  operator<< (::xercesc::DOMElement&, const mappingType&);
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace mapping
+          {
+            void
+            operator<< (::xercesc::DOMElement&, const mappingType&);
 
-  /**
-   * @name Serialization functions for the %mapping document root.
-   */
-  //@{
+            /**
+             * @name Serialization functions for the %mapping document root.
+             */
+            //@{
 
-  /**
-   * @brief Serialize to a standard output stream.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function uses exceptions to report serialization errors.
-   */
-  void
-  mapping (::std::ostream& os,
-           const ::mapping::mappingType& x, 
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           const ::std::string& e = "UTF-8",
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function uses exceptions to report serialization errors.
+             */
+            void
+            mapping (::std::ostream& os,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     const ::std::string& e = "UTF-8",
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a standard output stream with an error handler.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param eh An error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  mapping (::std::ostream& os,
-           const ::mapping::mappingType& x, 
-           ::xml_schema::error_handler& eh,
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           const ::std::string& e = "UTF-8",
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream with an error handler.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param eh An error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            mapping (::std::ostream& os,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     ::xml_schema::error_handler& eh,
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     const ::std::string& e = "UTF-8",
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a standard output stream with a Xerces-C++ DOM
-   * error handler.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  mapping (::std::ostream& os,
-           const ::mapping::mappingType& x, 
-           ::xercesc::DOMErrorHandler& eh,
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           const ::std::string& e = "UTF-8",
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+             * error handler.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            mapping (::std::ostream& os,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     ::xercesc::DOMErrorHandler& eh,
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     const ::std::string& e = "UTF-8",
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function uses exceptions to report serialization errors.
-   */
-  void
-  mapping (::xercesc::XMLFormatTarget& ft,
-           const ::mapping::mappingType& x, 
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           const ::std::string& e = "UTF-8",
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function uses exceptions to report serialization errors.
+             */
+            void
+            mapping (::xercesc::XMLFormatTarget& ft,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     const ::std::string& e = "UTF-8",
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target with an error
-   * handler.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param eh An error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  mapping (::xercesc::XMLFormatTarget& ft,
-           const ::mapping::mappingType& x, 
-           ::xml_schema::error_handler& eh,
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           const ::std::string& e = "UTF-8",
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target with an error
+             * handler.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param eh An error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            mapping (::xercesc::XMLFormatTarget& ft,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     ::xml_schema::error_handler& eh,
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     const ::std::string& e = "UTF-8",
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target with a
-   * Xerces-C++ DOM error handler.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  mapping (::xercesc::XMLFormatTarget& ft,
-           const ::mapping::mappingType& x, 
-           ::xercesc::DOMErrorHandler& eh,
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           const ::std::string& e = "UTF-8",
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target with a
+             * Xerces-C++ DOM error handler.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            mapping (::xercesc::XMLFormatTarget& ft,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     ::xercesc::DOMErrorHandler& eh,
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     const ::std::string& e = "UTF-8",
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to an existing Xerces-C++ DOM document.
-   *
-   * @param d A Xerces-C++ DOM document.
-   * @param x An object model to serialize.
-   * @param f Serialization flags.
-   *
-   * Note that it is your responsibility to create the DOM document
-   * with the correct root element as well as set the necessary
-   * namespace mapping attributes.
-   */
-  void
-  mapping (::xercesc::DOMDocument& d,
-           const ::mapping::mappingType& x,
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to an existing Xerces-C++ DOM document.
+             *
+             * @param d A Xerces-C++ DOM document.
+             * @param x An object model to serialize.
+             * @param f Serialization flags.
+             *
+             * Note that it is your responsibility to create the DOM document
+             * with the correct root element as well as set the necessary
+             * namespace mapping attributes.
+             */
+            void
+            mapping (::xercesc::DOMDocument& d,
+                     const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x,
+                     ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a new Xerces-C++ DOM document.
-   *
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param f Serialization flags.
-   * @return A pointer to the new Xerces-C++ DOM document.
-   */
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
-  mapping (const ::mapping::mappingType& x, 
-           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-           ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a new Xerces-C++ DOM document.
+             *
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param f Serialization flags.
+             * @return A pointer to the new Xerces-C++ DOM document.
+             */
+            ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+            mapping (const ::research::noc::application_mapping::unified_framework::schema::mapping::mappingType& x, 
+                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                     ::xml_schema::flags f = 0);
 
-  //@}
+            //@}
 
-  void
-  operator<< (::xercesc::DOMElement&, const mapType&);
+            void
+            operator<< (::xercesc::DOMElement&, const mapType&);
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <xsd/cxx/post.hxx>

@@ -40,214 +40,244 @@
 
 #include "task.hxx"
 
-namespace task
+namespace research
 {
-  // taskType
-  // 
-
-  const taskType::ID_type& taskType::
-  ID () const
+  namespace noc
   {
-    return this->ID_.get ();
-  }
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace task
+          {
+            // taskType
+            // 
 
-  taskType::ID_type& taskType::
-  ID ()
-  {
-    return this->ID_.get ();
-  }
+            const taskType::ID_type& taskType::
+            ID () const
+            {
+              return this->ID_.get ();
+            }
 
-  void taskType::
-  ID (const ID_type& x)
-  {
-    this->ID_.set (x);
-  }
+            taskType::ID_type& taskType::
+            ID ()
+            {
+              return this->ID_.get ();
+            }
 
-  void taskType::
-  ID (::std::auto_ptr< ID_type > x)
-  {
-    this->ID_.set (x);
-  }
+            void taskType::
+            ID (const ID_type& x)
+            {
+              this->ID_.set (x);
+            }
 
-  const taskType::type_type& taskType::
-  type () const
-  {
-    return this->type_.get ();
-  }
+            void taskType::
+            ID (::std::auto_ptr< ID_type > x)
+            {
+              this->ID_.set (x);
+            }
 
-  taskType::type_type& taskType::
-  type ()
-  {
-    return this->type_.get ();
-  }
+            const taskType::type_type& taskType::
+            type () const
+            {
+              return this->type_.get ();
+            }
 
-  void taskType::
-  type (const type_type& x)
-  {
-    this->type_.set (x);
-  }
+            taskType::type_type& taskType::
+            type ()
+            {
+              return this->type_.get ();
+            }
 
-  void taskType::
-  type (::std::auto_ptr< type_type > x)
-  {
-    this->type_.set (x);
-  }
+            void taskType::
+            type (const type_type& x)
+            {
+              this->type_.set (x);
+            }
 
-  const taskType::name_optional& taskType::
-  name () const
-  {
-    return this->name_;
-  }
+            void taskType::
+            type (::std::auto_ptr< type_type > x)
+            {
+              this->type_.set (x);
+            }
 
-  taskType::name_optional& taskType::
-  name ()
-  {
-    return this->name_;
-  }
+            const taskType::name_optional& taskType::
+            name () const
+            {
+              return this->name_;
+            }
 
-  void taskType::
-  name (const name_type& x)
-  {
-    this->name_.set (x);
-  }
+            taskType::name_optional& taskType::
+            name ()
+            {
+              return this->name_;
+            }
 
-  void taskType::
-  name (const name_optional& x)
-  {
-    this->name_ = x;
-  }
+            void taskType::
+            name (const name_type& x)
+            {
+              this->name_.set (x);
+            }
 
-  void taskType::
-  name (::std::auto_ptr< name_type > x)
-  {
-    this->name_.set (x);
+            void taskType::
+            name (const name_optional& x)
+            {
+              this->name_ = x;
+            }
+
+            void taskType::
+            name (::std::auto_ptr< name_type > x)
+            {
+              this->name_.set (x);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
 
-namespace task
+namespace research
 {
-  // taskType
-  //
-
-  taskType::
-  taskType (const ID_type& ID,
-            const type_type& type)
-  : ::xml_schema::type (),
-    ID_ (ID, ::xml_schema::flags (), this),
-    type_ (type, ::xml_schema::flags (), this),
-    name_ (::xml_schema::flags (), this)
+  namespace noc
   {
-  }
-
-  taskType::
-  taskType (const taskType& x,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    ID_ (x.ID_, f, this),
-    type_ (x.type_, f, this),
-    name_ (x.name_, f, this)
-  {
-  }
-
-  taskType::
-  taskType (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    ID_ (f, this),
-    type_ (f, this),
-    name_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
+    namespace application_mapping
     {
-      ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
-      this->parse (p, f);
-    }
-  }
-
-  void taskType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    for (; p.more_elements (); p.next_element ())
-    {
-      const ::xercesc::DOMElement& i (p.cur_element ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      // ID
-      //
-      if (n.name () == "ID" && n.namespace_ ().empty ())
+      namespace unified_framework
       {
-        ::std::auto_ptr< ID_type > r (
-          ID_traits::create (i, f, this));
-
-        if (!ID_.present ())
+        namespace schema
         {
-          this->ID_.set (r);
-          continue;
+          namespace task
+          {
+            // taskType
+            //
+
+            taskType::
+            taskType (const ID_type& ID,
+                      const type_type& type)
+            : ::xml_schema::type (),
+              ID_ (ID, ::xml_schema::flags (), this),
+              type_ (type, ::xml_schema::flags (), this),
+              name_ (::xml_schema::flags (), this)
+            {
+            }
+
+            taskType::
+            taskType (const taskType& x,
+                      ::xml_schema::flags f,
+                      ::xml_schema::container* c)
+            : ::xml_schema::type (x, f, c),
+              ID_ (x.ID_, f, this),
+              type_ (x.type_, f, this),
+              name_ (x.name_, f, this)
+            {
+            }
+
+            taskType::
+            taskType (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f,
+                      ::xml_schema::container* c)
+            : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              ID_ (f, this),
+              type_ (f, this),
+              name_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+                this->parse (p, f);
+              }
+            }
+
+            void taskType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              for (; p.more_elements (); p.next_element ())
+              {
+                const ::xercesc::DOMElement& i (p.cur_element ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                // ID
+                //
+                if (n.name () == "ID" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< ID_type > r (
+                    ID_traits::create (i, f, this));
+
+                  if (!ID_.present ())
+                  {
+                    this->ID_.set (r);
+                    continue;
+                  }
+                }
+
+                // type
+                //
+                if (n.name () == "type" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< type_type > r (
+                    type_traits::create (i, f, this));
+
+                  if (!type_.present ())
+                  {
+                    this->type_.set (r);
+                    continue;
+                  }
+                }
+
+                // name
+                //
+                if (n.name () == "name" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< name_type > r (
+                    name_traits::create (i, f, this));
+
+                  if (!this->name_)
+                  {
+                    this->name_.set (r);
+                    continue;
+                  }
+                }
+
+                break;
+              }
+
+              if (!ID_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_element< char > (
+                  "ID",
+                  "");
+              }
+
+              if (!type_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_element< char > (
+                  "type",
+                  "");
+              }
+            }
+
+            taskType* taskType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class taskType (*this, f, c);
+            }
+
+            taskType::
+            ~taskType ()
+            {
+            }
+          }
         }
       }
-
-      // type
-      //
-      if (n.name () == "type" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< type_type > r (
-          type_traits::create (i, f, this));
-
-        if (!type_.present ())
-        {
-          this->type_.set (r);
-          continue;
-        }
-      }
-
-      // name
-      //
-      if (n.name () == "name" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< name_type > r (
-          name_traits::create (i, f, this));
-
-        if (!this->name_)
-        {
-          this->name_.set (r);
-          continue;
-        }
-      }
-
-      break;
     }
-
-    if (!ID_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "ID",
-        "");
-    }
-
-    if (!type_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "type",
-        "");
-    }
-  }
-
-  taskType* taskType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class taskType (*this, f, c);
-  }
-
-  taskType::
-  ~taskType ()
-  {
   }
 }
 
@@ -255,286 +285,301 @@ namespace task
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
 
-namespace task
+namespace research
 {
-  ::std::auto_ptr< ::task::taskType >
-  task (const ::std::string& u,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
+  namespace noc
   {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-    ::std::auto_ptr< ::task::taskType > r (
-      ::task::task (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (const ::std::string& u,
-        ::xml_schema::error_handler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::task::taskType > r (
-      ::task::task (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (const ::std::string& u,
-        ::xercesc::DOMErrorHandler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::task::taskType > r (
-      ::task::task (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::std::istream& is,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::task::task (isrc, f, p);
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::std::istream& is,
-        ::xml_schema::error_handler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::task::task (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::std::istream& is,
-        ::xercesc::DOMErrorHandler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::task::task (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::std::istream& is,
-        const ::std::string& sid,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::task::task (isrc, f, p);
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::std::istream& is,
-        const ::std::string& sid,
-        ::xml_schema::error_handler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::task::task (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::std::istream& is,
-        const ::std::string& sid,
-        ::xercesc::DOMErrorHandler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::task::task (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::xercesc::InputSource& i,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-    ::std::auto_ptr< ::task::taskType > r (
-      ::task::task (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::xercesc::InputSource& i,
-        ::xml_schema::error_handler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::task::taskType > r (
-      ::task::task (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::xercesc::InputSource& i,
-        ::xercesc::DOMErrorHandler& h,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::task::taskType > r (
-      ::task::task (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (const ::xercesc::DOMDocument& d,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties& p)
-  {
-    if (f & ::xml_schema::flags::keep_dom)
+    namespace application_mapping
     {
-      ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
-        static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace task
+          {
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (const ::std::string& u,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
 
-      ::std::auto_ptr< ::task::taskType > r (
-        ::task::task (
-          c, f | ::xml_schema::flags::own_dom, p));
+              ::xsd::cxx::tree::error_handler< char > h;
 
-      return r;
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (const ::std::string& u,
+                  ::xml_schema::error_handler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (const ::std::string& u,
+                  ::xercesc::DOMErrorHandler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::std::istream& is,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::task::task (isrc, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::std::istream& is,
+                  ::xml_schema::error_handler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::task::task (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::std::istream& is,
+                  ::xercesc::DOMErrorHandler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::task::task (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::std::istream& is,
+                  const ::std::string& sid,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::task::task (isrc, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::std::istream& is,
+                  const ::std::string& sid,
+                  ::xml_schema::error_handler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::task::task (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::std::istream& is,
+                  const ::std::string& sid,
+                  ::xercesc::DOMErrorHandler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::task::task (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::xercesc::InputSource& i,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::xercesc::InputSource& i,
+                  ::xml_schema::error_handler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::xercesc::InputSource& i,
+                  ::xercesc::DOMErrorHandler& h,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (const ::xercesc::DOMDocument& d,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties& p)
+            {
+              if (f & ::xml_schema::flags::keep_dom)
+              {
+                ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+                  static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                  ::research::noc::application_mapping::unified_framework::schema::task::task (
+                    c, f | ::xml_schema::flags::own_dom, p));
+
+                return r;
+              }
+
+              const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (n.name () == "task" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task")
+              {
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                  ::xsd::cxx::tree::traits< ::research::noc::application_mapping::unified_framework::schema::task::taskType, char >::create (
+                    e, f, 0));
+                return r;
+              }
+
+              throw ::xsd::cxx::tree::unexpected_element < char > (
+                n.name (),
+                n.namespace_ (),
+                "task",
+                "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task");
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType >
+            task (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+                  ::xml_schema::flags f,
+                  const ::xml_schema::properties&)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+                ((f & ::xml_schema::flags::keep_dom) &&
+                 !(f & ::xml_schema::flags::own_dom))
+                ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+                : 0);
+
+              ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+              const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (f & ::xml_schema::flags::keep_dom)
+                doc.setUserData (::xml_schema::dom::tree_node_key,
+                                 (c.get () ? &c : &d),
+                                 0);
+
+              if (n.name () == "task" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task")
+              {
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::task::taskType > r (
+                  ::xsd::cxx::tree::traits< ::research::noc::application_mapping::unified_framework::schema::task::taskType, char >::create (
+                    e, f, 0));
+                return r;
+              }
+
+              throw ::xsd::cxx::tree::unexpected_element < char > (
+                n.name (),
+                n.namespace_ (),
+                "task",
+                "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task");
+            }
+          }
+        }
+      }
     }
-
-    const ::xercesc::DOMElement& e (*d.getDocumentElement ());
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (n.name () == "task" &&
-        n.namespace_ () == "http://www.example.org/task")
-    {
-      ::std::auto_ptr< ::task::taskType > r (
-        ::xsd::cxx::tree::traits< ::task::taskType, char >::create (
-          e, f, 0));
-      return r;
-    }
-
-    throw ::xsd::cxx::tree::unexpected_element < char > (
-      n.name (),
-      n.namespace_ (),
-      "task",
-      "http://www.example.org/task");
-  }
-
-  ::std::auto_ptr< ::task::taskType >
-  task (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
-        ::xml_schema::flags f,
-        const ::xml_schema::properties&)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
-      ((f & ::xml_schema::flags::keep_dom) &&
-       !(f & ::xml_schema::flags::own_dom))
-      ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
-      : 0);
-
-    ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
-    const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
-
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (f & ::xml_schema::flags::keep_dom)
-      doc.setUserData (::xml_schema::dom::tree_node_key,
-                       (c.get () ? &c : &d),
-                       0);
-
-    if (n.name () == "task" &&
-        n.namespace_ () == "http://www.example.org/task")
-    {
-      ::std::auto_ptr< ::task::taskType > r (
-        ::xsd::cxx::tree::traits< ::task::taskType, char >::create (
-          e, f, 0));
-      return r;
-    }
-
-    throw ::xsd::cxx::tree::unexpected_element < char > (
-      n.name (),
-      n.namespace_ (),
-      "task",
-      "http://www.example.org/task");
   }
 }
 
@@ -542,194 +587,209 @@ namespace task
 #include <xsd/cxx/tree/error-handler.hxx>
 #include <xsd/cxx/xml/dom/serialization-source.hxx>
 
-namespace task
+namespace research
 {
-  void
-  operator<< (::xercesc::DOMElement& e, const taskType& i)
+  namespace noc
   {
-    e << static_cast< const ::xml_schema::type& > (i);
-
-    // ID
-    //
+    namespace application_mapping
     {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "ID",
-          e));
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace task
+          {
+            void
+            operator<< (::xercesc::DOMElement& e, const taskType& i)
+            {
+              e << static_cast< const ::xml_schema::type& > (i);
 
-      s << i.ID ();
+              // ID
+              //
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "ID",
+                    e));
+
+                s << i.ID ();
+              }
+
+              // type
+              //
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "type",
+                    e));
+
+                s << i.type ();
+              }
+
+              // name
+              //
+              if (i.name ())
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "name",
+                    e));
+
+                s << *i.name ();
+              }
+            }
+
+            void
+            task (::std::ostream& o,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  const ::xml_schema::namespace_infomap& m,
+                  const ::std::string& e,
+                  ::xml_schema::flags f)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (s, m, f));
+
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+              }
+            }
+
+            void
+            task (::std::ostream& o,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  ::xml_schema::error_handler& h,
+                  const ::xml_schema::namespace_infomap& m,
+                  const ::std::string& e,
+                  ::xml_schema::flags f)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (s, m, f));
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            task (::std::ostream& o,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  ::xercesc::DOMErrorHandler& h,
+                  const ::xml_schema::namespace_infomap& m,
+                  const ::std::string& e,
+                  ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (s, m, f));
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            task (::xercesc::XMLFormatTarget& t,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  const ::xml_schema::namespace_infomap& m,
+                  const ::std::string& e,
+                  ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (s, m, f));
+
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+              }
+            }
+
+            void
+            task (::xercesc::XMLFormatTarget& t,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  ::xml_schema::error_handler& h,
+                  const ::xml_schema::namespace_infomap& m,
+                  const ::std::string& e,
+                  ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (s, m, f));
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            task (::xercesc::XMLFormatTarget& t,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  ::xercesc::DOMErrorHandler& h,
+                  const ::xml_schema::namespace_infomap& m,
+                  const ::std::string& e,
+                  ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::task::task (s, m, f));
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            task (::xercesc::DOMDocument& d,
+                  const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  ::xml_schema::flags)
+            {
+              ::xercesc::DOMElement& e (*d.getDocumentElement ());
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (n.name () == "task" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task")
+              {
+                e << s;
+              }
+              else
+              {
+                throw ::xsd::cxx::tree::unexpected_element < char > (
+                  n.name (),
+                  n.namespace_ (),
+                  "task",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task");
+              }
+            }
+
+            ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+            task (const ::research::noc::application_mapping::unified_framework::schema::task::taskType& s,
+                  const ::xml_schema::namespace_infomap& m,
+                  ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::serialize< char > (
+                  "task",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task",
+                  m, f));
+
+              ::research::noc::application_mapping::unified_framework::schema::task::task (*d, s, f);
+              return d;
+            }
+          }
+        }
+      }
     }
-
-    // type
-    //
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "type",
-          e));
-
-      s << i.type ();
-    }
-
-    // name
-    //
-    if (i.name ())
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "name",
-          e));
-
-      s << *i.name ();
-    }
-  }
-
-  void
-  task (::std::ostream& o,
-        const ::task::taskType& s,
-        const ::xml_schema::namespace_infomap& m,
-        const ::std::string& e,
-        ::xml_schema::flags f)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::task::task (s, m, f));
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-    }
-  }
-
-  void
-  task (::std::ostream& o,
-        const ::task::taskType& s,
-        ::xml_schema::error_handler& h,
-        const ::xml_schema::namespace_infomap& m,
-        const ::std::string& e,
-        ::xml_schema::flags f)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::task::task (s, m, f));
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  task (::std::ostream& o,
-        const ::task::taskType& s,
-        ::xercesc::DOMErrorHandler& h,
-        const ::xml_schema::namespace_infomap& m,
-        const ::std::string& e,
-        ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::task::task (s, m, f));
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  task (::xercesc::XMLFormatTarget& t,
-        const ::task::taskType& s,
-        const ::xml_schema::namespace_infomap& m,
-        const ::std::string& e,
-        ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::task::task (s, m, f));
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-    }
-  }
-
-  void
-  task (::xercesc::XMLFormatTarget& t,
-        const ::task::taskType& s,
-        ::xml_schema::error_handler& h,
-        const ::xml_schema::namespace_infomap& m,
-        const ::std::string& e,
-        ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::task::task (s, m, f));
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  task (::xercesc::XMLFormatTarget& t,
-        const ::task::taskType& s,
-        ::xercesc::DOMErrorHandler& h,
-        const ::xml_schema::namespace_infomap& m,
-        const ::std::string& e,
-        ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::task::task (s, m, f));
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  task (::xercesc::DOMDocument& d,
-        const ::task::taskType& s,
-        ::xml_schema::flags)
-  {
-    ::xercesc::DOMElement& e (*d.getDocumentElement ());
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (n.name () == "task" &&
-        n.namespace_ () == "http://www.example.org/task")
-    {
-      e << s;
-    }
-    else
-    {
-      throw ::xsd::cxx::tree::unexpected_element < char > (
-        n.name (),
-        n.namespace_ (),
-        "task",
-        "http://www.example.org/task");
-    }
-  }
-
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
-  task (const ::task::taskType& s,
-        const ::xml_schema::namespace_infomap& m,
-        ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::serialize< char > (
-        "task",
-        "http://www.example.org/task",
-        m, f));
-
-    ::task::task (*d, s, f);
-    return d;
   }
 }
 

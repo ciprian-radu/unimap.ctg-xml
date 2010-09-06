@@ -40,1171 +40,1216 @@
 
 #include "ctg.hxx"
 
-namespace ctg
+namespace research
 {
-  // ctgType
-  // 
-
-  const ctgType::communication_sequence& ctgType::
-  communication () const
+  namespace noc
   {
-    return this->communication_;
-  }
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace ctg
+          {
+            // ctgType
+            // 
 
-  ctgType::communication_sequence& ctgType::
-  communication ()
-  {
-    return this->communication_;
-  }
+            const ctgType::communication_sequence& ctgType::
+            communication () const
+            {
+              return this->communication_;
+            }
 
-  void ctgType::
-  communication (const communication_sequence& s)
-  {
-    this->communication_ = s;
-  }
+            ctgType::communication_sequence& ctgType::
+            communication ()
+            {
+              return this->communication_;
+            }
 
-  const ctgType::id_type& ctgType::
-  id () const
-  {
-    return this->id_.get ();
-  }
+            void ctgType::
+            communication (const communication_sequence& s)
+            {
+              this->communication_ = s;
+            }
 
-  ctgType::id_type& ctgType::
-  id ()
-  {
-    return this->id_.get ();
-  }
+            const ctgType::id_type& ctgType::
+            id () const
+            {
+              return this->id_.get ();
+            }
 
-  void ctgType::
-  id (const id_type& x)
-  {
-    this->id_.set (x);
-  }
+            ctgType::id_type& ctgType::
+            id ()
+            {
+              return this->id_.get ();
+            }
 
-  void ctgType::
-  id (::std::auto_ptr< id_type > x)
-  {
-    this->id_.set (x);
-  }
+            void ctgType::
+            id (const id_type& x)
+            {
+              this->id_.set (x);
+            }
 
-  const ctgType::period_optional& ctgType::
-  period () const
-  {
-    return this->period_;
-  }
+            void ctgType::
+            id (::std::auto_ptr< id_type > x)
+            {
+              this->id_.set (x);
+            }
 
-  ctgType::period_optional& ctgType::
-  period ()
-  {
-    return this->period_;
-  }
+            const ctgType::period_optional& ctgType::
+            period () const
+            {
+              return this->period_;
+            }
 
-  void ctgType::
-  period (const period_type& x)
-  {
-    this->period_.set (x);
-  }
+            ctgType::period_optional& ctgType::
+            period ()
+            {
+              return this->period_;
+            }
 
-  void ctgType::
-  period (const period_optional& x)
-  {
-    this->period_ = x;
-  }
+            void ctgType::
+            period (const period_type& x)
+            {
+              this->period_.set (x);
+            }
 
-  void ctgType::
-  period (::std::auto_ptr< period_type > x)
-  {
-    this->period_.set (x);
-  }
+            void ctgType::
+            period (const period_optional& x)
+            {
+              this->period_ = x;
+            }
 
-
-  // communicationType
-  // 
-
-  const communicationType::source_type& communicationType::
-  source () const
-  {
-    return this->source_.get ();
-  }
-
-  communicationType::source_type& communicationType::
-  source ()
-  {
-    return this->source_.get ();
-  }
-
-  void communicationType::
-  source (const source_type& x)
-  {
-    this->source_.set (x);
-  }
-
-  void communicationType::
-  source (::std::auto_ptr< source_type > x)
-  {
-    this->source_.set (x);
-  }
-
-  const communicationType::destination_type& communicationType::
-  destination () const
-  {
-    return this->destination_.get ();
-  }
-
-  communicationType::destination_type& communicationType::
-  destination ()
-  {
-    return this->destination_.get ();
-  }
-
-  void communicationType::
-  destination (const destination_type& x)
-  {
-    this->destination_.set (x);
-  }
-
-  void communicationType::
-  destination (::std::auto_ptr< destination_type > x)
-  {
-    this->destination_.set (x);
-  }
-
-  const communicationType::volume_type& communicationType::
-  volume () const
-  {
-    return this->volume_.get ();
-  }
-
-  communicationType::volume_type& communicationType::
-  volume ()
-  {
-    return this->volume_.get ();
-  }
-
-  void communicationType::
-  volume (const volume_type& x)
-  {
-    this->volume_.set (x);
-  }
-
-  void communicationType::
-  volume (::std::auto_ptr< volume_type > x)
-  {
-    this->volume_.set (x);
-  }
+            void ctgType::
+            period (::std::auto_ptr< period_type > x)
+            {
+              this->period_.set (x);
+            }
 
 
-  // communicatingTaskType
-  // 
+            // communicationType
+            // 
 
-  const communicatingTaskType::deadline_sequence& communicatingTaskType::
-  deadline () const
-  {
-    return this->deadline_;
-  }
+            const communicationType::source_type& communicationType::
+            source () const
+            {
+              return this->source_.get ();
+            }
 
-  communicatingTaskType::deadline_sequence& communicatingTaskType::
-  deadline ()
-  {
-    return this->deadline_;
-  }
+            communicationType::source_type& communicationType::
+            source ()
+            {
+              return this->source_.get ();
+            }
 
-  void communicatingTaskType::
-  deadline (const deadline_sequence& s)
-  {
-    this->deadline_ = s;
-  }
+            void communicationType::
+            source (const source_type& x)
+            {
+              this->source_.set (x);
+            }
 
-  const communicatingTaskType::id_type& communicatingTaskType::
-  id () const
-  {
-    return this->id_.get ();
-  }
+            void communicationType::
+            source (::std::auto_ptr< source_type > x)
+            {
+              this->source_.set (x);
+            }
 
-  communicatingTaskType::id_type& communicatingTaskType::
-  id ()
-  {
-    return this->id_.get ();
-  }
+            const communicationType::destination_type& communicationType::
+            destination () const
+            {
+              return this->destination_.get ();
+            }
 
-  void communicatingTaskType::
-  id (const id_type& x)
-  {
-    this->id_.set (x);
-  }
+            communicationType::destination_type& communicationType::
+            destination ()
+            {
+              return this->destination_.get ();
+            }
 
-  void communicatingTaskType::
-  id (::std::auto_ptr< id_type > x)
-  {
-    this->id_.set (x);
-  }
+            void communicationType::
+            destination (const destination_type& x)
+            {
+              this->destination_.set (x);
+            }
 
+            void communicationType::
+            destination (::std::auto_ptr< destination_type > x)
+            {
+              this->destination_.set (x);
+            }
 
-  // unsignedDouble
-  // 
+            const communicationType::volume_type& communicationType::
+            volume () const
+            {
+              return this->volume_.get ();
+            }
 
+            communicationType::volume_type& communicationType::
+            volume ()
+            {
+              return this->volume_.get ();
+            }
 
-  // deadlineType
-  // 
+            void communicationType::
+            volume (const volume_type& x)
+            {
+              this->volume_.set (x);
+            }
 
-  const deadlineType::type_optional& deadlineType::
-  type () const
-  {
-    return this->type_;
-  }
-
-  deadlineType::type_optional& deadlineType::
-  type ()
-  {
-    return this->type_;
-  }
-
-  void deadlineType::
-  type (const type_type& x)
-  {
-    this->type_.set (x);
-  }
-
-  void deadlineType::
-  type (const type_optional& x)
-  {
-    this->type_ = x;
-  }
-
-  void deadlineType::
-  type (::std::auto_ptr< type_type > x)
-  {
-    this->type_.set (x);
-  }
+            void communicationType::
+            volume (::std::auto_ptr< volume_type > x)
+            {
+              this->volume_.set (x);
+            }
 
 
-  // volume
-  // 
+            // communicatingTaskType
+            // 
+
+            const communicatingTaskType::deadline_sequence& communicatingTaskType::
+            deadline () const
+            {
+              return this->deadline_;
+            }
+
+            communicatingTaskType::deadline_sequence& communicatingTaskType::
+            deadline ()
+            {
+              return this->deadline_;
+            }
+
+            void communicatingTaskType::
+            deadline (const deadline_sequence& s)
+            {
+              this->deadline_ = s;
+            }
+
+            const communicatingTaskType::id_type& communicatingTaskType::
+            id () const
+            {
+              return this->id_.get ();
+            }
+
+            communicatingTaskType::id_type& communicatingTaskType::
+            id ()
+            {
+              return this->id_.get ();
+            }
+
+            void communicatingTaskType::
+            id (const id_type& x)
+            {
+              this->id_.set (x);
+            }
+
+            void communicatingTaskType::
+            id (::std::auto_ptr< id_type > x)
+            {
+              this->id_.set (x);
+            }
 
 
-  // type
-  // 
+            // unsignedDouble
+            // 
 
-  type::
-  type (value v)
-  : ::xml_schema::string (_xsd_type_literals_[v])
-  {
-  }
 
-  type::
-  type (const char* v)
-  : ::xml_schema::string (v)
-  {
-  }
+            // deadlineType
+            // 
 
-  type::
-  type (const ::std::string& v)
-  : ::xml_schema::string (v)
-  {
-  }
+            const deadlineType::type_optional& deadlineType::
+            type () const
+            {
+              return this->type_;
+            }
 
-  type::
-  type (const ::xml_schema::string& v)
-  : ::xml_schema::string (v)
-  {
-  }
+            deadlineType::type_optional& deadlineType::
+            type ()
+            {
+              return this->type_;
+            }
 
-  type::
-  type (const type& v,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::string (v, f, c)
-  {
-  }
+            void deadlineType::
+            type (const type_type& x)
+            {
+              this->type_.set (x);
+            }
 
-  type& type::
-  operator= (value v)
-  {
-    static_cast< ::xml_schema::string& > (*this) = 
-    ::xml_schema::string (_xsd_type_literals_[v]);
+            void deadlineType::
+            type (const type_optional& x)
+            {
+              this->type_ = x;
+            }
 
-    return *this;
+            void deadlineType::
+            type (::std::auto_ptr< type_type > x)
+            {
+              this->type_.set (x);
+            }
+
+
+            // volume
+            // 
+
+
+            // type
+            // 
+
+            type::
+            type (value v)
+            : ::xml_schema::string (_xsd_type_literals_[v])
+            {
+            }
+
+            type::
+            type (const char* v)
+            : ::xml_schema::string (v)
+            {
+            }
+
+            type::
+            type (const ::std::string& v)
+            : ::xml_schema::string (v)
+            {
+            }
+
+            type::
+            type (const ::xml_schema::string& v)
+            : ::xml_schema::string (v)
+            {
+            }
+
+            type::
+            type (const type& v,
+                  ::xml_schema::flags f,
+                  ::xml_schema::container* c)
+            : ::xml_schema::string (v, f, c)
+            {
+            }
+
+            type& type::
+            operator= (value v)
+            {
+              static_cast< ::xml_schema::string& > (*this) = 
+              ::xml_schema::string (_xsd_type_literals_[v]);
+
+              return *this;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
 
-namespace ctg
+namespace research
 {
-  // ctgType
-  //
-
-  ctgType::
-  ctgType (const id_type& id)
-  : ::xml_schema::type (),
-    communication_ (::xml_schema::flags (), this),
-    id_ (id, ::xml_schema::flags (), this),
-    period_ (::xml_schema::flags (), this)
+  namespace noc
   {
-  }
-
-  ctgType::
-  ctgType (const ctgType& x,
-           ::xml_schema::flags f,
-           ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    communication_ (x.communication_, f, this),
-    id_ (x.id_, f, this),
-    period_ (x.period_, f, this)
-  {
-  }
-
-  ctgType::
-  ctgType (const ::xercesc::DOMElement& e,
-           ::xml_schema::flags f,
-           ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    communication_ (f, this),
-    id_ (f, this),
-    period_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
+    namespace application_mapping
     {
-      ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
-      this->parse (p, f);
-    }
-  }
-
-  void ctgType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    for (; p.more_elements (); p.next_element ())
-    {
-      const ::xercesc::DOMElement& i (p.cur_element ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      // communication
-      //
-      if (n.name () == "communication" && n.namespace_ () == "http://www.example.org/ctg")
+      namespace unified_framework
       {
-        ::std::auto_ptr< communication_type > r (
-          communication_traits::create (i, f, this));
+        namespace schema
+        {
+          namespace ctg
+          {
+            // ctgType
+            //
 
-        this->communication_.push_back (r);
-        continue;
-      }
+            ctgType::
+            ctgType (const id_type& id)
+            : ::xml_schema::type (),
+              communication_ (::xml_schema::flags (), this),
+              id_ (id, ::xml_schema::flags (), this),
+              period_ (::xml_schema::flags (), this)
+            {
+            }
 
-      break;
-    }
-
-    while (p.more_attributes ())
-    {
-      const ::xercesc::DOMAttr& i (p.next_attribute ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      if (n.name () == "id" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< id_type > r (
-          id_traits::create (i, f, this));
-
-        this->id_.set (r);
-        continue;
-      }
-
-      if (n.name () == "period" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< period_type > r (
-          period_traits::create (i, f, this));
-
-        this->period_.set (r);
-        continue;
-      }
-    }
-
-    if (!id_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_attribute< char > (
-        "id",
-        "");
-    }
-  }
-
-  ctgType* ctgType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class ctgType (*this, f, c);
-  }
-
-  ctgType::
-  ~ctgType ()
-  {
-  }
-
-  // communicationType
-  //
-
-  communicationType::
-  communicationType (const source_type& source,
-                     const destination_type& destination,
-                     const volume_type& volume)
-  : ::xml_schema::type (),
-    source_ (source, ::xml_schema::flags (), this),
-    destination_ (destination, ::xml_schema::flags (), this),
-    volume_ (volume, ::xml_schema::flags (), this)
-  {
-  }
-
-  communicationType::
-  communicationType (::std::auto_ptr< source_type >& source,
-                     ::std::auto_ptr< destination_type >& destination,
-                     const volume_type& volume)
-  : ::xml_schema::type (),
-    source_ (source, ::xml_schema::flags (), this),
-    destination_ (destination, ::xml_schema::flags (), this),
-    volume_ (volume, ::xml_schema::flags (), this)
-  {
-  }
-
-  communicationType::
-  communicationType (const communicationType& x,
+            ctgType::
+            ctgType (const ctgType& x,
                      ::xml_schema::flags f,
                      ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    source_ (x.source_, f, this),
-    destination_ (x.destination_, f, this),
-    volume_ (x.volume_, f, this)
-  {
-  }
+            : ::xml_schema::type (x, f, c),
+              communication_ (x.communication_, f, this),
+              id_ (x.id_, f, this),
+              period_ (x.period_, f, this)
+            {
+            }
 
-  communicationType::
-  communicationType (const ::xercesc::DOMElement& e,
+            ctgType::
+            ctgType (const ::xercesc::DOMElement& e,
                      ::xml_schema::flags f,
                      ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    source_ (f, this),
-    destination_ (f, this),
-    volume_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
-    {
-      ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
-      this->parse (p, f);
-    }
-  }
+            : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              communication_ (f, this),
+              id_ (f, this),
+              period_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
+                this->parse (p, f);
+              }
+            }
 
-  void communicationType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    for (; p.more_elements (); p.next_element ())
-    {
-      const ::xercesc::DOMElement& i (p.cur_element ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
+            void ctgType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              for (; p.more_elements (); p.next_element ())
+              {
+                const ::xercesc::DOMElement& i (p.cur_element ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
 
-      // source
-      //
-      if (n.name () == "source" && n.namespace_ () == "http://www.example.org/ctg")
-      {
-        ::std::auto_ptr< source_type > r (
-          source_traits::create (i, f, this));
+                // communication
+                //
+                if (n.name () == "communication" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+                {
+                  ::std::auto_ptr< communication_type > r (
+                    communication_traits::create (i, f, this));
 
-        if (!source_.present ())
-        {
-          this->source_.set (r);
-          continue;
-        }
-      }
+                  this->communication_.push_back (r);
+                  continue;
+                }
 
-      // destination
-      //
-      if (n.name () == "destination" && n.namespace_ () == "http://www.example.org/ctg")
-      {
-        ::std::auto_ptr< destination_type > r (
-          destination_traits::create (i, f, this));
+                break;
+              }
 
-        if (!destination_.present ())
-        {
-          this->destination_.set (r);
-          continue;
-        }
-      }
+              while (p.more_attributes ())
+              {
+                const ::xercesc::DOMAttr& i (p.next_attribute ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
 
-      // volume
-      //
-      if (n.name () == "volume" && n.namespace_ () == "http://www.example.org/ctg")
-      {
-        ::std::auto_ptr< volume_type > r (
-          volume_traits::create (i, f, this));
+                if (n.name () == "id" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< id_type > r (
+                    id_traits::create (i, f, this));
 
-        if (!volume_.present ())
-        {
-          this->volume_.set (r);
-          continue;
-        }
-      }
+                  this->id_.set (r);
+                  continue;
+                }
 
-      break;
-    }
+                if (n.name () == "period" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< period_type > r (
+                    period_traits::create (i, f, this));
 
-    if (!source_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "source",
-        "http://www.example.org/ctg");
-    }
+                  this->period_.set (r);
+                  continue;
+                }
+              }
 
-    if (!destination_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "destination",
-        "http://www.example.org/ctg");
-    }
+              if (!id_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_attribute< char > (
+                  "id",
+                  "");
+              }
+            }
 
-    if (!volume_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_element< char > (
-        "volume",
-        "http://www.example.org/ctg");
-    }
-  }
+            ctgType* ctgType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class ctgType (*this, f, c);
+            }
 
-  communicationType* communicationType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class communicationType (*this, f, c);
-  }
+            ctgType::
+            ~ctgType ()
+            {
+            }
 
-  communicationType::
-  ~communicationType ()
-  {
-  }
+            // communicationType
+            //
 
-  // communicatingTaskType
-  //
+            communicationType::
+            communicationType (const source_type& source,
+                               const destination_type& destination,
+                               const volume_type& volume)
+            : ::xml_schema::type (),
+              source_ (source, ::xml_schema::flags (), this),
+              destination_ (destination, ::xml_schema::flags (), this),
+              volume_ (volume, ::xml_schema::flags (), this)
+            {
+            }
 
-  communicatingTaskType::
-  communicatingTaskType (const id_type& id)
-  : ::xml_schema::type (),
-    deadline_ (::xml_schema::flags (), this),
-    id_ (id, ::xml_schema::flags (), this)
-  {
-  }
+            communicationType::
+            communicationType (::std::auto_ptr< source_type >& source,
+                               ::std::auto_ptr< destination_type >& destination,
+                               const volume_type& volume)
+            : ::xml_schema::type (),
+              source_ (source, ::xml_schema::flags (), this),
+              destination_ (destination, ::xml_schema::flags (), this),
+              volume_ (volume, ::xml_schema::flags (), this)
+            {
+            }
 
-  communicatingTaskType::
-  communicatingTaskType (const communicatingTaskType& x,
-                         ::xml_schema::flags f,
-                         ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    deadline_ (x.deadline_, f, this),
-    id_ (x.id_, f, this)
-  {
-  }
+            communicationType::
+            communicationType (const communicationType& x,
+                               ::xml_schema::flags f,
+                               ::xml_schema::container* c)
+            : ::xml_schema::type (x, f, c),
+              source_ (x.source_, f, this),
+              destination_ (x.destination_, f, this),
+              volume_ (x.volume_, f, this)
+            {
+            }
 
-  communicatingTaskType::
-  communicatingTaskType (const ::xercesc::DOMElement& e,
-                         ::xml_schema::flags f,
-                         ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    deadline_ (f, this),
-    id_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
-    {
-      ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
-      this->parse (p, f);
-    }
-  }
+            communicationType::
+            communicationType (const ::xercesc::DOMElement& e,
+                               ::xml_schema::flags f,
+                               ::xml_schema::container* c)
+            : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              source_ (f, this),
+              destination_ (f, this),
+              volume_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+                this->parse (p, f);
+              }
+            }
 
-  void communicatingTaskType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    for (; p.more_elements (); p.next_element ())
-    {
-      const ::xercesc::DOMElement& i (p.cur_element ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
+            void communicationType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              for (; p.more_elements (); p.next_element ())
+              {
+                const ::xercesc::DOMElement& i (p.cur_element ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
 
-      // deadline
-      //
-      if (n.name () == "deadline" && n.namespace_ () == "http://www.example.org/ctg")
-      {
-        ::std::auto_ptr< deadline_type > r (
-          deadline_traits::create (i, f, this));
+                // source
+                //
+                if (n.name () == "source" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+                {
+                  ::std::auto_ptr< source_type > r (
+                    source_traits::create (i, f, this));
 
-        this->deadline_.push_back (r);
-        continue;
-      }
+                  if (!source_.present ())
+                  {
+                    this->source_.set (r);
+                    continue;
+                  }
+                }
 
-      break;
-    }
+                // destination
+                //
+                if (n.name () == "destination" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+                {
+                  ::std::auto_ptr< destination_type > r (
+                    destination_traits::create (i, f, this));
 
-    while (p.more_attributes ())
-    {
-      const ::xercesc::DOMAttr& i (p.next_attribute ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
+                  if (!destination_.present ())
+                  {
+                    this->destination_.set (r);
+                    continue;
+                  }
+                }
 
-      if (n.name () == "id" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< id_type > r (
-          id_traits::create (i, f, this));
+                // volume
+                //
+                if (n.name () == "volume" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+                {
+                  ::std::auto_ptr< volume_type > r (
+                    volume_traits::create (i, f, this));
 
-        this->id_.set (r);
-        continue;
-      }
-    }
+                  if (!volume_.present ())
+                  {
+                    this->volume_.set (r);
+                    continue;
+                  }
+                }
 
-    if (!id_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_attribute< char > (
-        "id",
-        "");
-    }
-  }
+                break;
+              }
 
-  communicatingTaskType* communicatingTaskType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class communicatingTaskType (*this, f, c);
-  }
+              if (!source_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_element< char > (
+                  "source",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg");
+              }
 
-  communicatingTaskType::
-  ~communicatingTaskType ()
-  {
-  }
+              if (!destination_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_element< char > (
+                  "destination",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg");
+              }
 
-  // unsignedDouble
-  //
+              if (!volume_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_element< char > (
+                  "volume",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg");
+              }
+            }
 
-  unsignedDouble::
-  unsignedDouble (const ::xml_schema::double_& _xsd_double__base)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (_xsd_double__base)
-  {
-  }
+            communicationType* communicationType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class communicationType (*this, f, c);
+            }
 
-  unsignedDouble::
-  unsignedDouble (const unsignedDouble& x,
+            communicationType::
+            ~communicationType ()
+            {
+            }
+
+            // communicatingTaskType
+            //
+
+            communicatingTaskType::
+            communicatingTaskType (const id_type& id)
+            : ::xml_schema::type (),
+              deadline_ (::xml_schema::flags (), this),
+              id_ (id, ::xml_schema::flags (), this)
+            {
+            }
+
+            communicatingTaskType::
+            communicatingTaskType (const communicatingTaskType& x,
+                                   ::xml_schema::flags f,
+                                   ::xml_schema::container* c)
+            : ::xml_schema::type (x, f, c),
+              deadline_ (x.deadline_, f, this),
+              id_ (x.id_, f, this)
+            {
+            }
+
+            communicatingTaskType::
+            communicatingTaskType (const ::xercesc::DOMElement& e,
+                                   ::xml_schema::flags f,
+                                   ::xml_schema::container* c)
+            : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              deadline_ (f, this),
+              id_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
+                this->parse (p, f);
+              }
+            }
+
+            void communicatingTaskType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              for (; p.more_elements (); p.next_element ())
+              {
+                const ::xercesc::DOMElement& i (p.cur_element ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                // deadline
+                //
+                if (n.name () == "deadline" && n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+                {
+                  ::std::auto_ptr< deadline_type > r (
+                    deadline_traits::create (i, f, this));
+
+                  this->deadline_.push_back (r);
+                  continue;
+                }
+
+                break;
+              }
+
+              while (p.more_attributes ())
+              {
+                const ::xercesc::DOMAttr& i (p.next_attribute ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                if (n.name () == "id" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< id_type > r (
+                    id_traits::create (i, f, this));
+
+                  this->id_.set (r);
+                  continue;
+                }
+              }
+
+              if (!id_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_attribute< char > (
+                  "id",
+                  "");
+              }
+            }
+
+            communicatingTaskType* communicatingTaskType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class communicatingTaskType (*this, f, c);
+            }
+
+            communicatingTaskType::
+            ~communicatingTaskType ()
+            {
+            }
+
+            // unsignedDouble
+            //
+
+            unsignedDouble::
+            unsignedDouble (const ::xml_schema::double_& _xsd_double__base)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (_xsd_double__base)
+            {
+            }
+
+            unsignedDouble::
+            unsignedDouble (const unsignedDouble& x,
+                            ::xml_schema::flags f,
+                            ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (x, f, c)
+            {
+            }
+
+            unsignedDouble::
+            unsignedDouble (const ::xercesc::DOMElement& e,
+                            ::xml_schema::flags f,
+                            ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (e, f, c)
+            {
+            }
+
+            unsignedDouble::
+            unsignedDouble (const ::xercesc::DOMAttr& a,
+                            ::xml_schema::flags f,
+                            ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (a, f, c)
+            {
+            }
+
+            unsignedDouble::
+            unsignedDouble (const ::std::string& s,
+                            const ::xercesc::DOMElement* e,
+                            ::xml_schema::flags f,
+                            ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, c)
+            {
+            }
+
+            unsignedDouble* unsignedDouble::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class unsignedDouble (*this, f, c);
+            }
+
+            unsignedDouble::
+            ~unsignedDouble ()
+            {
+            }
+
+            // deadlineType
+            //
+
+            deadlineType::
+            deadlineType (const ::xml_schema::double_& _xsd_double__base)
+            : ::research::noc::application_mapping::unified_framework::schema::ctg::unsignedDouble (_xsd_double__base),
+              type_ (::xml_schema::flags (), this)
+            {
+            }
+
+            deadlineType::
+            deadlineType (const deadlineType& x,
+                          ::xml_schema::flags f,
+                          ::xml_schema::container* c)
+            : ::research::noc::application_mapping::unified_framework::schema::ctg::unsignedDouble (x, f, c),
+              type_ (x.type_, f, this)
+            {
+            }
+
+            deadlineType::
+            deadlineType (const ::xercesc::DOMElement& e,
+                          ::xml_schema::flags f,
+                          ::xml_schema::container* c)
+            : ::research::noc::application_mapping::unified_framework::schema::ctg::unsignedDouble (e, f | ::xml_schema::flags::base, c),
+              type_ (f, this)
+            {
+              if ((f & ::xml_schema::flags::base) == 0)
+              {
+                ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+                this->parse (p, f);
+              }
+            }
+
+            void deadlineType::
+            parse (::xsd::cxx::xml::dom::parser< char >& p,
+                   ::xml_schema::flags f)
+            {
+              while (p.more_attributes ())
+              {
+                const ::xercesc::DOMAttr& i (p.next_attribute ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                if (n.name () == "type" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< type_type > r (
+                    type_traits::create (i, f, this));
+
+                  this->type_.set (r);
+                  continue;
+                }
+              }
+            }
+
+            deadlineType* deadlineType::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class deadlineType (*this, f, c);
+            }
+
+            deadlineType::
+            ~deadlineType ()
+            {
+            }
+
+            // volume
+            //
+
+            volume::
+            volume (const ::xml_schema::double_& _xsd_double__base)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (_xsd_double__base)
+            {
+            }
+
+            volume::
+            volume (const volume& x,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (x, f, c)
+            {
+            }
+
+            volume::
+            volume (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (e, f, c)
+            {
+            }
+
+            volume::
+            volume (const ::xercesc::DOMAttr& a,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (a, f, c)
+            {
+            }
+
+            volume::
+            volume (const ::std::string& s,
+                    const ::xercesc::DOMElement* e,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+            : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, c)
+            {
+            }
+
+            volume* volume::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class volume (*this, f, c);
+            }
+
+            volume::
+            ~volume ()
+            {
+            }
+
+            // type
+            //
+
+            type::
+            type (const ::xercesc::DOMElement& e,
                   ::xml_schema::flags f,
                   ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (x, f, c)
-  {
-  }
+            : ::xml_schema::string (e, f, c)
+            {
+              _xsd_type_convert ();
+            }
 
-  unsignedDouble::
-  unsignedDouble (const ::xercesc::DOMElement& e,
+            type::
+            type (const ::xercesc::DOMAttr& a,
                   ::xml_schema::flags f,
                   ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (e, f, c)
-  {
-  }
+            : ::xml_schema::string (a, f, c)
+            {
+              _xsd_type_convert ();
+            }
 
-  unsignedDouble::
-  unsignedDouble (const ::xercesc::DOMAttr& a,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (a, f, c)
-  {
-  }
-
-  unsignedDouble::
-  unsignedDouble (const ::std::string& s,
+            type::
+            type (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
                   ::xml_schema::flags f,
                   ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, c)
-  {
-  }
+            : ::xml_schema::string (s, e, f, c)
+            {
+              _xsd_type_convert ();
+            }
 
-  unsignedDouble* unsignedDouble::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class unsignedDouble (*this, f, c);
-  }
+            type* type::
+            _clone (::xml_schema::flags f,
+                    ::xml_schema::container* c) const
+            {
+              return new class type (*this, f, c);
+            }
 
-  unsignedDouble::
-  ~unsignedDouble ()
-  {
-  }
+            type::value type::
+            _xsd_type_convert () const
+            {
+              ::xsd::cxx::tree::enum_comparator< char > c (_xsd_type_literals_);
+              const value* i (::std::lower_bound (
+                                _xsd_type_indexes_,
+                                _xsd_type_indexes_ + 2,
+                                *this,
+                                c));
 
-  // deadlineType
-  //
+              if (i == _xsd_type_indexes_ + 2 || _xsd_type_literals_[*i] != *this)
+              {
+                throw ::xsd::cxx::tree::unexpected_enumerator < char > (*this);
+              }
 
-  deadlineType::
-  deadlineType (const ::xml_schema::double_& _xsd_double__base)
-  : ::ctg::unsignedDouble (_xsd_double__base),
-    type_ (::xml_schema::flags (), this)
-  {
-  }
+              return *i;
+            }
 
-  deadlineType::
-  deadlineType (const deadlineType& x,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::ctg::unsignedDouble (x, f, c),
-    type_ (x.type_, f, this)
-  {
-  }
+            const char* const type::
+            _xsd_type_literals_[2] =
+            {
+              "soft",
+              "hard"
+            };
 
-  deadlineType::
-  deadlineType (const ::xercesc::DOMElement& e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::ctg::unsignedDouble (e, f | ::xml_schema::flags::base, c),
-    type_ (f, this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
-    {
-      ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
-      this->parse (p, f);
-    }
-  }
-
-  void deadlineType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    while (p.more_attributes ())
-    {
-      const ::xercesc::DOMAttr& i (p.next_attribute ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      if (n.name () == "type" && n.namespace_ ().empty ())
-      {
-        ::std::auto_ptr< type_type > r (
-          type_traits::create (i, f, this));
-
-        this->type_.set (r);
-        continue;
+            const type::value type::
+            _xsd_type_indexes_[2] =
+            {
+              ::research::noc::application_mapping::unified_framework::schema::ctg::type::hard,
+              ::research::noc::application_mapping::unified_framework::schema::ctg::type::soft
+            };
+          }
+        }
       }
     }
   }
-
-  deadlineType* deadlineType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class deadlineType (*this, f, c);
-  }
-
-  deadlineType::
-  ~deadlineType ()
-  {
-  }
-
-  // volume
-  //
-
-  volume::
-  volume (const ::xml_schema::double_& _xsd_double__base)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (_xsd_double__base)
-  {
-  }
-
-  volume::
-  volume (const volume& x,
-          ::xml_schema::flags f,
-          ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (x, f, c)
-  {
-  }
-
-  volume::
-  volume (const ::xercesc::DOMElement& e,
-          ::xml_schema::flags f,
-          ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (e, f, c)
-  {
-  }
-
-  volume::
-  volume (const ::xercesc::DOMAttr& a,
-          ::xml_schema::flags f,
-          ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (a, f, c)
-  {
-  }
-
-  volume::
-  volume (const ::std::string& s,
-          const ::xercesc::DOMElement* e,
-          ::xml_schema::flags f,
-          ::xml_schema::container* c)
-  : ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, c)
-  {
-  }
-
-  volume* volume::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class volume (*this, f, c);
-  }
-
-  volume::
-  ~volume ()
-  {
-  }
-
-  // type
-  //
-
-  type::
-  type (const ::xercesc::DOMElement& e,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::string (e, f, c)
-  {
-    _xsd_type_convert ();
-  }
-
-  type::
-  type (const ::xercesc::DOMAttr& a,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::string (a, f, c)
-  {
-    _xsd_type_convert ();
-  }
-
-  type::
-  type (const ::std::string& s,
-        const ::xercesc::DOMElement* e,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::string (s, e, f, c)
-  {
-    _xsd_type_convert ();
-  }
-
-  type* type::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class type (*this, f, c);
-  }
-
-  type::value type::
-  _xsd_type_convert () const
-  {
-    ::xsd::cxx::tree::enum_comparator< char > c (_xsd_type_literals_);
-    const value* i (::std::lower_bound (
-                      _xsd_type_indexes_,
-                      _xsd_type_indexes_ + 2,
-                      *this,
-                      c));
-
-    if (i == _xsd_type_indexes_ + 2 || _xsd_type_literals_[*i] != *this)
-    {
-      throw ::xsd::cxx::tree::unexpected_enumerator < char > (*this);
-    }
-
-    return *i;
-  }
-
-  const char* const type::
-  _xsd_type_literals_[2] =
-  {
-    "soft",
-    "hard"
-  };
-
-  const type::value type::
-  _xsd_type_indexes_[2] =
-  {
-    ::ctg::type::hard,
-    ::ctg::type::soft
-  };
 }
 
 #include <istream>
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
 
-namespace ctg
+namespace research
 {
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::std::string& u,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
+  namespace noc
   {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-    ::std::auto_ptr< ::ctg::ctgType > r (
-      ::ctg::ctg (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::std::string& u,
-       ::xml_schema::error_handler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::ctg::ctgType > r (
-      ::ctg::ctg (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::std::string& u,
-       ::xercesc::DOMErrorHandler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        u, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::ctg::ctgType > r (
-      ::ctg::ctg (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::ctg::ctg (isrc, f, p);
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       ::xml_schema::error_handler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::ctg::ctg (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       ::xercesc::DOMErrorHandler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::sax::std_input_source isrc (is);
-    return ::ctg::ctg (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       const ::std::string& sid,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::ctg::ctg (isrc, f, p);
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       const ::std::string& sid,
-       ::xml_schema::error_handler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0,
-      (f & ::xml_schema::flags::keep_dom) == 0);
-
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::ctg::ctg (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       const ::std::string& sid,
-       ::xercesc::DOMErrorHandler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-    return ::ctg::ctg (isrc, h, f, p);
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xercesc::InputSource& i,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-    ::std::auto_ptr< ::ctg::ctgType > r (
-      ::ctg::ctg (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xercesc::InputSource& i,
-       ::xml_schema::error_handler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::ctg::ctgType > r (
-      ::ctg::ctg (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xercesc::InputSource& i,
-       ::xercesc::DOMErrorHandler& h,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::parse< char > (
-        i, h, p, f));
-
-    if (!d.get ())
-      throw ::xsd::cxx::tree::parsing< char > ();
-
-    ::std::auto_ptr< ::ctg::ctgType > r (
-      ::ctg::ctg (
-        d, f | ::xml_schema::flags::own_dom, p));
-
-    return r;
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::xercesc::DOMDocument& d,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties& p)
-  {
-    if (f & ::xml_schema::flags::keep_dom)
+    namespace application_mapping
     {
-      ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
-        static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace ctg
+          {
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::std::string& u,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
 
-      ::std::auto_ptr< ::ctg::ctgType > r (
-        ::ctg::ctg (
-          c, f | ::xml_schema::flags::own_dom, p));
+              ::xsd::cxx::tree::error_handler< char > h;
 
-      return r;
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::std::string& u,
+                 ::xml_schema::error_handler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::std::string& u,
+                 ::xercesc::DOMErrorHandler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  u, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (isrc, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 ::xml_schema::error_handler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 ::xercesc::DOMErrorHandler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::sax::std_input_source isrc (is);
+              return ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 const ::std::string& sid,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (isrc, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 const ::std::string& sid,
+                 ::xml_schema::error_handler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0,
+                (f & ::xml_schema::flags::keep_dom) == 0);
+
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 const ::std::string& sid,
+                 ::xercesc::DOMErrorHandler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+              return ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (isrc, h, f, p);
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xercesc::InputSource& i,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xercesc::InputSource& i,
+                 ::xml_schema::error_handler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xercesc::InputSource& i,
+                 ::xercesc::DOMErrorHandler& h,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::parse< char > (
+                  i, h, p, f));
+
+              if (!d.get ())
+                throw ::xsd::cxx::tree::parsing< char > ();
+
+              ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                  d, f | ::xml_schema::flags::own_dom, p));
+
+              return r;
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::xercesc::DOMDocument& d,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties& p)
+            {
+              if (f & ::xml_schema::flags::keep_dom)
+              {
+                ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+                  static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                  ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (
+                    c, f | ::xml_schema::flags::own_dom, p));
+
+                return r;
+              }
+
+              const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (n.name () == "ctg" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+              {
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                  ::xsd::cxx::tree::traits< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType, char >::create (
+                    e, f, 0));
+                return r;
+              }
+
+              throw ::xsd::cxx::tree::unexpected_element < char > (
+                n.name (),
+                n.namespace_ (),
+                "ctg",
+                "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg");
+            }
+
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+                 ::xml_schema::flags f,
+                 const ::xml_schema::properties&)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+                ((f & ::xml_schema::flags::keep_dom) &&
+                 !(f & ::xml_schema::flags::own_dom))
+                ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+                : 0);
+
+              ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+              const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (f & ::xml_schema::flags::keep_dom)
+                doc.setUserData (::xml_schema::dom::tree_node_key,
+                                 (c.get () ? &c : &d),
+                                 0);
+
+              if (n.name () == "ctg" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+              {
+                ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType > r (
+                  ::xsd::cxx::tree::traits< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType, char >::create (
+                    e, f, 0));
+                return r;
+              }
+
+              throw ::xsd::cxx::tree::unexpected_element < char > (
+                n.name (),
+                n.namespace_ (),
+                "ctg",
+                "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg");
+            }
+          }
+        }
+      }
     }
-
-    const ::xercesc::DOMElement& e (*d.getDocumentElement ());
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (n.name () == "ctg" &&
-        n.namespace_ () == "http://www.example.org/ctg")
-    {
-      ::std::auto_ptr< ::ctg::ctgType > r (
-        ::xsd::cxx::tree::traits< ::ctg::ctgType, char >::create (
-          e, f, 0));
-      return r;
-    }
-
-    throw ::xsd::cxx::tree::unexpected_element < char > (
-      n.name (),
-      n.namespace_ (),
-      "ctg",
-      "http://www.example.org/ctg");
-  }
-
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
-       ::xml_schema::flags f,
-       const ::xml_schema::properties&)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
-      ((f & ::xml_schema::flags::keep_dom) &&
-       !(f & ::xml_schema::flags::own_dom))
-      ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
-      : 0);
-
-    ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
-    const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
-
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (f & ::xml_schema::flags::keep_dom)
-      doc.setUserData (::xml_schema::dom::tree_node_key,
-                       (c.get () ? &c : &d),
-                       0);
-
-    if (n.name () == "ctg" &&
-        n.namespace_ () == "http://www.example.org/ctg")
-    {
-      ::std::auto_ptr< ::ctg::ctgType > r (
-        ::xsd::cxx::tree::traits< ::ctg::ctgType, char >::create (
-          e, f, 0));
-      return r;
-    }
-
-    throw ::xsd::cxx::tree::unexpected_element < char > (
-      n.name (),
-      n.namespace_ (),
-      "ctg",
-      "http://www.example.org/ctg");
   }
 }
 
@@ -1212,347 +1257,362 @@ namespace ctg
 #include <xsd/cxx/tree/error-handler.hxx>
 #include <xsd/cxx/xml/dom/serialization-source.hxx>
 
-namespace ctg
+namespace research
 {
-  void
-  operator<< (::xercesc::DOMElement& e, const ctgType& i)
+  namespace noc
   {
-    e << static_cast< const ::xml_schema::type& > (i);
-
-    // communication
-    //
-    for (ctgType::communication_const_iterator
-         b (i.communication ().begin ()), n (i.communication ().end ());
-         b != n; ++b)
+    namespace application_mapping
     {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "communication",
-          "http://www.example.org/ctg",
-          e));
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace ctg
+          {
+            void
+            operator<< (::xercesc::DOMElement& e, const ctgType& i)
+            {
+              e << static_cast< const ::xml_schema::type& > (i);
 
-      s << *b;
+              // communication
+              //
+              for (ctgType::communication_const_iterator
+                   b (i.communication ().begin ()), n (i.communication ().end ());
+                   b != n; ++b)
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "communication",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg",
+                    e));
+
+                s << *b;
+              }
+
+              // id
+              //
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "id",
+                    e));
+
+                a << i.id ();
+              }
+
+              // period
+              //
+              if (i.period ())
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "period",
+                    e));
+
+                a << *i.period ();
+              }
+            }
+
+            void
+            operator<< (::xercesc::DOMElement& e, const communicationType& i)
+            {
+              e << static_cast< const ::xml_schema::type& > (i);
+
+              // source
+              //
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "source",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg",
+                    e));
+
+                s << i.source ();
+              }
+
+              // destination
+              //
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "destination",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg",
+                    e));
+
+                s << i.destination ();
+              }
+
+              // volume
+              //
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "volume",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg",
+                    e));
+
+                s << i.volume ();
+              }
+            }
+
+            void
+            ctg (::std::ostream& o,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 const ::xml_schema::namespace_infomap& m,
+                 const ::std::string& e,
+                 ::xml_schema::flags f)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (s, m, f));
+
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+              }
+            }
+
+            void
+            ctg (::std::ostream& o,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 ::xml_schema::error_handler& h,
+                 const ::xml_schema::namespace_infomap& m,
+                 const ::std::string& e,
+                 ::xml_schema::flags f)
+            {
+              ::xsd::cxx::xml::auto_initializer i (
+                (f & ::xml_schema::flags::dont_initialize) == 0);
+
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (s, m, f));
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            ctg (::std::ostream& o,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 ::xercesc::DOMErrorHandler& h,
+                 const ::xml_schema::namespace_infomap& m,
+                 const ::std::string& e,
+                 ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (s, m, f));
+              ::xsd::cxx::xml::dom::ostream_format_target t (o);
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            ctg (::xercesc::XMLFormatTarget& t,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 const ::xml_schema::namespace_infomap& m,
+                 const ::std::string& e,
+                 ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (s, m, f));
+
+              ::xsd::cxx::tree::error_handler< char > h;
+
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+              }
+            }
+
+            void
+            ctg (::xercesc::XMLFormatTarget& t,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 ::xml_schema::error_handler& h,
+                 const ::xml_schema::namespace_infomap& m,
+                 const ::std::string& e,
+                 ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (s, m, f));
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            ctg (::xercesc::XMLFormatTarget& t,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 ::xercesc::DOMErrorHandler& h,
+                 const ::xml_schema::namespace_infomap& m,
+                 const ::std::string& e,
+                 ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (s, m, f));
+              if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+              {
+                throw ::xsd::cxx::tree::serialization< char > ();
+              }
+            }
+
+            void
+            ctg (::xercesc::DOMDocument& d,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 ::xml_schema::flags)
+            {
+              ::xercesc::DOMElement& e (*d.getDocumentElement ());
+              const ::xsd::cxx::xml::qualified_name< char > n (
+                ::xsd::cxx::xml::dom::name< char > (e));
+
+              if (n.name () == "ctg" &&
+                  n.namespace_ () == "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg")
+              {
+                e << s;
+              }
+              else
+              {
+                throw ::xsd::cxx::tree::unexpected_element < char > (
+                  n.name (),
+                  n.namespace_ (),
+                  "ctg",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg");
+              }
+            }
+
+            ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+            ctg (const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& s,
+                 const ::xml_schema::namespace_infomap& m,
+                 ::xml_schema::flags f)
+            {
+              ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+                ::xsd::cxx::xml::dom::serialize< char > (
+                  "ctg",
+                  "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg",
+                  m, f));
+
+              ::research::noc::application_mapping::unified_framework::schema::ctg::ctg (*d, s, f);
+              return d;
+            }
+
+            void
+            operator<< (::xercesc::DOMElement& e, const communicatingTaskType& i)
+            {
+              e << static_cast< const ::xml_schema::type& > (i);
+
+              // deadline
+              //
+              for (communicatingTaskType::deadline_const_iterator
+                   b (i.deadline ().begin ()), n (i.deadline ().end ());
+                   b != n; ++b)
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "deadline",
+                    "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg",
+                    e));
+
+                s << *b;
+              }
+
+              // id
+              //
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "id",
+                    e));
+
+                a << i.id ();
+              }
+            }
+
+            void
+            operator<< (::xercesc::DOMElement& e, const unsignedDouble& i)
+            {
+              e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+            }
+
+            void
+            operator<< (::xercesc::DOMAttr& a, const unsignedDouble& i)
+            {
+              a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+            }
+
+            void
+            operator<< (::xml_schema::list_stream& l,
+                        const unsignedDouble& i)
+            {
+              l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+            }
+
+            void
+            operator<< (::xercesc::DOMElement& e, const deadlineType& i)
+            {
+              e << static_cast< const ::research::noc::application_mapping::unified_framework::schema::ctg::unsignedDouble& > (i);
+
+              // type
+              //
+              if (i.type ())
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "type",
+                    e));
+
+                a << *i.type ();
+              }
+            }
+
+            void
+            operator<< (::xercesc::DOMElement& e, const volume& i)
+            {
+              e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+            }
+
+            void
+            operator<< (::xercesc::DOMAttr& a, const volume& i)
+            {
+              a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+            }
+
+            void
+            operator<< (::xml_schema::list_stream& l,
+                        const volume& i)
+            {
+              l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+            }
+
+            void
+            operator<< (::xercesc::DOMElement& e, const type& i)
+            {
+              e << static_cast< const ::xml_schema::string& > (i);
+            }
+
+            void
+            operator<< (::xercesc::DOMAttr& a, const type& i)
+            {
+              a << static_cast< const ::xml_schema::string& > (i);
+            }
+
+            void
+            operator<< (::xml_schema::list_stream& l,
+                        const type& i)
+            {
+              l << static_cast< const ::xml_schema::string& > (i);
+            }
+          }
+        }
+      }
     }
-
-    // id
-    //
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "id",
-          e));
-
-      a << i.id ();
-    }
-
-    // period
-    //
-    if (i.period ())
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "period",
-          e));
-
-      a << *i.period ();
-    }
-  }
-
-  void
-  operator<< (::xercesc::DOMElement& e, const communicationType& i)
-  {
-    e << static_cast< const ::xml_schema::type& > (i);
-
-    // source
-    //
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "source",
-          "http://www.example.org/ctg",
-          e));
-
-      s << i.source ();
-    }
-
-    // destination
-    //
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "destination",
-          "http://www.example.org/ctg",
-          e));
-
-      s << i.destination ();
-    }
-
-    // volume
-    //
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "volume",
-          "http://www.example.org/ctg",
-          e));
-
-      s << i.volume ();
-    }
-  }
-
-  void
-  ctg (::std::ostream& o,
-       const ::ctg::ctgType& s,
-       const ::xml_schema::namespace_infomap& m,
-       const ::std::string& e,
-       ::xml_schema::flags f)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::ctg::ctg (s, m, f));
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-    }
-  }
-
-  void
-  ctg (::std::ostream& o,
-       const ::ctg::ctgType& s,
-       ::xml_schema::error_handler& h,
-       const ::xml_schema::namespace_infomap& m,
-       const ::std::string& e,
-       ::xml_schema::flags f)
-  {
-    ::xsd::cxx::xml::auto_initializer i (
-      (f & ::xml_schema::flags::dont_initialize) == 0);
-
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::ctg::ctg (s, m, f));
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  ctg (::std::ostream& o,
-       const ::ctg::ctgType& s,
-       ::xercesc::DOMErrorHandler& h,
-       const ::xml_schema::namespace_infomap& m,
-       const ::std::string& e,
-       ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::ctg::ctg (s, m, f));
-    ::xsd::cxx::xml::dom::ostream_format_target t (o);
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  ctg (::xercesc::XMLFormatTarget& t,
-       const ::ctg::ctgType& s,
-       const ::xml_schema::namespace_infomap& m,
-       const ::std::string& e,
-       ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::ctg::ctg (s, m, f));
-
-    ::xsd::cxx::tree::error_handler< char > h;
-
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-    }
-  }
-
-  void
-  ctg (::xercesc::XMLFormatTarget& t,
-       const ::ctg::ctgType& s,
-       ::xml_schema::error_handler& h,
-       const ::xml_schema::namespace_infomap& m,
-       const ::std::string& e,
-       ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::ctg::ctg (s, m, f));
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  ctg (::xercesc::XMLFormatTarget& t,
-       const ::ctg::ctgType& s,
-       ::xercesc::DOMErrorHandler& h,
-       const ::xml_schema::namespace_infomap& m,
-       const ::std::string& e,
-       ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::ctg::ctg (s, m, f));
-    if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-    {
-      throw ::xsd::cxx::tree::serialization< char > ();
-    }
-  }
-
-  void
-  ctg (::xercesc::DOMDocument& d,
-       const ::ctg::ctgType& s,
-       ::xml_schema::flags)
-  {
-    ::xercesc::DOMElement& e (*d.getDocumentElement ());
-    const ::xsd::cxx::xml::qualified_name< char > n (
-      ::xsd::cxx::xml::dom::name< char > (e));
-
-    if (n.name () == "ctg" &&
-        n.namespace_ () == "http://www.example.org/ctg")
-    {
-      e << s;
-    }
-    else
-    {
-      throw ::xsd::cxx::tree::unexpected_element < char > (
-        n.name (),
-        n.namespace_ (),
-        "ctg",
-        "http://www.example.org/ctg");
-    }
-  }
-
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
-  ctg (const ::ctg::ctgType& s,
-       const ::xml_schema::namespace_infomap& m,
-       ::xml_schema::flags f)
-  {
-    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
-      ::xsd::cxx::xml::dom::serialize< char > (
-        "ctg",
-        "http://www.example.org/ctg",
-        m, f));
-
-    ::ctg::ctg (*d, s, f);
-    return d;
-  }
-
-  void
-  operator<< (::xercesc::DOMElement& e, const communicatingTaskType& i)
-  {
-    e << static_cast< const ::xml_schema::type& > (i);
-
-    // deadline
-    //
-    for (communicatingTaskType::deadline_const_iterator
-         b (i.deadline ().begin ()), n (i.deadline ().end ());
-         b != n; ++b)
-    {
-      ::xercesc::DOMElement& s (
-        ::xsd::cxx::xml::dom::create_element (
-          "deadline",
-          "http://www.example.org/ctg",
-          e));
-
-      s << *b;
-    }
-
-    // id
-    //
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "id",
-          e));
-
-      a << i.id ();
-    }
-  }
-
-  void
-  operator<< (::xercesc::DOMElement& e, const unsignedDouble& i)
-  {
-    e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
-  }
-
-  void
-  operator<< (::xercesc::DOMAttr& a, const unsignedDouble& i)
-  {
-    a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
-  }
-
-  void
-  operator<< (::xml_schema::list_stream& l,
-              const unsignedDouble& i)
-  {
-    l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
-  }
-
-  void
-  operator<< (::xercesc::DOMElement& e, const deadlineType& i)
-  {
-    e << static_cast< const ::ctg::unsignedDouble& > (i);
-
-    // type
-    //
-    if (i.type ())
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "type",
-          e));
-
-      a << *i.type ();
-    }
-  }
-
-  void
-  operator<< (::xercesc::DOMElement& e, const volume& i)
-  {
-    e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
-  }
-
-  void
-  operator<< (::xercesc::DOMAttr& a, const volume& i)
-  {
-    a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
-  }
-
-  void
-  operator<< (::xml_schema::list_stream& l,
-              const volume& i)
-  {
-    l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >& > (i);
-  }
-
-  void
-  operator<< (::xercesc::DOMElement& e, const type& i)
-  {
-    e << static_cast< const ::xml_schema::string& > (i);
-  }
-
-  void
-  operator<< (::xercesc::DOMAttr& a, const type& i)
-  {
-    a << static_cast< const ::xml_schema::string& > (i);
-  }
-
-  void
-  operator<< (::xml_schema::list_stream& l,
-              const type& i)
-  {
-    l << static_cast< const ::xml_schema::string& > (i);
   }
 }
 

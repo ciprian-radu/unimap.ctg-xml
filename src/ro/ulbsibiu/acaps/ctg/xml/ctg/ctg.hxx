@@ -607,15 +607,30 @@ namespace xml_schema
 
 // Forward declarations.
 //
-namespace ctg
+namespace research
 {
-  class ctgType;
-  class communicationType;
-  class communicatingTaskType;
-  class unsignedDouble;
-  class deadlineType;
-  class volume;
-  class type;
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace ctg
+          {
+            class ctgType;
+            class communicationType;
+            class communicatingTaskType;
+            class unsignedDouble;
+            class deadlineType;
+            class volume;
+            class type;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -632,1275 +647,1292 @@ namespace ctg
 
 #include <xsd/cxx/xml/dom/parsing-header.hxx>
 
-/**
- * @brief C++ namespace for the %http://www.example.org/ctg
- * schema namespace.
- */
-namespace ctg
+namespace research
 {
-  /**
-   * @brief Class corresponding to the %ctgType schema type.
-   *
-   * @nosubgrouping
-   */
-  class ctgType: public ::xml_schema::type
+  namespace noc
   {
-    public:
-    /**
-     * @name communication
-     *
-     * @brief Accessor and modifier functions for the %communication
-     * sequence element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::ctg::communicationType communication_type;
-
-    /**
-     * @brief Element sequence container type.
-     */
-    typedef ::xsd::cxx::tree::sequence< communication_type > communication_sequence;
-
-    /**
-     * @brief Element iterator type.
-     */
-    typedef communication_sequence::iterator communication_iterator;
-
-    /**
-     * @brief Element constant iterator type.
-     */
-    typedef communication_sequence::const_iterator communication_const_iterator;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< communication_type, char > communication_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * sequence.
-     *
-     * @return A constant reference to the sequence container.
-     */
-    const communication_sequence&
-    communication () const;
-
-    /**
-     * @brief Return a read-write reference to the element sequence.
-     *
-     * @return A reference to the sequence container.
-     */
-    communication_sequence&
-    communication ();
-
-    /**
-     * @brief Copy elements from a given sequence.
-     *
-     * @param s A sequence to copy elements from.
-     *
-     * For each element in @a s this function makes a copy and adds it 
-     * to the sequence. Note that this operation completely changes the 
-     * sequence and all old elements will be lost.
-     */
-    void
-    communication (const communication_sequence& s);
-
-    //@}
-
-    /**
-     * @name id
-     *
-     * @brief Accessor and modifier functions for the %id
-     * required attribute.
-     *
-     * The ID of this CTG.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::xml_schema::id id_type;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< id_type, char > id_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute.
-     *
-     * @return A constant reference to the attribute.
-     */
-    const id_type&
-    id () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute.
-     *
-     * @return A reference to the attribute.
-     */
-    id_type&
-    id ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    id (const id_type& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    id (::std::auto_ptr< id_type > p);
-
-    //@}
-
-    /**
-     * @name period
-     *
-     * @brief Accessor and modifier functions for the %period
-     * optional attribute.
-     *
-     * The periodicity (in miliseconds) of this CTG.
-     */
-    //@{
-
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::ctg::unsignedDouble period_type;
-
-    /**
-     * @brief Attribute optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< period_type > period_optional;
-
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< period_type, char > period_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const period_optional&
-    period () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute container.
-     *
-     * @return A reference to the optional container.
-     */
-    period_optional&
-    period ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    period (const period_type& x);
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the attribute.
-     * Otherwise the attribute container is set the 'not present' state.
-     */
-    void
-    period (const period_optional& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    period (::std::auto_ptr< period_type > p);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    ctgType (const id_type&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    ctgType (const ::xercesc::DOMElement& e,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    ctgType (const ctgType& x,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual ctgType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~ctgType ();
-
-    // Implementation.
-    //
-
-    //@cond
-
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
-
-    protected:
-    communication_sequence communication_;
-    ::xsd::cxx::tree::one< id_type > id_;
-    period_optional period_;
-
-    //@endcond
-  };
-
-  /**
-   * @brief Class corresponding to the %communicationType schema type.
-   *
-   * @nosubgrouping
-   */
-  class communicationType: public ::xml_schema::type
-  {
-    public:
-    /**
-     * @name source
-     *
-     * @brief Accessor and modifier functions for the %source
-     * required element.
-     *
-     * The ID of the communication's source task.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::ctg::communicatingTaskType source_type;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< source_type, char > source_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element.
-     *
-     * @return A constant reference to the element.
-     */
-    const source_type&
-    source () const;
-
-    /**
-     * @brief Return a read-write reference to the element.
-     *
-     * @return A reference to the element.
-     */
-    source_type&
-    source ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    source (const source_type& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    source (::std::auto_ptr< source_type > p);
-
-    //@}
-
-    /**
-     * @name destination
-     *
-     * @brief Accessor and modifier functions for the %destination
-     * required element.
-     *
-     * The ID of the communication's destination task.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::ctg::communicatingTaskType destination_type;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< destination_type, char > destination_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element.
-     *
-     * @return A constant reference to the element.
-     */
-    const destination_type&
-    destination () const;
-
-    /**
-     * @brief Return a read-write reference to the element.
-     *
-     * @return A reference to the element.
-     */
-    destination_type&
-    destination ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    destination (const destination_type& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    destination (::std::auto_ptr< destination_type > p);
-
-    //@}
-
-    /**
-     * @name volume
-     *
-     * @brief Accessor and modifier functions for the %volume
-     * required element.
-     *
-     * The communication volume (in bits).
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::ctg::volume volume_type;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< volume_type, char > volume_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element.
-     *
-     * @return A constant reference to the element.
-     */
-    const volume_type&
-    volume () const;
-
-    /**
-     * @brief Return a read-write reference to the element.
-     *
-     * @return A reference to the element.
-     */
-    volume_type&
-    volume ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    volume (const volume_type& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    volume (::std::auto_ptr< volume_type > p);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    communicationType (const source_type&,
-                       const destination_type&,
-                       const volume_type&);
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes
-     * (auto_ptr version).
-     *
-     * This constructor will try to use the passed values directly
-     * instead of making copies.
-     */
-    communicationType (::std::auto_ptr< source_type >&,
-                       ::std::auto_ptr< destination_type >&,
-                       const volume_type&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    communicationType (const ::xercesc::DOMElement& e,
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          /**
+           * @brief C++ namespace for the %http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg
+           * schema namespace.
+           */
+          namespace ctg
+          {
+            /**
+             * @brief Class corresponding to the %ctgType schema type.
+             *
+             * @nosubgrouping
+             */
+            class ctgType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name communication
+               *
+               * @brief Accessor and modifier functions for the %communication
+               * sequence element.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::communicationType communication_type;
+
+              /**
+               * @brief Element sequence container type.
+               */
+              typedef ::xsd::cxx::tree::sequence< communication_type > communication_sequence;
+
+              /**
+               * @brief Element iterator type.
+               */
+              typedef communication_sequence::iterator communication_iterator;
+
+              /**
+               * @brief Element constant iterator type.
+               */
+              typedef communication_sequence::const_iterator communication_const_iterator;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< communication_type, char > communication_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * sequence.
+               *
+               * @return A constant reference to the sequence container.
+               */
+              const communication_sequence&
+              communication () const;
+
+              /**
+               * @brief Return a read-write reference to the element sequence.
+               *
+               * @return A reference to the sequence container.
+               */
+              communication_sequence&
+              communication ();
+
+              /**
+               * @brief Copy elements from a given sequence.
+               *
+               * @param s A sequence to copy elements from.
+               *
+               * For each element in @a s this function makes a copy and adds it 
+               * to the sequence. Note that this operation completely changes the 
+               * sequence and all old elements will be lost.
+               */
+              void
+              communication (const communication_sequence& s);
+
+              //@}
+
+              /**
+               * @name id
+               *
+               * @brief Accessor and modifier functions for the %id
+               * required attribute.
+               *
+               * The ID of this CTG.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::id id_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< id_type, char > id_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const id_type&
+              id () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              id_type&
+              id ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              id (const id_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              id (::std::auto_ptr< id_type > p);
+
+              //@}
+
+              /**
+               * @name period
+               *
+               * @brief Accessor and modifier functions for the %period
+               * optional attribute.
+               *
+               * The periodicity (in miliseconds) of this CTG.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::unsignedDouble period_type;
+
+              /**
+               * @brief Attribute optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< period_type > period_optional;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< period_type, char > period_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const period_optional&
+              period () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute container.
+               *
+               * @return A reference to the optional container.
+               */
+              period_optional&
+              period ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              period (const period_type& x);
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the attribute.
+               * Otherwise the attribute container is set the 'not present' state.
+               */
+              void
+              period (const period_optional& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              period (::std::auto_ptr< period_type > p);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              ctgType (const id_type&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              ctgType (const ::xercesc::DOMElement& e,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    communicationType (const communicationType& x,
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              ctgType (const ctgType& x,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual communicationType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual ctgType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
 
-    //@}
+              //@}
 
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~communicationType ();
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~ctgType ();
 
-    // Implementation.
-    //
+              // Implementation.
+              //
 
-    //@cond
+              //@cond
 
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
 
-    protected:
-    ::xsd::cxx::tree::one< source_type > source_;
-    ::xsd::cxx::tree::one< destination_type > destination_;
-    ::xsd::cxx::tree::one< volume_type > volume_;
+              protected:
+              communication_sequence communication_;
+              ::xsd::cxx::tree::one< id_type > id_;
+              period_optional period_;
 
-    //@endcond
-  };
+              //@endcond
+            };
 
-  /**
-   * @brief Class corresponding to the %communicatingTaskType schema type.
-   *
-   * @nosubgrouping
-   */
-  class communicatingTaskType: public ::xml_schema::type
-  {
-    public:
-    /**
-     * @name deadline
-     *
-     * @brief Accessor and modifier functions for the %deadline
-     * sequence element.
-     */
-    //@{
+            /**
+             * @brief Class corresponding to the %communicationType schema type.
+             *
+             * @nosubgrouping
+             */
+            class communicationType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name source
+               *
+               * @brief Accessor and modifier functions for the %source
+               * required element.
+               *
+               * The ID of the communication's source task.
+               */
+              //@{
 
-    /**
-     * @brief Element type.
-     */
-    typedef ::ctg::deadlineType deadline_type;
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::communicatingTaskType source_type;
 
-    /**
-     * @brief Element sequence container type.
-     */
-    typedef ::xsd::cxx::tree::sequence< deadline_type > deadline_sequence;
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< source_type, char > source_traits;
 
-    /**
-     * @brief Element iterator type.
-     */
-    typedef deadline_sequence::iterator deadline_iterator;
+              /**
+               * @brief Return a read-only (constant) reference to the element.
+               *
+               * @return A constant reference to the element.
+               */
+              const source_type&
+              source () const;
 
-    /**
-     * @brief Element constant iterator type.
-     */
-    typedef deadline_sequence::const_iterator deadline_const_iterator;
+              /**
+               * @brief Return a read-write reference to the element.
+               *
+               * @return A reference to the element.
+               */
+              source_type&
+              source ();
 
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< deadline_type, char > deadline_traits;
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              source (const source_type& x);
 
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * sequence.
-     *
-     * @return A constant reference to the sequence container.
-     */
-    const deadline_sequence&
-    deadline () const;
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              source (::std::auto_ptr< source_type > p);
 
-    /**
-     * @brief Return a read-write reference to the element sequence.
-     *
-     * @return A reference to the sequence container.
-     */
-    deadline_sequence&
-    deadline ();
+              //@}
 
-    /**
-     * @brief Copy elements from a given sequence.
-     *
-     * @param s A sequence to copy elements from.
-     *
-     * For each element in @a s this function makes a copy and adds it 
-     * to the sequence. Note that this operation completely changes the 
-     * sequence and all old elements will be lost.
-     */
-    void
-    deadline (const deadline_sequence& s);
+              /**
+               * @name destination
+               *
+               * @brief Accessor and modifier functions for the %destination
+               * required element.
+               *
+               * The ID of the communication's destination task.
+               */
+              //@{
 
-    //@}
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::communicatingTaskType destination_type;
 
-    /**
-     * @name id
-     *
-     * @brief Accessor and modifier functions for the %id
-     * required attribute.
-     */
-    //@{
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< destination_type, char > destination_traits;
 
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::xml_schema::string id_type;
+              /**
+               * @brief Return a read-only (constant) reference to the element.
+               *
+               * @return A constant reference to the element.
+               */
+              const destination_type&
+              destination () const;
 
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< id_type, char > id_traits;
+              /**
+               * @brief Return a read-write reference to the element.
+               *
+               * @return A reference to the element.
+               */
+              destination_type&
+              destination ();
 
-    /**
-     * @brief Return a read-only (constant) reference to the attribute.
-     *
-     * @return A constant reference to the attribute.
-     */
-    const id_type&
-    id () const;
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              destination (const destination_type& x);
 
-    /**
-     * @brief Return a read-write reference to the attribute.
-     *
-     * @return A reference to the attribute.
-     */
-    id_type&
-    id ();
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              destination (::std::auto_ptr< destination_type > p);
 
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    id (const id_type& x);
+              //@}
 
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
-     */
-    void
-    id (::std::auto_ptr< id_type > p);
+              /**
+               * @name volume
+               *
+               * @brief Accessor and modifier functions for the %volume
+               * required element.
+               *
+               * The communication volume (in bits).
+               */
+              //@{
 
-    //@}
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::volume volume_type;
 
-    /**
-     * @name Constructors
-     */
-    //@{
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< volume_type, char > volume_traits;
 
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    communicatingTaskType (const id_type&);
+              /**
+               * @brief Return a read-only (constant) reference to the element.
+               *
+               * @return A constant reference to the element.
+               */
+              const volume_type&
+              volume () const;
 
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    communicatingTaskType (const ::xercesc::DOMElement& e,
-                           ::xml_schema::flags f = 0,
-                           ::xml_schema::container* c = 0);
+              /**
+               * @brief Return a read-write reference to the element.
+               *
+               * @return A reference to the element.
+               */
+              volume_type&
+              volume ();
 
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    communicatingTaskType (const communicatingTaskType& x,
-                           ::xml_schema::flags f = 0,
-                           ::xml_schema::container* c = 0);
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              volume (const volume_type& x);
 
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual communicatingTaskType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              volume (::std::auto_ptr< volume_type > p);
 
-    //@}
+              //@}
 
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~communicatingTaskType ();
+              /**
+               * @name Constructors
+               */
+              //@{
 
-    // Implementation.
-    //
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              communicationType (const source_type&,
+                                 const destination_type&,
+                                 const volume_type&);
 
-    //@cond
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes
+               * (auto_ptr version).
+               *
+               * This constructor will try to use the passed values directly
+               * instead of making copies.
+               */
+              communicationType (::std::auto_ptr< source_type >&,
+                                 ::std::auto_ptr< destination_type >&,
+                                 const volume_type&);
 
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              communicationType (const ::xercesc::DOMElement& e,
+                                 ::xml_schema::flags f = 0,
+                                 ::xml_schema::container* c = 0);
 
-    protected:
-    deadline_sequence deadline_;
-    ::xsd::cxx::tree::one< id_type > id_;
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              communicationType (const communicationType& x,
+                                 ::xml_schema::flags f = 0,
+                                 ::xml_schema::container* c = 0);
 
-    //@endcond
-  };
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual communicationType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
 
-  /**
-   * @brief Class corresponding to the %unsignedDouble schema type.
-   *
-   * @nosubgrouping
-   */
-  class unsignedDouble: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
-  {
-    public:
-    /**
-     * @name Constructors
-     */
-    //@{
+              //@}
 
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    unsignedDouble (const ::xml_schema::double_&);
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~communicationType ();
 
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    unsignedDouble (const ::xercesc::DOMElement& e,
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              ::xsd::cxx::tree::one< source_type > source_;
+              ::xsd::cxx::tree::one< destination_type > destination_;
+              ::xsd::cxx::tree::one< volume_type > volume_;
+
+              //@endcond
+            };
+
+            /**
+             * @brief Class corresponding to the %communicatingTaskType schema type.
+             *
+             * @nosubgrouping
+             */
+            class communicatingTaskType: public ::xml_schema::type
+            {
+              public:
+              /**
+               * @name deadline
+               *
+               * @brief Accessor and modifier functions for the %deadline
+               * sequence element.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::deadlineType deadline_type;
+
+              /**
+               * @brief Element sequence container type.
+               */
+              typedef ::xsd::cxx::tree::sequence< deadline_type > deadline_sequence;
+
+              /**
+               * @brief Element iterator type.
+               */
+              typedef deadline_sequence::iterator deadline_iterator;
+
+              /**
+               * @brief Element constant iterator type.
+               */
+              typedef deadline_sequence::const_iterator deadline_const_iterator;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< deadline_type, char > deadline_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * sequence.
+               *
+               * @return A constant reference to the sequence container.
+               */
+              const deadline_sequence&
+              deadline () const;
+
+              /**
+               * @brief Return a read-write reference to the element sequence.
+               *
+               * @return A reference to the sequence container.
+               */
+              deadline_sequence&
+              deadline ();
+
+              /**
+               * @brief Copy elements from a given sequence.
+               *
+               * @param s A sequence to copy elements from.
+               *
+               * For each element in @a s this function makes a copy and adds it 
+               * to the sequence. Note that this operation completely changes the 
+               * sequence and all old elements will be lost.
+               */
+              void
+              deadline (const deadline_sequence& s);
+
+              //@}
+
+              /**
+               * @name id
+               *
+               * @brief Accessor and modifier functions for the %id
+               * required attribute.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::string id_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< id_type, char > id_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const id_type&
+              id () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              id_type&
+              id ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              id (const id_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              id (::std::auto_ptr< id_type > p);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              communicatingTaskType (const id_type&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              communicatingTaskType (const ::xercesc::DOMElement& e,
+                                     ::xml_schema::flags f = 0,
+                                     ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              communicatingTaskType (const communicatingTaskType& x,
+                                     ::xml_schema::flags f = 0,
+                                     ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual communicatingTaskType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~communicatingTaskType ();
+
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              deadline_sequence deadline_;
+              ::xsd::cxx::tree::one< id_type > id_;
+
+              //@endcond
+            };
+
+            /**
+             * @brief Class corresponding to the %unsignedDouble schema type.
+             *
+             * @nosubgrouping
+             */
+            class unsignedDouble: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+            {
+              public:
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              unsignedDouble (const ::xml_schema::double_&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              unsignedDouble (const ::xercesc::DOMElement& e,
+                              ::xml_schema::flags f = 0,
+                              ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a DOM attribute.
+               *
+               * @param a A DOM attribute to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              unsignedDouble (const ::xercesc::DOMAttr& a,
+                              ::xml_schema::flags f = 0,
+                              ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a string fragment.
+               *
+               * @param s A string fragment to extract the data from.
+               * @param e A pointer to DOM element containing the string fragment.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              unsignedDouble (const ::std::string& s,
+                              const ::xercesc::DOMElement* e,
+                              ::xml_schema::flags f = 0,
+                              ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              unsignedDouble (const unsignedDouble& x,
+                              ::xml_schema::flags f = 0,
+                              ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual unsignedDouble*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~unsignedDouble ();
+            };
+
+            /**
+             * @brief Class corresponding to the %deadlineType schema type.
+             *
+             * Task deadline (in milliseconds).
+             *
+             * @nosubgrouping
+             */
+            class deadlineType: public ::research::noc::application_mapping::unified_framework::schema::ctg::unsignedDouble
+            {
+              public:
+              /**
+               * @name type
+               *
+               * @brief Accessor and modifier functions for the %type
+               * optional attribute.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::research::noc::application_mapping::unified_framework::schema::ctg::type type_type;
+
+              /**
+               * @brief Attribute optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< type_type > type_optional;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< type_type, char > type_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const type_optional&
+              type () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute container.
+               *
+               * @return A reference to the optional container.
+               */
+              type_optional&
+              type ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              type (const type_type& x);
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the attribute.
+               * Otherwise the attribute container is set the 'not present' state.
+               */
+              void
+              type (const type_optional& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              type (::std::auto_ptr< type_type > p);
+
+              //@}
+
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              deadlineType (const ::xml_schema::double_&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              deadlineType (const ::xercesc::DOMElement& e,
+                            ::xml_schema::flags f = 0,
+                            ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              deadlineType (const deadlineType& x,
+                            ::xml_schema::flags f = 0,
+                            ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual deadlineType*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~deadlineType ();
+
+              // Implementation.
+              //
+
+              //@cond
+
+              protected:
+              void
+              parse (::xsd::cxx::xml::dom::parser< char >&,
+                     ::xml_schema::flags);
+
+              protected:
+              type_optional type_;
+
+              //@endcond
+            };
+
+            /**
+             * @brief Class corresponding to the %volume schema type.
+             *
+             * @nosubgrouping
+             */
+            class volume: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+            {
+              public:
+              /**
+               * @name Constructors
+               */
+              //@{
+
+              /**
+               * @brief Create an instance from the ultimate base and
+               * initializers for required elements and attributes.
+               */
+              volume (const ::xml_schema::double_&);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              volume (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a DOM attribute.
+               *
+               * @param a A DOM attribute to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              volume (const ::xercesc::DOMAttr& a,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Create an instance from a string fragment.
+               *
+               * @param s A string fragment to extract the data from.
+               * @param e A pointer to DOM element containing the string fragment.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              volume (const ::std::string& s,
+                      const ::xercesc::DOMElement* e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              volume (const volume& x,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual volume*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
+
+              //@}
+
+              /**
+               * @brief Destructor.
+               */
+              virtual 
+              ~volume ();
+            };
+
+            /**
+             * @brief Enumeration class corresponding to the %type
+             * schema type.
+             */
+            class type: public ::xml_schema::string
+            {
+              public:
+
+              /**
+               * @brief Underlying enum type.
+               */
+              enum value
+              {
+                soft,
+                hard
+              };
+
+              /**
+               * @brief Create an instance from the underlying enum value.
+               *
+               * @param v A enum value.
+               */
+              type (value v);
+
+              /**
+               * @brief Create an instance from a C string.
+               *
+               * @param v A string value.
+               */
+              type (const char* v);
+
+              /**
+               * @brief Create an instance from a string.
+               *
+               * @param v A string value.
+               */
+              type (const ::std::string& v);
+
+              /**
+               * @brief Create an instance from the base value.
+               *
+               * @param v A base value.
+               */
+              type (const ::xml_schema::string& v);
+
+              /**
+               * @brief Create an instance from a DOM element.
+               *
+               * @param e A DOM element to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              type (const ::xercesc::DOMElement& e,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
-    /**
-     * @brief Create an instance from a DOM attribute.
-     *
-     * @param a A DOM attribute to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    unsignedDouble (const ::xercesc::DOMAttr& a,
+              /**
+               * @brief Create an instance from a DOM attribute.
+               *
+               * @param a A DOM attribute to extract the data from.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              type (const ::xercesc::DOMAttr& a,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
-    /**
-     * @brief Create an instance from a string fragment.
-     *
-     * @param s A string fragment to extract the data from.
-     * @param e A pointer to DOM element containing the string fragment.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    unsignedDouble (const ::std::string& s,
+              /**
+               * @brief Create an instance from a string fragment.
+               *
+               * @param s A string fragment to extract the data from.
+               * @param e A pointer to DOM element containing the string fragment.
+               * @param f Flags to create the new instance with.
+               * @param c A pointer to the object that will contain the new
+               * instance.
+               */
+              type (const ::std::string& s,
                     const ::xercesc::DOMElement* e,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    unsignedDouble (const unsignedDouble& x,
+              /**
+               * @brief Copy constructor.
+               *
+               * @param x An instance to make a copy of.
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               *
+               * For polymorphic object models use the @c _clone function instead.
+               */
+              type (const type& x,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual unsignedDouble*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
+              /**
+               * @brief Copy the instance polymorphically.
+               *
+               * @param f Flags to create the copy with.
+               * @param c A pointer to the object that will contain the copy.
+               * @return A pointer to the dynamically allocated copy.
+               *
+               * This function ensures that the dynamic type of the instance is
+               * used for copying and should be used for polymorphic object
+               * models instead of the copy constructor.
+               */
+              virtual type*
+              _clone (::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0) const;
 
-    //@}
+              /**
+               * @brief Assign the underlying enum value.
+               *
+               * @param v A enum value.
+               * @return A refernce to the instance.
+               */
+              type&
+              operator= (value v);
 
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~unsignedDouble ();
-  };
+              /**
+               * @brief Implicit conversion operator to the underlying
+               * enum value.
+               *
+               * @return A enum value.
+               */
+              virtual
+              operator value () const
+              {
+                return _xsd_type_convert ();
+              }
 
-  /**
-   * @brief Class corresponding to the %deadlineType schema type.
-   *
-   * @nosubgrouping
-   */
-  class deadlineType: public ::ctg::unsignedDouble
-  {
-    public:
-    /**
-     * @name type
-     *
-     * @brief Accessor and modifier functions for the %type
-     * optional attribute.
-     */
-    //@{
+              //@cond
 
-    /**
-     * @brief Attribute type.
-     */
-    typedef ::ctg::type type_type;
+              protected:
+              value
+              _xsd_type_convert () const;
 
-    /**
-     * @brief Attribute optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< type_type > type_optional;
+              public:
+              static const char* const _xsd_type_literals_[2];
+              static const value _xsd_type_indexes_[2];
 
-    /**
-     * @brief Attribute traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< type_type, char > type_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the attribute
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const type_optional&
-    type () const;
-
-    /**
-     * @brief Return a read-write reference to the attribute container.
-     *
-     * @return A reference to the optional container.
-     */
-    type_optional&
-    type ();
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the attribute.
-     */
-    void
-    type (const type_type& x);
-
-    /**
-     * @brief Set the attribute value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the attribute.
-     * Otherwise the attribute container is set the 'not present' state.
-     */
-    void
-    type (const type_optional& x);
-
-    /**
-     * @brief Set the attribute value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    type (::std::auto_ptr< type_type > p);
-
-    //@}
-
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    deadlineType (const ::xml_schema::double_&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    deadlineType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    deadlineType (const deadlineType& x,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual deadlineType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~deadlineType ();
-
-    // Implementation.
-    //
-
-    //@cond
-
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
-
-    protected:
-    type_optional type_;
-
-    //@endcond
-  };
-
-  /**
-   * @brief Class corresponding to the %volume schema type.
-   *
-   * @nosubgrouping
-   */
-  class volume: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
-  {
-    public:
-    /**
-     * @name Constructors
-     */
-    //@{
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes.
-     */
-    volume (const ::xml_schema::double_&);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    volume (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a DOM attribute.
-     *
-     * @param a A DOM attribute to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    volume (const ::xercesc::DOMAttr& a,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a string fragment.
-     *
-     * @param s A string fragment to extract the data from.
-     * @param e A pointer to DOM element containing the string fragment.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    volume (const ::std::string& s,
-            const ::xercesc::DOMElement* e,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    volume (const volume& x,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual volume*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    //@}
-
-    /**
-     * @brief Destructor.
-     */
-    virtual 
-    ~volume ();
-  };
-
-  /**
-   * @brief Enumeration class corresponding to the %type
-   * schema type.
-   */
-  class type: public ::xml_schema::string
-  {
-    public:
-
-    /**
-     * @brief Underlying enum type.
-     */
-    enum value
-    {
-      soft,
-      hard
-    };
-
-    /**
-     * @brief Create an instance from the underlying enum value.
-     *
-     * @param v A enum value.
-     */
-    type (value v);
-
-    /**
-     * @brief Create an instance from a C string.
-     *
-     * @param v A string value.
-     */
-    type (const char* v);
-
-    /**
-     * @brief Create an instance from a string.
-     *
-     * @param v A string value.
-     */
-    type (const ::std::string& v);
-
-    /**
-     * @brief Create an instance from the base value.
-     *
-     * @param v A base value.
-     */
-    type (const ::xml_schema::string& v);
-
-    /**
-     * @brief Create an instance from a DOM element.
-     *
-     * @param e A DOM element to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    type (const ::xercesc::DOMElement& e,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a DOM attribute.
-     *
-     * @param a A DOM attribute to extract the data from.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    type (const ::xercesc::DOMAttr& a,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Create an instance from a string fragment.
-     *
-     * @param s A string fragment to extract the data from.
-     * @param e A pointer to DOM element containing the string fragment.
-     * @param f Flags to create the new instance with.
-     * @param c A pointer to the object that will contain the new
-     * instance.
-     */
-    type (const ::std::string& s,
-          const ::xercesc::DOMElement* e,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy constructor.
-     *
-     * @param x An instance to make a copy of.
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     *
-     * For polymorphic object models use the @c _clone function instead.
-     */
-    type (const type& x,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    /**
-     * @brief Copy the instance polymorphically.
-     *
-     * @param f Flags to create the copy with.
-     * @param c A pointer to the object that will contain the copy.
-     * @return A pointer to the dynamically allocated copy.
-     *
-     * This function ensures that the dynamic type of the instance is
-     * used for copying and should be used for polymorphic object
-     * models instead of the copy constructor.
-     */
-    virtual type*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-
-    /**
-     * @brief Assign the underlying enum value.
-     *
-     * @param v A enum value.
-     * @return A refernce to the instance.
-     */
-    type&
-    operator= (value v);
-
-    /**
-     * @brief Implicit conversion operator to the underlying
-     * enum value.
-     *
-     * @return A enum value.
-     */
-    virtual
-    operator value () const
-    {
-      return _xsd_type_convert ();
+              //@endcond
+            };
+          }
+        }
+      }
     }
-
-    //@cond
-
-    protected:
-    value
-    _xsd_type_convert () const;
-
-    public:
-    static const char* const _xsd_type_literals_[2];
-    static const value _xsd_type_indexes_[2];
-
-    //@endcond
-  };
+  }
 }
 
 #include <iosfwd>
@@ -1909,260 +1941,275 @@ namespace ctg
 #include <xercesc/dom/DOMDocument.hpp>
 #include <xercesc/dom/DOMErrorHandler.hpp>
 
-namespace ctg
+namespace research
 {
-  /**
-   * @name Parsing functions for the %ctg document root.
-   */
-  //@{
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace ctg
+          {
+            /**
+             * @name Parsing functions for the %ctg document root.
+             */
+            //@{
 
-  /**
-   * @brief Parse a URI or a local file.
-   *
-   * @param uri A URI or a local file name.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::std::string& uri,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file.
+             *
+             * @param uri A URI or a local file name.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::std::string& uri,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a URI or a local file with an error handler.
-   *
-   * @param uri A URI or a local file name.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::std::string& uri,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file with an error handler.
+             *
+             * @param uri A URI or a local file name.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::std::string& uri,
+                 ::xml_schema::error_handler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a URI or a local file with a Xerces-C++ DOM error
-   * handler.
-   *
-   * @param uri A URI or a local file name.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::std::string& uri,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+             * handler.
+             *
+             * @param uri A URI or a local file name.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::std::string& uri,
+                 ::xercesc::DOMErrorHandler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream.
-   *
-   * @param is A standrad input stream.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream.
+             *
+             * @param is A standrad input stream.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with an error handler.
-   *
-   * @param is A standrad input stream.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with an error handler.
+             *
+             * @param is A standrad input stream.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 ::xml_schema::error_handler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a Xerces-C++ DOM error
-   * handler.
-   *
-   * @param is A standrad input stream.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a Xerces-C++ DOM error
+             * handler.
+             *
+             * @param is A standrad input stream.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 ::xercesc::DOMErrorHandler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       const ::std::string& id,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 const ::std::string& id,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id and an
-   * error handler.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       const ::std::string& id,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id and an
+             * error handler.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 const ::std::string& id,
+                 ::xml_schema::error_handler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a standard input stream with a resource id and a
-   * Xerces-C++ DOM error handler.
-   *
-   * @param is A standrad input stream.
-   * @param id A resource id.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * The resource id is used to identify the document being parsed in
-   * diagnostics as well as to resolve relative paths.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::std::istream& is,
-       const ::std::string& id,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a standard input stream with a resource id and a
+             * Xerces-C++ DOM error handler.
+             *
+             * @param is A standrad input stream.
+             * @param id A resource id.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * The resource id is used to identify the document being parsed in
+             * diagnostics as well as to resolve relative paths.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::std::istream& is,
+                 const ::std::string& id,
+                 ::xercesc::DOMErrorHandler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function uses exceptions to report parsing errors.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xercesc::InputSource& is,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function uses exceptions to report parsing errors.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xercesc::InputSource& is,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source with an error handler.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param eh An error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xercesc::InputSource& is,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source with an error handler.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param eh An error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xercesc::InputSource& is,
+                 ::xml_schema::error_handler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
-   * error handler.
-   *
-   * @param is A Xerces-C++ input source.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function reports parsing errors by calling the error handler.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xercesc::InputSource& is,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+             * error handler.
+             *
+             * @param is A Xerces-C++ input source.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function reports parsing errors by calling the error handler.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xercesc::InputSource& is,
+                 ::xercesc::DOMErrorHandler& eh,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ DOM document.
-   *
-   * @param d A Xerces-C++ DOM document.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (const ::xercesc::DOMDocument& d,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ DOM document.
+             *
+             * @param d A Xerces-C++ DOM document.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (const ::xercesc::DOMDocument& d,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  /**
-   * @brief Parse a Xerces-C++ DOM document.
-   *
-   * @param d A pointer to the Xerces-C++ DOM document.
-   * @param f Parsing flags.
-   * @param p Parsing properties. 
-   * @return A pointer to the root of the object model.
-   *
-   * This function is normally used together with the keep_dom and
-   * own_dom parsing flags to assign ownership of the DOM document
-   * to the object model.
-   */
-  ::std::auto_ptr< ::ctg::ctgType >
-  ctg (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+            /**
+             * @brief Parse a Xerces-C++ DOM document.
+             *
+             * @param d A pointer to the Xerces-C++ DOM document.
+             * @param f Parsing flags.
+             * @param p Parsing properties. 
+             * @return A pointer to the root of the object model.
+             *
+             * This function is normally used together with the keep_dom and
+             * own_dom parsing flags to assign ownership of the DOM document
+             * to the object model.
+             */
+            ::std::auto_ptr< ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType >
+            ctg (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+                 ::xml_schema::flags f = 0,
+                 const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  //@}
+            //@}
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <iosfwd>
@@ -2173,208 +2220,223 @@ namespace ctg
 
 #include <xsd/cxx/xml/dom/auto-ptr.hxx>
 
-namespace ctg
+namespace research
 {
-  void
-  operator<< (::xercesc::DOMElement&, const ctgType&);
+  namespace noc
+  {
+    namespace application_mapping
+    {
+      namespace unified_framework
+      {
+        namespace schema
+        {
+          namespace ctg
+          {
+            void
+            operator<< (::xercesc::DOMElement&, const ctgType&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const communicationType&);
+            void
+            operator<< (::xercesc::DOMElement&, const communicationType&);
 
-  /**
-   * @name Serialization functions for the %ctg document root.
-   */
-  //@{
+            /**
+             * @name Serialization functions for the %ctg document root.
+             */
+            //@{
 
-  /**
-   * @brief Serialize to a standard output stream.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function uses exceptions to report serialization errors.
-   */
-  void
-  ctg (::std::ostream& os,
-       const ::ctg::ctgType& x, 
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function uses exceptions to report serialization errors.
+             */
+            void
+            ctg (::std::ostream& os,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 const ::std::string& e = "UTF-8",
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a standard output stream with an error handler.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param eh An error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  ctg (::std::ostream& os,
-       const ::ctg::ctgType& x, 
-       ::xml_schema::error_handler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream with an error handler.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param eh An error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            ctg (::std::ostream& os,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 ::xml_schema::error_handler& eh,
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 const ::std::string& e = "UTF-8",
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a standard output stream with a Xerces-C++ DOM
-   * error handler.
-   *
-   * @param os A standrad output stream.
-   * @param x An object model to serialize.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  ctg (::std::ostream& os,
-       const ::ctg::ctgType& x, 
-       ::xercesc::DOMErrorHandler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+             * error handler.
+             *
+             * @param os A standrad output stream.
+             * @param x An object model to serialize.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            ctg (::std::ostream& os,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 ::xercesc::DOMErrorHandler& eh,
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 const ::std::string& e = "UTF-8",
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function uses exceptions to report serialization errors.
-   */
-  void
-  ctg (::xercesc::XMLFormatTarget& ft,
-       const ::ctg::ctgType& x, 
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function uses exceptions to report serialization errors.
+             */
+            void
+            ctg (::xercesc::XMLFormatTarget& ft,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 const ::std::string& e = "UTF-8",
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target with an error
-   * handler.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param eh An error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  ctg (::xercesc::XMLFormatTarget& ft,
-       const ::ctg::ctgType& x, 
-       ::xml_schema::error_handler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target with an error
+             * handler.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param eh An error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            ctg (::xercesc::XMLFormatTarget& ft,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 ::xml_schema::error_handler& eh,
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 const ::std::string& e = "UTF-8",
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a Xerces-C++ XML format target with a
-   * Xerces-C++ DOM error handler.
-   *
-   * @param ft A Xerces-C++ XML format target.
-   * @param x An object model to serialize.
-   * @param eh A Xerces-C++ DOM error handler.
-   * @param m A namespace information map.
-   * @param e A character encoding to produce XML in.
-   * @param f Serialization flags.
-   *
-   * This function reports serialization errors by calling the error
-   * handler.
-   */
-  void
-  ctg (::xercesc::XMLFormatTarget& ft,
-       const ::ctg::ctgType& x, 
-       ::xercesc::DOMErrorHandler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a Xerces-C++ XML format target with a
+             * Xerces-C++ DOM error handler.
+             *
+             * @param ft A Xerces-C++ XML format target.
+             * @param x An object model to serialize.
+             * @param eh A Xerces-C++ DOM error handler.
+             * @param m A namespace information map.
+             * @param e A character encoding to produce XML in.
+             * @param f Serialization flags.
+             *
+             * This function reports serialization errors by calling the error
+             * handler.
+             */
+            void
+            ctg (::xercesc::XMLFormatTarget& ft,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 ::xercesc::DOMErrorHandler& eh,
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 const ::std::string& e = "UTF-8",
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to an existing Xerces-C++ DOM document.
-   *
-   * @param d A Xerces-C++ DOM document.
-   * @param x An object model to serialize.
-   * @param f Serialization flags.
-   *
-   * Note that it is your responsibility to create the DOM document
-   * with the correct root element as well as set the necessary
-   * namespace mapping attributes.
-   */
-  void
-  ctg (::xercesc::DOMDocument& d,
-       const ::ctg::ctgType& x,
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to an existing Xerces-C++ DOM document.
+             *
+             * @param d A Xerces-C++ DOM document.
+             * @param x An object model to serialize.
+             * @param f Serialization flags.
+             *
+             * Note that it is your responsibility to create the DOM document
+             * with the correct root element as well as set the necessary
+             * namespace mapping attributes.
+             */
+            void
+            ctg (::xercesc::DOMDocument& d,
+                 const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x,
+                 ::xml_schema::flags f = 0);
 
-  /**
-   * @brief Serialize to a new Xerces-C++ DOM document.
-   *
-   * @param x An object model to serialize.
-   * @param m A namespace information map.
-   * @param f Serialization flags.
-   * @return A pointer to the new Xerces-C++ DOM document.
-   */
-  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
-  ctg (const ::ctg::ctgType& x, 
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       ::xml_schema::flags f = 0);
+            /**
+             * @brief Serialize to a new Xerces-C++ DOM document.
+             *
+             * @param x An object model to serialize.
+             * @param m A namespace information map.
+             * @param f Serialization flags.
+             * @return A pointer to the new Xerces-C++ DOM document.
+             */
+            ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+            ctg (const ::research::noc::application_mapping::unified_framework::schema::ctg::ctgType& x, 
+                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                 ::xml_schema::flags f = 0);
 
-  //@}
+            //@}
 
-  void
-  operator<< (::xercesc::DOMElement&, const communicatingTaskType&);
+            void
+            operator<< (::xercesc::DOMElement&, const communicatingTaskType&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const unsignedDouble&);
+            void
+            operator<< (::xercesc::DOMElement&, const unsignedDouble&);
 
-  void
-  operator<< (::xercesc::DOMAttr&, const unsignedDouble&);
+            void
+            operator<< (::xercesc::DOMAttr&, const unsignedDouble&);
 
-  void
-  operator<< (::xml_schema::list_stream&,
-              const unsignedDouble&);
+            void
+            operator<< (::xml_schema::list_stream&,
+                        const unsignedDouble&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const deadlineType&);
+            void
+            operator<< (::xercesc::DOMElement&, const deadlineType&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const volume&);
+            void
+            operator<< (::xercesc::DOMElement&, const volume&);
 
-  void
-  operator<< (::xercesc::DOMAttr&, const volume&);
+            void
+            operator<< (::xercesc::DOMAttr&, const volume&);
 
-  void
-  operator<< (::xml_schema::list_stream&,
-              const volume&);
+            void
+            operator<< (::xml_schema::list_stream&,
+                        const volume&);
 
-  void
-  operator<< (::xercesc::DOMElement&, const type&);
+            void
+            operator<< (::xercesc::DOMElement&, const type&);
 
-  void
-  operator<< (::xercesc::DOMAttr&, const type&);
+            void
+            operator<< (::xercesc::DOMAttr&, const type&);
 
-  void
-  operator<< (::xml_schema::list_stream&,
-              const type&);
+            void
+            operator<< (::xml_schema::list_stream&,
+                        const type&);
+          }
+        }
+      }
+    }
+  }
 }
 
 #include <xsd/cxx/post.hxx>
