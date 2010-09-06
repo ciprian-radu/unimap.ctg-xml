@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.example.org/mapping" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mapping="http://www.example.org/mapping">
+<schema targetNamespace="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mapping="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
 
     <annotation>
     	<documentation>XML used for representing a mapping generated with any application mapping algorithm for NoCs.</documentation></annotation>
@@ -24,7 +24,7 @@
                 	<documentation>The ID of the NoC node.</documentation>
                 </annotation>
     		</element>
-    		<element name="core" type="string" maxOccurs="1" minOccurs="1">
+    		<element name="core" type="string" maxOccurs="1" minOccurs="0">
     			<annotation>
     				<documentation>The ID of the IP core.</documentation>
     			</annotation></element>

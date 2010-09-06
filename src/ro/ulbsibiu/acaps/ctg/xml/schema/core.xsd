@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="http://www.example.org/core" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.example.org/core">
+<xsd:schema targetNamespace="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/core" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/core">
 
     <xsd:annotation>
-    	<xsd:documentation>XML schema for a task belonging to a Communiaction Task Graph (CTG).</xsd:documentation></xsd:annotation>
+    	<xsd:documentation>XML schema for a core belonging to a Communiaction Task Graph (CTG).</xsd:documentation></xsd:annotation>
     
 
     

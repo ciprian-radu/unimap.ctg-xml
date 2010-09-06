@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ctg" elementFormDefault="qualified" xmlns:ctg="http://www.example.org/ctg">
+<schema targetNamespace="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ctg="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg">
 
     <annotation>
     	<documentation>XML representing a Communication Task Graph.</documentation></annotation>
@@ -63,7 +63,10 @@
     </complexType>
     
     <complexType name="deadlineType">
-    	<simpleContent>
+        <annotation>
+        	<documentation>Task deadline (in milliseconds).</documentation>
+        </annotation>
+        <simpleContent>
     		<extension base="ctg:unsignedDouble">
     			<attribute name="type">
     				<simpleType>
