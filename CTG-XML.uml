@@ -13,7 +13,7 @@
     <eAnnotations xmi:id="_R4X3cLsaEd-YP6PCNhC6sg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
     </eAnnotations>
-    <appliedProfile href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_0"/>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
   </profileApplication>
   <profileApplication xmi:id="_R4X3cbsaEd-YP6PCNhC6sg">
     <eAnnotations xmi:id="_R4X3crsaEd-YP6PCNhC6sg" source="http://www.eclipse.org/uml2/2.0.0/UML">
