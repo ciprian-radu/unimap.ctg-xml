@@ -223,6 +223,36 @@ namespace research
               this->task_ = s;
             }
 
+            const coreType::node_optional& coreType::
+            node () const
+            {
+              return this->node_;
+            }
+
+            coreType::node_optional& coreType::
+            node ()
+            {
+              return this->node_;
+            }
+
+            void coreType::
+            node (const node_type& x)
+            {
+              this->node_.set (x);
+            }
+
+            void coreType::
+            node (const node_optional& x)
+            {
+              this->node_ = x;
+            }
+
+            void coreType::
+            node (::std::auto_ptr< node_type > x)
+            {
+              this->node_.set (x);
+            }
+
 
             // taskType
             // 
@@ -351,7 +381,8 @@ namespace research
               width_ (::xml_schema::flags (), this),
               height_ (::xml_schema::flags (), this),
               idlePower_ (::xml_schema::flags (), this),
-              task_ (::xml_schema::flags (), this)
+              task_ (::xml_schema::flags (), this),
+              node_ (::xml_schema::flags (), this)
             {
             }
 
@@ -366,7 +397,8 @@ namespace research
               width_ (x.width_, f, this),
               height_ (x.height_, f, this),
               idlePower_ (x.idlePower_, f, this),
-              task_ (x.task_, f, this)
+              task_ (x.task_, f, this),
+              node_ (x.node_, f, this)
             {
             }
 
@@ -381,7 +413,8 @@ namespace research
               width_ (f, this),
               height_ (f, this),
               idlePower_ (f, this),
-              task_ (f, this)
+              task_ (f, this),
+              node_ (f, this)
             {
               if ((f & ::xml_schema::flags::base) == 0)
               {
@@ -481,6 +514,20 @@ namespace research
 
                   this->task_.push_back (r);
                   continue;
+                }
+
+                // node
+                //
+                if (n.name () == "node" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< node_type > r (
+                    node_traits::create (i, f, this));
+
+                  if (!this->node_)
+                  {
+                    this->node_.set (r);
+                    continue;
+                  }
                 }
 
                 break;
@@ -1123,6 +1170,18 @@ namespace research
                     e));
 
                 s << *b;
+              }
+
+              // node
+              //
+              if (i.node ())
+              {
+                ::xercesc::DOMElement& s (
+                  ::xsd::cxx::xml::dom::create_element (
+                    "node",
+                    e));
+
+                s << *i.node ();
               }
             }
 

@@ -1143,6 +1143,85 @@ namespace research
               //@}
 
               /**
+               * @name node
+               *
+               * @brief Accessor and modifier functions for the %node
+               * optional element.
+               *
+               * Specifies the Id of the NoC node to which this core is currently
+               * mapped to.
+               */
+              //@{
+
+              /**
+               * @brief Element type.
+               */
+              typedef ::xml_schema::string node_type;
+
+              /**
+               * @brief Element optional container type.
+               */
+              typedef ::xsd::cxx::tree::optional< node_type > node_optional;
+
+              /**
+               * @brief Element traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< node_type, char > node_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the element
+               * container.
+               *
+               * @return A constant reference to the optional container.
+               */
+              const node_optional&
+              node () const;
+
+              /**
+               * @brief Return a read-write reference to the element container.
+               *
+               * @return A reference to the optional container.
+               */
+              node_optional&
+              node ();
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the element.
+               */
+              void
+              node (const node_type& x);
+
+              /**
+               * @brief Set the element value.
+               *
+               * @param x An optional container with the new value to set.
+               *
+               * If the value is present in @a x then this function makes a copy 
+               * of this value and sets it as the new value of the element.
+               * Otherwise the element container is set the 'not present' state.
+               */
+              void
+              node (const node_optional& x);
+
+              /**
+               * @brief Set the element value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly instead
+               * of making a copy.
+               */
+              void
+              node (::std::auto_ptr< node_type > p);
+
+              //@}
+
+              /**
                * @name Constructors
                */
               //@{
@@ -1219,6 +1298,7 @@ namespace research
               height_optional height_;
               idlePower_optional idlePower_;
               task_sequence task_;
+              node_optional node_;
 
               //@endcond
             };

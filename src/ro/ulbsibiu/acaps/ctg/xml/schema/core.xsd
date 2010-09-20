@@ -65,7 +65,13 @@
         			</xsd:documentation>
         		</xsd:annotation>
         	</xsd:element>
-        	<xsd:element name="task" type="core:taskType" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+        	<xsd:element name="task" type="core:taskType"
+        		maxOccurs="unbounded" minOccurs="0">
+        	</xsd:element>
+        	<xsd:element name="node" type="xsd:string" maxOccurs="1" minOccurs="0">
+        		<xsd:annotation>
+        			<xsd:documentation>Specifies the Id of the NoC node to which this core is currently mapped to.</xsd:documentation>
+        		</xsd:annotation></xsd:element>
         </xsd:sequence>
     </xsd:complexType>
 
