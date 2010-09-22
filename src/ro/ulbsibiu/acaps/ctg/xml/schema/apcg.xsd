@@ -53,7 +53,7 @@
     			</restriction>
     		</simpleType>
     	</attribute>
-    	<attribute name="power">
+    	<attribute name="power" use="optional">
     		<annotation>
     			<documentation>
     				The power (in Watts) consumed by this task, when it
