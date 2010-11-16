@@ -789,64 +789,6 @@ namespace research
               //@}
 
               /**
-               * @name apcg
-               *
-               * @brief Accessor and modifier functions for the %apcg
-               * required attribute.
-               */
-              //@{
-
-              /**
-               * @brief Attribute type.
-               */
-              typedef ::xml_schema::string apcg_type;
-
-              /**
-               * @brief Attribute traits type.
-               */
-              typedef ::xsd::cxx::tree::traits< apcg_type, char > apcg_traits;
-
-              /**
-               * @brief Return a read-only (constant) reference to the attribute.
-               *
-               * @return A constant reference to the attribute.
-               */
-              const apcg_type&
-              apcg () const;
-
-              /**
-               * @brief Return a read-write reference to the attribute.
-               *
-               * @return A reference to the attribute.
-               */
-              apcg_type&
-              apcg ();
-
-              /**
-               * @brief Set the attribute value.
-               *
-               * @param x A new value to set.
-               *
-               * This function makes a copy of its argument and sets it as
-               * the new value of the attribute.
-               */
-              void
-              apcg (const apcg_type& x);
-
-              /**
-               * @brief Set the attribute value without copying.
-               *
-               * @param p A new value to use.
-               *
-               * This function will try to use the passed value directly
-               * instead of making a copy.
-               */
-              void
-              apcg (::std::auto_ptr< apcg_type > p);
-
-              //@}
-
-              /**
                * @name Constructors
                */
               //@{
@@ -855,8 +797,7 @@ namespace research
                * @brief Create an instance from the ultimate base and
                * initializers for required elements and attributes.
                */
-              mappingType (const id_type&,
-                           const apcg_type&);
+              mappingType (const id_type&);
 
               /**
                * @brief Create an instance from a DOM element.
@@ -919,7 +860,6 @@ namespace research
               protected:
               map_sequence map_;
               ::xsd::cxx::tree::one< id_type > id_;
-              ::xsd::cxx::tree::one< apcg_type > apcg_;
 
               //@endcond
             };
@@ -1071,6 +1011,67 @@ namespace research
               //@}
 
               /**
+               * @name apcg
+               *
+               * @brief Accessor and modifier functions for the %apcg
+               * required attribute.
+               *
+               * Each mapped IP core comes from an APCG. Having the ID of the APCG set
+               * for each mapped core allows a mapping for multiple APCGs/CTGs.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::string apcg_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< apcg_type, char > apcg_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const apcg_type&
+              apcg () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              apcg_type&
+              apcg ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              apcg (const apcg_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              apcg (::std::auto_ptr< apcg_type > p);
+
+              //@}
+
+              /**
                * @name Constructors
                */
               //@{
@@ -1079,7 +1080,8 @@ namespace research
                * @brief Create an instance from the ultimate base and
                * initializers for required elements and attributes.
                */
-              mapType (const node_type&);
+              mapType (const node_type&,
+                       const apcg_type&);
 
               /**
                * @brief Create an instance from a DOM element.
@@ -1142,6 +1144,7 @@ namespace research
               protected:
               ::xsd::cxx::tree::one< node_type > node_;
               core_optional core_;
+              ::xsd::cxx::tree::one< apcg_type > apcg_;
 
               //@endcond
             };

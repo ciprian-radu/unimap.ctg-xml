@@ -97,30 +97,6 @@ namespace research
               this->id_.set (x);
             }
 
-            const mappingType::apcg_type& mappingType::
-            apcg () const
-            {
-              return this->apcg_.get ();
-            }
-
-            mappingType::apcg_type& mappingType::
-            apcg ()
-            {
-              return this->apcg_.get ();
-            }
-
-            void mappingType::
-            apcg (const apcg_type& x)
-            {
-              this->apcg_.set (x);
-            }
-
-            void mappingType::
-            apcg (::std::auto_ptr< apcg_type > x)
-            {
-              this->apcg_.set (x);
-            }
-
 
             // mapType
             // 
@@ -178,6 +154,30 @@ namespace research
             {
               this->core_.set (x);
             }
+
+            const mapType::apcg_type& mapType::
+            apcg () const
+            {
+              return this->apcg_.get ();
+            }
+
+            mapType::apcg_type& mapType::
+            apcg ()
+            {
+              return this->apcg_.get ();
+            }
+
+            void mapType::
+            apcg (const apcg_type& x)
+            {
+              this->apcg_.set (x);
+            }
+
+            void mapType::
+            apcg (::std::auto_ptr< apcg_type > x)
+            {
+              this->apcg_.set (x);
+            }
           }
         }
       }
@@ -203,12 +203,10 @@ namespace research
             //
 
             mappingType::
-            mappingType (const id_type& id,
-                         const apcg_type& apcg)
+            mappingType (const id_type& id)
             : ::xml_schema::type (),
               map_ (::xml_schema::flags (), this),
-              id_ (id, ::xml_schema::flags (), this),
-              apcg_ (apcg, ::xml_schema::flags (), this)
+              id_ (id, ::xml_schema::flags (), this)
             {
             }
 
@@ -218,8 +216,7 @@ namespace research
                          ::xml_schema::container* c)
             : ::xml_schema::type (x, f, c),
               map_ (x.map_, f, this),
-              id_ (x.id_, f, this),
-              apcg_ (x.apcg_, f, this)
+              id_ (x.id_, f, this)
             {
             }
 
@@ -229,8 +226,7 @@ namespace research
                          ::xml_schema::container* c)
             : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
               map_ (f, this),
-              id_ (f, this),
-              apcg_ (f, this)
+              id_ (f, this)
             {
               if ((f & ::xml_schema::flags::base) == 0)
               {
@@ -277,28 +273,12 @@ namespace research
                   this->id_.set (r);
                   continue;
                 }
-
-                if (n.name () == "apcg" && n.namespace_ ().empty ())
-                {
-                  ::std::auto_ptr< apcg_type > r (
-                    apcg_traits::create (i, f, this));
-
-                  this->apcg_.set (r);
-                  continue;
-                }
               }
 
               if (!id_.present ())
               {
                 throw ::xsd::cxx::tree::expected_attribute< char > (
                   "id",
-                  "");
-              }
-
-              if (!apcg_.present ())
-              {
-                throw ::xsd::cxx::tree::expected_attribute< char > (
-                  "apcg",
                   "");
               }
             }
@@ -319,10 +299,12 @@ namespace research
             //
 
             mapType::
-            mapType (const node_type& node)
+            mapType (const node_type& node,
+                     const apcg_type& apcg)
             : ::xml_schema::type (),
               node_ (node, ::xml_schema::flags (), this),
-              core_ (::xml_schema::flags (), this)
+              core_ (::xml_schema::flags (), this),
+              apcg_ (apcg, ::xml_schema::flags (), this)
             {
             }
 
@@ -332,7 +314,8 @@ namespace research
                      ::xml_schema::container* c)
             : ::xml_schema::type (x, f, c),
               node_ (x.node_, f, this),
-              core_ (x.core_, f, this)
+              core_ (x.core_, f, this),
+              apcg_ (x.apcg_, f, this)
             {
             }
 
@@ -342,11 +325,12 @@ namespace research
                      ::xml_schema::container* c)
             : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
               node_ (f, this),
-              core_ (f, this)
+              core_ (f, this),
+              apcg_ (f, this)
             {
               if ((f & ::xml_schema::flags::base) == 0)
               {
-                ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+                ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
                 this->parse (p, f);
               }
             }
@@ -397,6 +381,29 @@ namespace research
                 throw ::xsd::cxx::tree::expected_element< char > (
                   "node",
                   "http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping");
+              }
+
+              while (p.more_attributes ())
+              {
+                const ::xercesc::DOMAttr& i (p.next_attribute ());
+                const ::xsd::cxx::xml::qualified_name< char > n (
+                  ::xsd::cxx::xml::dom::name< char > (i));
+
+                if (n.name () == "apcg" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< apcg_type > r (
+                    apcg_traits::create (i, f, this));
+
+                  this->apcg_.set (r);
+                  continue;
+                }
+              }
+
+              if (!apcg_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_attribute< char > (
+                  "apcg",
+                  "");
               }
             }
 
@@ -766,17 +773,6 @@ namespace research
 
                 a << i.id ();
               }
-
-              // apcg
-              //
-              {
-                ::xercesc::DOMAttr& a (
-                  ::xsd::cxx::xml::dom::create_attribute (
-                    "apcg",
-                    e));
-
-                a << i.apcg ();
-              }
             }
 
             void
@@ -955,6 +951,17 @@ namespace research
                     e));
 
                 s << *i.core ();
+              }
+
+              // apcg
+              //
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "apcg",
+                    e));
+
+                a << i.apcg ();
               }
             }
           }
