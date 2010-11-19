@@ -3,7 +3,7 @@
     <core id="7">
         <task id="1" execTime="0.0049" power="6.0"/>
     </core>
-    <core id="28">
-        <task id="0" execTime="1.0E-5" power="0.77"/>
+    <core id="2">
+        <task id="0" execTime="1.0E-5" power="10.0"/>
     </core>
 </apcg>
