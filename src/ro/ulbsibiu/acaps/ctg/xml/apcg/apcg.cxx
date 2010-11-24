@@ -143,6 +143,30 @@ namespace research
               this->task_ = s;
             }
 
+            const coreType::uid_type& coreType::
+            uid () const
+            {
+              return this->uid_.get ();
+            }
+
+            coreType::uid_type& coreType::
+            uid ()
+            {
+              return this->uid_.get ();
+            }
+
+            void coreType::
+            uid (const uid_type& x)
+            {
+              this->uid_.set (x);
+            }
+
+            void coreType::
+            uid (::std::auto_ptr< uid_type > x)
+            {
+              this->uid_.set (x);
+            }
+
             const coreType::id_type& coreType::
             id () const
             {
@@ -403,9 +427,11 @@ namespace research
             //
 
             coreType::
-            coreType (const id_type& id)
+            coreType (const uid_type& uid,
+                      const id_type& id)
             : ::xml_schema::type (),
               task_ (::xml_schema::flags (), this),
+              uid_ (uid, ::xml_schema::flags (), this),
               id_ (id, ::xml_schema::flags (), this)
             {
             }
@@ -416,6 +442,7 @@ namespace research
                       ::xml_schema::container* c)
             : ::xml_schema::type (x, f, c),
               task_ (x.task_, f, this),
+              uid_ (x.uid_, f, this),
               id_ (x.id_, f, this)
             {
             }
@@ -426,6 +453,7 @@ namespace research
                       ::xml_schema::container* c)
             : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
               task_ (f, this),
+              uid_ (f, this),
               id_ (f, this)
             {
               if ((f & ::xml_schema::flags::base) == 0)
@@ -465,6 +493,15 @@ namespace research
                 const ::xsd::cxx::xml::qualified_name< char > n (
                   ::xsd::cxx::xml::dom::name< char > (i));
 
+                if (n.name () == "uid" && n.namespace_ ().empty ())
+                {
+                  ::std::auto_ptr< uid_type > r (
+                    uid_traits::create (i, f, this));
+
+                  this->uid_.set (r);
+                  continue;
+                }
+
                 if (n.name () == "id" && n.namespace_ ().empty ())
                 {
                   ::std::auto_ptr< id_type > r (
@@ -473,6 +510,13 @@ namespace research
                   this->id_.set (r);
                   continue;
                 }
+              }
+
+              if (!uid_.present ())
+              {
+                throw ::xsd::cxx::tree::expected_attribute< char > (
+                  "uid",
+                  "");
               }
 
               if (!id_.present ())
@@ -1233,6 +1277,17 @@ namespace research
                     e));
 
                 s << *b;
+              }
+
+              // uid
+              //
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "uid",
+                    e));
+
+                a << i.uid ();
               }
 
               // id

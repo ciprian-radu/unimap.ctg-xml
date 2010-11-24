@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <apcg id="8_0" ctg="8" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/apcg">
-    <core id="63">
-        <task id="0" execTime="1.0E-6" power="0.017"/>
+    <core uid="4" id="4">
+        <task id="1" execTime="4.6E-4" power="16.0"/>
     </core>
-    <core id="32">
-        <task id="1" execTime="8.2E-4" power="0.075"/>
+    <core uid="54" id="54">
+        <task id="0" execTime="1.0E-6" power="1.4"/>
     </core>
 </apcg>

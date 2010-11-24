@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping id="1_0_0" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
+    <map apcg="1_0">
+        <node>63</node>
+        <core>16</core>
+    </map>
+    <map apcg="1_0">
+        <node>27</node>
+        <core>46</core>
+    </map>
+    <map apcg="1_0">
+        <node>54</node>
+        <core>59</core>
+    </map>
+    <map apcg="1_0">
+        <node>56</node>
+        <core>8</core>
+    </map>
+</mapping>

@@ -1006,6 +1006,66 @@ namespace research
               //@}
 
               /**
+               * @name uid
+               *
+               * @brief Accessor and modifier functions for the %uid
+               * required attribute.
+               *
+               * A unique identifier of a core within the APCG.
+               */
+              //@{
+
+              /**
+               * @brief Attribute type.
+               */
+              typedef ::xml_schema::string uid_type;
+
+              /**
+               * @brief Attribute traits type.
+               */
+              typedef ::xsd::cxx::tree::traits< uid_type, char > uid_traits;
+
+              /**
+               * @brief Return a read-only (constant) reference to the attribute.
+               *
+               * @return A constant reference to the attribute.
+               */
+              const uid_type&
+              uid () const;
+
+              /**
+               * @brief Return a read-write reference to the attribute.
+               *
+               * @return A reference to the attribute.
+               */
+              uid_type&
+              uid ();
+
+              /**
+               * @brief Set the attribute value.
+               *
+               * @param x A new value to set.
+               *
+               * This function makes a copy of its argument and sets it as
+               * the new value of the attribute.
+               */
+              void
+              uid (const uid_type& x);
+
+              /**
+               * @brief Set the attribute value without copying.
+               *
+               * @param p A new value to use.
+               *
+               * This function will try to use the passed value directly
+               * instead of making a copy.
+               */
+              void
+              uid (::std::auto_ptr< uid_type > p);
+
+              //@}
+
+              /**
                * @name id
                *
                * @brief Accessor and modifier functions for the %id
@@ -1074,7 +1134,8 @@ namespace research
                * @brief Create an instance from the ultimate base and
                * initializers for required elements and attributes.
                */
-              coreType (const id_type&);
+              coreType (const uid_type&,
+                        const id_type&);
 
               /**
                * @brief Create an instance from a DOM element.
@@ -1136,6 +1197,7 @@ namespace research
 
               protected:
               task_sequence task_;
+              ::xsd::cxx::tree::one< uid_type > uid_;
               ::xsd::cxx::tree::one< id_type > id_;
 
               //@endcond
