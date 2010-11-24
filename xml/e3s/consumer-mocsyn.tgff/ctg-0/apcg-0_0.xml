@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <apcg id="0_0" ctg="0" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/apcg">
-    <core id="22">
-        <task id="1" execTime="0.0" power="0.91"/>
+    <core uid="28" id="28">
+        <task id="0" execTime="1.0E-5" power="0.77"/>
     </core>
-    <core id="16">
-        <task id="0" execTime="1.0E-5" power="1.6"/>
+    <core uid="7" id="7">
+        <task id="1" execTime="0.0" power="6.0"/>
     </core>
-    <core id="29">
-        <task id="2" execTime="1.0E-5" power="0.17"/>
+    <core uid="17" id="17">
+        <task id="2" execTime="1.0E-5" power="1.6"/>
     </core>
 </apcg>

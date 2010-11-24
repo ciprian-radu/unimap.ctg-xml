@@ -24,19 +24,26 @@
 
     <complexType name="coreType">
     	<sequence maxOccurs="unbounded" minOccurs="1">
-    		<element name="task" type="apcg:taskType" maxOccurs="unbounded"
-    			minOccurs="1">
-                <annotation>
-                	<documentation>A task that is assigned to this core.</documentation>
-                </annotation>
+    		<element name="task" type="apcg:taskType"
+    			maxOccurs="unbounded" minOccurs="1">
+    			<annotation>
+    				<documentation>
+    					A task that is assigned to this core.
+    				</documentation>
+    			</annotation>
     		</element>
     	</sequence>
+    	<attribute name="uid" type="string" use="required">
+    		<annotation>
+    			<documentation>A unique identifier of a core within the APCG.</documentation>
+    		</annotation></attribute>
     	<attribute name="id" type="string" use="required">
     		<annotation>
     			<documentation>The ID of the core.</documentation>
-    		</annotation></attribute>
+    		</annotation>
+    	</attribute>
     </complexType>
-    
+
 
     <complexType name="taskType">
     	<attribute name="id" type="string" use="required"></attribute>
