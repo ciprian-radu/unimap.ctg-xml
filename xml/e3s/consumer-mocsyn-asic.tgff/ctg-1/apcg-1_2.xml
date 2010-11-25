@@ -9,7 +9,10 @@
     <core uid="1" id="40">
         <task id="1" execTime="0.0013" power="0.2"/>
     </core>
-    <core uid="3" id="43">
-        <task id="3" execTime="1.0E-6" power="0.058"/>
+    <core uid="3" id="40">
+        <task id="3" execTime="1.5E-4" power="0.2"/>
+    </core>
+    <core uid="4" id="43">
+        <task id="4" execTime="1.0E-6" power="0.058"/>
     </core>
 </apcg>

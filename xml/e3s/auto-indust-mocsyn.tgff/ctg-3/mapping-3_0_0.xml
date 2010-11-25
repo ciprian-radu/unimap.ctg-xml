@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mapping id="3_0_0" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
     <map apcg="3_0">
-        <node>34</node>
+        <node>16</node>
         <core>26</core>
     </map>
     <map apcg="3_0">
-        <node>4</node>
-        <core>17</core>
+        <node>1</node>
+        <core>4</core>
     </map>
     <map apcg="3_0">
-        <node>53</node>
-        <core>23</core>
+        <node>42</node>
+        <core>19</core>
     </map>
     <map apcg="3_0">
-        <node>12</node>
-        <core>31</core>
+        <node>30</node>
+        <core>6</core>
     </map>
     <map apcg="3_0">
-        <node>61</node>
-        <core>11</core>
+        <node>22</node>
+        <core>3</core>
     </map>
 </mapping>
