@@ -10,6 +10,10 @@
     		</element>
     	</sequence>
     	<attribute name="id" type="ID" use="required"></attribute>
+    	<attribute name="runtime" type="double" use="optional">
+    		<annotation>
+    			<documentation>The mapper runtime, in milliseconds.</documentation>
+    		</annotation></attribute>
     </complexType>
 
 
