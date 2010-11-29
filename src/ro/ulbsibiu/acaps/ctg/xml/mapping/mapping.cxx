@@ -97,6 +97,30 @@ namespace research
               this->id_.set (x);
             }
 
+            const mappingType::runtime_optional& mappingType::
+            runtime () const
+            {
+              return this->runtime_;
+            }
+
+            mappingType::runtime_optional& mappingType::
+            runtime ()
+            {
+              return this->runtime_;
+            }
+
+            void mappingType::
+            runtime (const runtime_type& x)
+            {
+              this->runtime_.set (x);
+            }
+
+            void mappingType::
+            runtime (const runtime_optional& x)
+            {
+              this->runtime_ = x;
+            }
+
 
             // mapType
             // 
@@ -206,7 +230,8 @@ namespace research
             mappingType (const id_type& id)
             : ::xml_schema::type (),
               map_ (::xml_schema::flags (), this),
-              id_ (id, ::xml_schema::flags (), this)
+              id_ (id, ::xml_schema::flags (), this),
+              runtime_ (::xml_schema::flags (), this)
             {
             }
 
@@ -216,7 +241,8 @@ namespace research
                          ::xml_schema::container* c)
             : ::xml_schema::type (x, f, c),
               map_ (x.map_, f, this),
-              id_ (x.id_, f, this)
+              id_ (x.id_, f, this),
+              runtime_ (x.runtime_, f, this)
             {
             }
 
@@ -226,7 +252,8 @@ namespace research
                          ::xml_schema::container* c)
             : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
               map_ (f, this),
-              id_ (f, this)
+              id_ (f, this),
+              runtime_ (f, this)
             {
               if ((f & ::xml_schema::flags::base) == 0)
               {
@@ -271,6 +298,12 @@ namespace research
                     id_traits::create (i, f, this));
 
                   this->id_.set (r);
+                  continue;
+                }
+
+                if (n.name () == "runtime" && n.namespace_ ().empty ())
+                {
+                  this->runtime_.set (runtime_traits::create (i, f, this));
                   continue;
                 }
               }
@@ -772,6 +805,18 @@ namespace research
                     e));
 
                 a << i.id ();
+              }
+
+              // runtime
+              //
+              if (i.runtime ())
+              {
+                ::xercesc::DOMAttr& a (
+                  ::xsd::cxx::xml::dom::create_attribute (
+                    "runtime",
+                    e));
+
+                a << ::xml_schema::as_double(*i.runtime ());
               }
             }
 
