@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<mapping runtime="69666.0" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
+<mapping runtime="72092.0" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
     <map apcg="0_2">
-        <node>2</node>
+        <node>1</node>
         <core>4</core>
     </map>
     <map apcg="0_2">
-        <node>3</node>
+        <node>2</node>
         <core>5</core>
     </map>
     <map apcg="0_2">
-        <node>6</node>
+        <node>5</node>
         <core>3</core>
     </map>
     <map apcg="0_2">
-        <node>7</node>
-        <core>2</core>
-    </map>
-    <map apcg="0_2">
-        <node>11</node>
+        <node>8</node>
         <core>1</core>
     </map>
     <map apcg="0_2">
-        <node>15</node>
+        <node>9</node>
+        <core>2</core>
+    </map>
+    <map apcg="0_2">
+        <node>12</node>
         <core>0</core>
     </map>
 </mapping>
