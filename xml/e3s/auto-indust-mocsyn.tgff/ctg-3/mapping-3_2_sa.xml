@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<mapping runtime="69594.0" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
+<mapping runtime="7.6079894E10" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
     <map apcg="3_2">
-        <node>9</node>
-        <core>0</core>
-    </map>
-    <map apcg="3_2">
-        <node>10</node>
+        <node>8</node>
         <core>3</core>
     </map>
     <map apcg="3_2">
-        <node>11</node>
+        <node>9</node>
+        <core>2</core>
+    </map>
+    <map apcg="3_2">
+        <node>12</node>
         <core>4</core>
     </map>
     <map apcg="3_2">
@@ -18,6 +18,6 @@
     </map>
     <map apcg="3_2">
         <node>14</node>
-        <core>2</core>
+        <core>0</core>
     </map>
 </mapping>
