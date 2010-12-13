@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<mapping runtime="3.7670266E10" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
+<mapping runtime="3.7219986E10" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
     <map apcg="8_2">
-        <node>1</node>
+        <node>8</node>
         <core>1</core>
     </map>
     <map apcg="8_2">
-        <node>2</node>
+        <node>9</node>
         <core>0</core>
     </map>
 </mapping>
