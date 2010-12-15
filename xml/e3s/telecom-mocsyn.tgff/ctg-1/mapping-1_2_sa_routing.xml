@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<mapping runtime="9.9728609E10" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
+<mapping runtime="9.1264254E10" id="sa" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/mapping">
     <map apcg="1_2">
-        <node>1</node>
+        <node>0</node>
         <core>3</core>
     </map>
     <map apcg="1_2">
