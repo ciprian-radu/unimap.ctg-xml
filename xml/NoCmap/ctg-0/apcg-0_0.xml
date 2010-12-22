@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apcg id="0_0" ctg="0" xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/apcg">
+    <core uid="15" id="15">
+        <task id="5" execTime="1.0E-5" power="0.075"/>
+    </core>
+    <core uid="36" id="36">
+        <task id="14" execTime="1.0E-6" power="1.0"/>
+    </core>
+    <core uid="26" id="26">
+        <task id="6" execTime="1.0E-5" power="0.58"/>
+    </core>
+    <core uid="43" id="43">
+        <task id="4" execTime="1.0E-6" power="0.058"/>
+    </core>
+    <core uid="23" id="23">
+        <task id="8" execTime="1.0E-5" power="2.0"/>
+    </core>
+    <core uid="8" id="8">
+        <task id="12" execTime="1.0E-5" power="1.2"/>
+    </core>
+    <core uid="50" id="50">
+        <task id="10" execTime="1.0E-6" power="0.16"/>
+    </core>
+    <core uid="51" id="51">
+        <task id="3" execTime="1.0E-6" power="0.16"/>
+    </core>
+    <core uid="31" id="31">
+        <task id="2" execTime="1.0E-5" power="2.5"/>
+    </core>
+    <core uid="64" id="64">
+        <task id="13" execTime="1.0E-6" power="0.1"/>
+    </core>
+    <core uid="56" id="56">
+        <task id="0" execTime="1.0E-6" power="0.091"/>
+    </core>
+    <core uid="19" id="19">
+        <task id="11" execTime="1.0E-5" power="10.0"/>
+    </core>
+    <core uid="27" id="27">
+        <task id="1" execTime="1.0E-5" power="1.7"/>
+    </core>
+    <core uid="53" id="53">
+        <task id="9" execTime="1.0E-6" power="1.0"/>
+    </core>
+    <core uid="22" id="22">
+        <task id="7" execTime="1.0E-5" power="0.91"/>
+    </core>
+    <core uid="49" id="49">
+        <task id="15" execTime="1.0E-6" power="0.0075"/>
+    </core>
+</apcg>
