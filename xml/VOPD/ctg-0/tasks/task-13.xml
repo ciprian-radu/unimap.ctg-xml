@@ -2,5 +2,5 @@
 <ns2:task xmlns:ns2="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/task">
     <ID>13</ID>
     <type>45</type>
-    <name>inverse Discrete Cosine Transform</name>
+    <name>iDCT</name>
 </ns2:task>
