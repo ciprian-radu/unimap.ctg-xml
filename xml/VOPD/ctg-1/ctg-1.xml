@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!-- VOPD mapped onto 16 cores -->
+<!-- VOPD mapped onto 12 core -->
 <ctg
 	xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg"
 	id="0" period="0.000976562">
