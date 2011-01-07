@@ -3,8 +3,8 @@
 <ctg
 	xmlns="http://webspace.ulbsibiu.ro/ciprian.radu/research/noc/application_mapping/unified_framework/schema/ctg"
 	id="0" period="0.000976562">
-	<!-- VOPD traffics are in MB/s. There are here multiplied by 8*1024 ad the 
-		period is 1 / 1024 s (we need to avoid to big numbers because SA and BB cannot 
+	<!-- VOPD traffics are in MB/s. They are here multiplied by 8*1024 and the 
+		period is 1 / 1024 s (we need to avoid too big numbers because SA and BB cannot 
 		handle huge communication values) -->
 	<communication>
 		<source id="0" />
